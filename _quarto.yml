@@ -22,8 +22,8 @@ page-footer:
       Este livro foi construído com <a href="https://quarto.org/">Quarto</a>.
 
 cover-image: cover.png
-site-url: https://datasciencehamburg.github.io/QuartoBookSample/
-repo-url: https://github.com/DataScienceHamburg/QuartoBookSample
+site-url: https://adqgs.github.io/
+repo-url: https://github.com/ADQGS/ADQGS.github.io
 
 bibliography: references.bib
 

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ADQGS_ICEPi_book",
     "section": "",
-    "text": "Prefácio\nEste é um livro on-line feito com Quarto para alunos do ICEPi.\nPara aprender mais sobre livros com Quarto visite https://quarto.org/docs/books (site em inglês).\n\n# nestes espaços teremos códigos de exemplos\n1 + 1\n\n[1] 2"
+    "text": "Prefácio\nEste é um livro on-line feito com Quarto para alunos do ICEPi.\nPara aprender mais sobre livros com Quarto visite https://quarto.org/docs/books (site em inglês).\n\nCode# nestes espaços teremos códigos de exemplos\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "intro.html",
@@ -53,6 +53,6 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Uma degustação para inspirar…\n\n# install.packages(\"pheatmap\")\nlibrary(pheatmap)\n\n# Data \nset.seed(8)\nm <- matrix(rnorm(200), 10, 10)\ncolnames(m) <- paste(\"Col\", 1:10)\nrownames(m) <- paste(\"Row\", 1:10)\n\n# Heat map\npheatmap(m,\n         display_numbers = TRUE,\n         number_color = \"black\", \n         fontsize_number = 8) \n\n\n\n\nRef"
+    "text": "Uma degustação para inspirar…\n\nCode# install.packages(\"pheatmap\")\nlibrary(pheatmap)\n\n# Data \nset.seed(8)\nm <- matrix(rnorm(200), 10, 10)\ncolnames(m) <- paste(\"Col\", 1:10)\nrownames(m) <- paste(\"Row\", 1:10)\n\n# Heat map\npheatmap(m,\n         display_numbers = TRUE,\n         number_color = \"black\", \n         fontsize_number = 8) \n\n\n\n\nRef"
   }
 ]

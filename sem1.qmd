@@ -1,26 +1,37 @@
 # Semana 01 {.unnumbered}
 
-1.  ## Aula 01-1
+1.  
+
+    ## Aula 01-1
 
     [Convocação aos alunos](https://www.youtube.com/watch?v=el9Jd8vErcI "começando")
 
-2.  ## Aula 01-2 
+2.  
+
+    ## Aula 01-2
 
     [Revisão de estatística](https://www.youtube.com/watch?v=m3Cf4IqNovc "revisando")
 
-3.  ## Aula 02
+3.  
+
+    ## Aula 02
 
     [De volta ao R com tranquilidade](https://www.youtube.com/watch?v=n7ooofzPDL8 "tranquilão")
 
-4.  ## Aula 03 
+4.  
+
+    ## Aula 03
 
     [Revisão de Ciência de Dados](https://www.youtube.com/watch?v=emjVIu_ZITc "ciência de dados")
 
-5.  ## Aula 04 
+5.  
+
+    ## Aula 04
 
     [Pensando no nosso projeto](https://www.youtube.com/watch?v=k997WIbwo4o&t=5s "idealização")
 
-6. ## Aula 05   
+6.  
 
-    **Projeto livro on-line** a partir do módulo 2...
-(irá incorporar o módulo1 revisado ao longo do tempo)
+    ## Aula 05
+
+    **Projeto livro on-line** a partir do módulo 2... (irá incorporar o módulo1 revisado ao longo do tempo)

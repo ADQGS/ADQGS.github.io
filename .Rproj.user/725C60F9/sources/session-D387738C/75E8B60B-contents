@@ -1,0 +1,42 @@
+project:
+  type: book
+
+book:
+  title: "ADQGS_ICEPi_book"
+  author: "Bragatte"
+  date: "2/16/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - mod2.qmd
+    - sem1.qmd
+    - references.qmd
+
+reader-mode: true
+
+page-footer:
+  left: |
+      escrito por Marcelo A. S. Bragatte
+  right: |
+      Este livro foi construído com <a href="https://quarto.org/">Quarto</a>.
+
+cover-image: cover.png
+site-url: https://adqgs.github.io/
+repo-url: https://github.com/ADQGS/ADQGS.github.io
+
+bibliography: references.bib
+
+format:
+  html:
+    code-link: true
+    code-line-numbers: true
+    embed-resources: true
+    theme:
+      light: cerulean
+      dark: darkly
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

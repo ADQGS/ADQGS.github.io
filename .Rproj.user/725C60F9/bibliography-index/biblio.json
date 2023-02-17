@@ -1,0 +1,35 @@
+{
+    "sources": [
+        {
+            "DOI": "",
+            "ISSN": "",
+            "URL": "",
+            "author": [
+                {
+                    "family": "Bragatte",
+                    "given": "M. A. S."
+                }
+            ],
+            "container-title": "",
+            "id": "bragatte23",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        2
+                    ]
+                ]
+            },
+            "page": "1-10",
+            "publisher": "ICEPi",
+            "publisher-place": "Brasil",
+            "title": "Literate programming",
+            "type": "article-journal",
+            "volume": "1"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

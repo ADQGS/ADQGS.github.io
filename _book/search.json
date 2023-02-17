@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ADQGS_ICEPi_book",
+    "section": "",
+    "text": "Prefácio\nEste é um livro on-line feito com Quarto para alunos do ICEPi.\nPara aprender mais sobre livros com Quarto visite https://quarto.org/docs/books (site em inglês).\n\n# nestes espaços teremos códigos de exemplos\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introdução",
+    "section": "",
+    "text": "Este livro esta sendo criado ao longo do curso:\nCAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE a partir de markdown e códigos gerados nas aulas.\nAcesse o portal do aluno através do link disponibilizado pela plataforma moodle do ICEPi para maiores informações.\nCuradoria deste livro on-line por Bragatte."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Sumário",
+    "section": "",
+    "text": "Este livro irá conter os scripts e aulas disponibilizadas pelos instrutores do curso ADQGS do ICEPi.\n\nMarcelo A. S. Bragatte\nIsaac N. Schrarstzhaupt\nAdelmo I. Bertolde\nMarcos V. C. Vital\nMikael A. G. Lemos"
+  },
+  {
+    "objectID": "index.html#ementa",
+    "href": "index.html#ementa",
+    "title": "ADQGS_ICEPi_book",
+    "section": "Ementa",
+    "text": "Ementa\nNeste curso você aprenderá:\n\nMódulo Boas-Vindas\nConceitos de inferência estatística; principais modelos de probabilidade; estimação pontual e intervalar.\n\n\nMódulo I\nTestes de hipóteses para parâmetros; modelos de regressão linear simples e múltipla para dados quantitativos e qualitativos; seleção de modelos via métodos stepwise.\n\n\nMódulo II\nCoeficiente R2 e Teste F; dados supervisionados e não supervisionados. Exemplos reais;\n\n\nMódulo III\nexplorando técnicas de Machine Learning; modelos de Machine Learning para dados supervisionados: Regressão Logística, KNN e Florestas Aleatórias;\n\n\nMódulo IV\nmodelos de Machine Learning para dados não supervisionados: técnicas multivariadas de dados (análise de cluster e análise fatorial); métricas de ajustes de modelos: acurácia, sensibilidade, especificidade e índice kappa;\n\n\nMódulo V\nelaboração de projeto de análise exploratória de dados; uso de scripts e pacotes no R; Comunicando com visualização de dados e storytelling.\nTodo o processo é guiado com carga teórica e prática por intermédio da linguagem R."
+  },
+  {
+    "objectID": "mod2.html#objetivo-do-curso",
+    "href": "mod2.html#objetivo-do-curso",
+    "title": "Módulo II",
+    "section": "Objetivo do Curso:",
+    "text": "Objetivo do Curso:\nO curso visa qualificar a tomada de decisão e a avaliação das políticas públicas de saúde, em especial as relacionadas à vigilância em saúde, por meio da formação em serviço de trabalhadores do Sistema Único de Saúde do ES sobre ferramentas de análise de dados e estatística e da realização de estudos e análises de dados epidemiológicos sob demanda relacionadas ao projeto.\n\nPúblico alvo:\nTrabalhadores do Sistema Único de Saúde do Espírito Santo\n\n\nMetodologia\nO curso é oferecido sob a forma de Educação a Distância, de forma assíncrona, com encontros de tutoria, sendo mediado por material didático e por encontros síncronos quinzenais.\n\n\nRecursos\nSerão utilizados vídeos, textos e scripts.\n\n\nAtividades\nAs atividades avaliativas são coerentes com os conteúdos propostos nos vídeos e textos. Para isso, serão utilizadas a avaliação processual realizada por meio de questionários compostos por questões de múltipla escolha."
+  },
+  {
+    "objectID": "mod2.html#ementa",
+    "href": "mod2.html#ementa",
+    "title": "Módulo II",
+    "section": "Ementa",
+    "text": "Ementa\nNeste curso você aprenderá:\n\nMódulo Boas-Vindas\nConceitos de inferência estatística; principais modelos de probabilidade; estimação pontual e intervalar.\n\n\nMódulo I\nTestes de hipóteses para parâmetros; modelos de regressão linear simples e múltipla para dados quantitativos e qualitativos; seleção de modelos via métodos stepwise.\n\n\nMódulo II\nCoeficiente R2 e Teste F; dados supervisionados e não supervisionados. Exemplos reais;\n\n\nMódulo III\nexplorando técnicas de Machine Learning; modelos de Machine Learning para dados supervisionados: Regressão Logística, KNN e Florestas Aleatórias;\n\n\nMódulo IV\nmodelos de Machine Learning para dados não supervisionados: técnicas multivariadas de dados (análise de cluster e análise fatorial); métricas de ajustes de modelos: acurácia, sensibilidade, especificidade e índice kappa;\n\n\nMódulo V\nelaboração de projeto de análise exploratória de dados; uso de scripts e pacotes no R; Comunicando com visualização de dados e storytelling.\nCarga Horária Total: 60h\nTodo o processo é guiado com carga teórica e prática por intermédio da linguagem R."
+  },
+  {
+    "objectID": "sem1.html",
+    "href": "sem1.html",
+    "title": "3  Semana 01",
+    "section": "",
+    "text": "Aula 01-1 Convocação aos alunos\nAula 01-2 Revisão de estatística\nAula 02 - De volta ao R com tranquilidade\nAula 03 - Revisão de Ciência de Dados\nProjeto livro on-line a partir do módulo 2…"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Uma degustação para inspirar…\n\n# install.packages(\"pheatmap\")\nlibrary(pheatmap)\n\n# Data \nset.seed(8)\nm <- matrix(rnorm(200), 10, 10)\ncolnames(m) <- paste(\"Col\", 1:10)\nrownames(m) <- paste(\"Row\", 1:10)\n\n# Heat map\npheatmap(m,\n         display_numbers = TRUE,\n         number_color = \"black\", \n         fontsize_number = 8) \n\n\n\n\nRef"
+  }
+]

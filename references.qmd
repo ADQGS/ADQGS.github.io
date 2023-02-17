@@ -1,0 +1,31 @@
+# References {.unnumbered}
+
+::: {#refs}
+:::
+
+Uma degustação para inspirar...
+
+```{r}
+#| label: load-packages
+#| echo: true
+#| warning: false
+
+
+# install.packages("pheatmap")
+library(pheatmap)
+
+# Data 
+set.seed(8)
+m <- matrix(rnorm(200), 10, 10)
+colnames(m) <- paste("Col", 1:10)
+rownames(m) <- paste("Row", 1:10)
+
+# Heat map
+pheatmap(m,
+         display_numbers = TRUE,
+         number_color = "black", 
+         fontsize_number = 8) 
+
+```
+
+[Ref](https://r-charts.com/correlation/pheatmap/ "fonte")

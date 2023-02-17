@@ -1,0 +1,11 @@
+# Semana 01 {.unnumbered}
+
+1.  [Aula 01-1 **Convocação aos alunos**](https://www.youtube.com/watch?v=el9Jd8vErcI "começando")
+
+2.  [Aula 01-2 **Revisão de estatística**](https://www.youtube.com/watch?v=m3Cf4IqNovc "revisando")
+
+3.  [Aula 02 - **De volta ao R com tranquilidade**](https://www.youtube.com/watch?v=n7ooofzPDL8)
+
+4.  [Aula 03 - **Revisão de Ciência de Dados**](https://www.youtube.com/watch?v=emjVIu_ZITc "ciência de dados")
+
+5.  **Projeto livro on-line** a partir do módulo 2...

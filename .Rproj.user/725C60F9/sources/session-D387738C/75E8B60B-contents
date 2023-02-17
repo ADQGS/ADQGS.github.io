@@ -6,6 +6,10 @@ book:
   title: "ADQGS_ICEPi_book"
   author: "Bragatte"
   date: "2/16/2023"
+  site-url: https://adqgs.github.io/
+  repo-url: https://github.com/ADQGS/ADQGS.github.io
+  repo-actions: [edit]
+  downloads: [pdf,docx]
   chapters:
     - index.qmd
     - intro.qmd
@@ -23,8 +27,7 @@ page-footer:
       Este livro foi construído com <a href="https://quarto.org/">Quarto</a>.
 
 cover-image: cover.png
-site-url: https://adqgs.github.io/
-repo-url: https://github.com/ADQGS/ADQGS.github.io
+
 
 bibliography: references.bib
 
@@ -36,8 +39,20 @@ format:
     theme:
       light: cerulean
       dark: darkly
+
+  #define pdf
   pdf:
-    documentclass: scrreprt
+    toc: true
+    number-sections: true
+    colorlinks: true
+    documentclass: report
+    papersize: letter
+
+  # Define the name of the latex output file for PDF builds
+  latex:
+    latex_documents:
+      targetname: book.tex
+
 
 editor: visual
 

@@ -2,6 +2,7 @@
 
 Este livro irá conter os scripts e aulas disponibilizadas pelos instrutores do curso ADQGS do ICEPi.
 
+## Autores
 -   Marcelo A. S. **Bragatte**
 
 -   **Isaac** N. Schrarstzhaupt

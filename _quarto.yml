@@ -41,12 +41,8 @@ format:
       dark: darkly
 
   #define pdf
-  pdf:
-    toc: true
-    number-sections: true
-    colorlinks: true
-    documentclass: report
-    papersize: letter
+  pdf: default
+
 
   # Define the name of the latex output file for PDF builds
   latex:

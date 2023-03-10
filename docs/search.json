@@ -54,5 +54,12 @@
     "title": "References",
     "section": "",
     "text": "Uma degustação para inspirar…\n\nCode# install.packages(\"pheatmap\")\nlibrary(pheatmap)\n\n# Data \nset.seed(8)\nm <- matrix(rnorm(200), 10, 10)\ncolnames(m) <- paste(\"Col\", 1:10)\nrownames(m) <- paste(\"Row\", 1:10)\n\n# Heat map\npheatmap(m,\n         display_numbers = TRUE,\n         number_color = \"black\", \n         fontsize_number = 8) \n\n\n\n\nRef"
+  },
+  {
+    "objectID": "summary.html#autores",
+    "href": "summary.html#autores",
+    "title": "Sumário",
+    "section": "Autores",
+    "text": "Autores\n\nMarcelo A. S. Bragatte\nIsaac N. Schrarstzhaupt\nAdelmo I. Bertolde\nMarcos V. C. Vital\nMikael A. G. Lemos"
   }
 ]

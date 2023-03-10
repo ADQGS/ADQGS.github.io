@@ -1,0 +1,137 @@
+---
+title: "Aula 09 - Pop de dados para limpar"
+author: "BragatteMAS"
+format: html
+editor: source
+version: 4.2.1
+---
+
+# Populações de dados
+
+Quanto estamos lidando com diferentes populações de dados, temos grande chance de esbarrarmos em diferentes tipos de erros. Alguns erros são mais frequentes:
+
+\* dado de entrada não formatados
+
+\* erros de digitação
+
+\* erros nos objetos ou dtypes
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, error = FALSE, warning = FALSE, message = FALSE, results = 'asis')
+```
+
+## 1. Raciocínio e configurações do projeto
+
+```{r}
+##Sempre começar definindo o caminho:
+setwd("~/Documents/Github/ADQGS.github.io") #colocar AQUI o nome da pasta do seu computador - caminho onde os arquivos estarão salvos
+getwd() # mostra o caminho definido
+```
+
+### Instalar e carregar pacotes
+
+```{r}
+#| echo: false
+pacotes <-
+    c(
+        "janitor", ##manipulação para limpeza dos dados 
+        "vroom", ##ler arquivos rápido e prático
+        "tidytable" ##manipular dados
+    )
+##se necessário instalar algum pacote retirar a `#` da próxima linha
+#lapply(pacotes, install.packages, character.only = TRUE) 
+
+lapply(pacotes, require, character.only = TRUE)
+```
+
+Observações para as \# ou \## dentro dos blocos de código:
+
+`## comentário para texto = explicação`
+
+`#comentário para código = código que pode ser rodado se tirar #`
+
+## 2. Manipulação de Dados
+
+Indicação para manipulação de dados: Pacote **JANITOR**
+
+Ideal para limpar e formatar dados para deixar os mesmos mais legíveis e fáceis de analisar.
+
+### Dados
+
+#### Mundo e países
+
+```{r}
+covid_mundo <- vroom("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv")
+```
+
+### Criando exemplos
+
+```{r}
+## qual novo nome 
+covid_br <-
+    ## qual arquivo original
+    covid_mundo |>     
+    ## quais colunas eu quero
+    select.(location, date, new_cases, new_cases_smoothed ,new_deaths, new_deaths_smoothed) |>
+    ## quais filtros quero aplicar
+    filter.(location == "Brazil",
+            between.(date, as.Date('2022-01-01'),
+                    as.Date('2022-12-31')))
+```
+
+## 3. Aplicação
+
+Exemplos de funções versáteis e muito úteis para limpeza de qualquer dado:
+
+***clean_names()*** - para renomear as colunas de dados para nomes mais descritivos, como country_region e confirmed_cases.
+
+```{r}
+## Adicionar um nome na primeira coluna erro
+colnames(covid_br)[1] <- "Location or Country"
+## adicionar uma nova coluna em branco
+covid_br$`Dados ErradoS` <- NA
+```
+
+```{r}
+## Renomear as colunas do data frame
+covid_br <- clean_names(covid_br)
+```
+
+Frequentemente temos valores ausentes ou nulos. ***remove_empty()*** - remover linhas com valores ausentes em uma tabela de dados. ***replace_na()*** - preencher valores ausentes com um valor específico, como zero.
+
+```{r}
+## Preencher valores ausentes com zero no data frame
+covid_br_com_zero <- replace_na(covid_br, replace = list(dados_errado_s = 0))
+```
+
+***drop_na()*** - remover valores ausentes.
+
+```{r}
+covid_mundo_sem_nulos <- drop_na(covid_mundo, na_cols="new_tests")
+```
+
+***pivot_longer()*** - para converter os dados de formato amplo para longo, o que facilita a visualização e análise.
+
+```{r}
+## Selecionar apenas as colunas relevantes
+covid_mundo_casos_mortes <- covid_mundo |> 
+    select.(date, iso_code, location, new_cases, new_deaths)
+
+## Transformar os dados de largos para longos
+covid_mundo_long <- pivot_longer(covid_mundo_casos_mortes, 
+                                 cols = c("new_cases", "new_deaths"),
+                                 names_to = "tipo_caso",
+                                 values_to = "quantidade")
+```
+
+## References
+### Mundo e países
+-   [Our World in Data](https://github.com/owid)
+
+### Estados do Brasil
+-   [COVID-19 data in Brazil: cases, deaths, and vaccination by Wesley Cota](https://github.com/wcota/covid19br)
+-   [Coronavírus Brasil](https://covid.saude.gov.br/)
+
+### Janitor documentos
+-   [Página oficial do pacote Janitor](https://github.com/sfirke/janitor)
+-   [Documentação Janitor](https://cran.r-project.org/web/packages/janitor/janitor.pdf)

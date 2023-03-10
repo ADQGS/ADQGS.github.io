@@ -1,0 +1,398 @@
+---
+    output: html_document
+    author: Refactor by @BragatteMAS
+---
+
+# What's new and exciting in [gt](https://www.youtube.com/watch?v=5bVVX7mzOk8&t=2s)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gt)
+library(gtsummary)
+library(tidyverse)
+```
+
+The **gt** package helps us create tables for publication and its development as of late has been quite swift! We're pleased to share all the improvements in the newest release of **gt**: version `0.8.0`. There's *a lot* to talk about here. We will start by introducing all 14 new functions in this release. After that, we'll discuss improvements to existing functions and rendered outputs. We can't go through everything that's changed (it's just way too much) but what's outlined here constitutes the top-tier changes.
+
+## `sub_values()`: Substituting Targeted Values in the Table Body
+
+The new function `sub_values()` is here for substituting values in body cells with replacement text. The targeting of cells can be based on literal values, a regex pattern, or a specialized function of your own devising. This is best explained through examples so let's start by creating an input table with three columns.
+
+```{r}
+tbl <-
+    dplyr::tibble(
+        num_1 = c(-0.01, 74, NA, 0, 500, 0.001, 84.3),
+        int_1 = c(1L, -100000L, 800L, 5L, NA, 1L, -32L),
+        lett = LETTERS[1:7]
+    )
+tbl
+```
+
+Values in the table body cells can be replaced by specifying which values should be replaced (in `values`) and what the replacement value should be. It's okay to search for numerical or character values across all columns. It's also fine whether the replacement value is of the numeric or character type.
+
+```{r}
+tbl %>%
+    gt() %>%
+    sub_values(values = c(74, 500), replacement = 150) %>%
+    sub_values(values = "B", replacement = "Bee") %>%
+    sub_values(values = 800, replacement = "Eight hundred")
+```
+
+We can also use the `pattern` argument to target cell values for replacement in `character`-based columns.
+
+```{r}
+tbl %>%
+    gt() %>%
+    sub_values(pattern = "A|C|E", replacement = "Ace")
+```
+
+For the most flexibility, it's probably best to use the `fn` argument. With that you need to provide a function that returns logical values.
+
+```{r}
+tbl %>%
+  gt() %>%
+  sub_values(fn = function(x) x < 50, replacement = "Under 50")
+```
+
+## Styling Targeted Values in the Table Body with `tab_style_body()`
+
+We want the setting of styles to be as easy as possible so, to that end, we've added a helpful new function: `tab_style_body()`. This function is a bit like `sub_values()` and a bit like `tab_style()`. The idea is that basic style attributes can be set based on values in the table body. We can target body cells through value, regex, and custom matching rules, and, apply styles to them and their surrounding context (e.g., styling an entire row or column wherein the match is found). As before, we need examples to really understand what this function can do.
+
+We'll begin by creating a simple **gt** table with a stub and row groups. This contains an assortment of values that could potentially undergo some styling via `tab_style_body()`.
+
+```{r}
+gt_tbl <- gt(exibble, rowname_col = "row", groupname_col = "group")
+  
+gt_tbl
+```
+
+Cells in the table body can be styled through specification of literal values in the values argument of `tab_style_body()`. It's okay to search for numerical, character, or logical values across all columns. Let's target the values `49.95` and `33.33` and style those cells with an orange fill.
+
+```{r}
+gt_tbl %>%
+  tab_style_body(
+    style = cell_fill(color = "orange"),
+    values = c(49.95, 33.33)
+  )
+```
+
+Multiple styles can be combined in a `list`, here's an example of that using the same cell targets:
+
+``` r
+{r}
+gt_tbl %>%
+tab_style_body(
+    style = list(
+        cell_text(font = google_font("Dancing Script"), color = "white"),
+        cell_fill(color = "red"),
+        cell_borders(
+            sides = c("left", "right"),
+            color = "steelblue",
+            weight = px(4)
+        )
+    ),
+    values = c(49.95, 33.33)
+)
+```
+
+Entire rows or columns can be styled by using specific keywords in the `targets` argument. For the `49.95` value we will style the entire row and with `33.33` the entire column will get the same styling.
+
+```{r}
+gt_tbl %>%
+    tab_style_body(
+        style = cell_fill(color = "lightgreen"),
+        values = 49.95,
+        targets = "row"
+    ) %>%
+    tab_style_body(
+        style = cell_fill(color = "lightgreen"),
+        values = 33.33,
+        targets = "column"
+    )
+```
+
+In a minor variation to the prior example, it's possible to extend the styling to other locations, or, entirely project the styling elsewhere. This is done with the `extents` argument. Valid keywords that can be included in the vector are: `"body"` (the default) and `"stub"`. Let's take the previous example and extend the styling of the row into the stub.
+
+```{r}
+gt_tbl %>%
+    tab_style_body(
+        style = cell_fill(color = "lightgreen"),
+        values = 49.95,
+        targets = "row",
+        extents = c("body", "stub")
+    ) %>%
+    tab_style_body(
+        style = cell_fill(color = "lightgreen"),
+        values = 33.33,
+        targets = "column"
+    )
+```
+
+We can also use the pattern argument to target cell values in `character`-based columns. The `"fctr"` column is skipped because it is in fact a factor-based column.
+
+```{r}
+gt_tbl %>%
+    tab_style_body(
+        style = cell_fill(color = "lightblue"),
+        pattern = "ne|na"
+    )
+```
+
+For the most flexibility in targeting, it's best to use the `fn` argument. The function you give to `fn` will be invoked separately on all cells so the columns argument of `tab_style_body()` might be useful to limit which cells should be evaluated. For this next example, the supplied function should only be used on numeric values and we can make sure of this by using `columns = where(is.numeric)`.
+
+```{r}
+gt_tbl %>%
+  tab_style_body(
+    columns = where(is.numeric),
+    style = cell_fill(color = "pink"),
+    fn = function(x) x >= 0 && x < 50
+  )
+```
+
+## Cellular Extraction with `extract_cells()`
+
+Replicating summary table values in a paragraph of text within an R Markdown or Quarto document typically involves non-optimal solutions including manual transcription or obtaining values from the input table and formatting that value. With the new `extract_cells()` function, we can extract a vector of body cell values from a `gt_tbl` object. The output vector will have the cell data formatted in the same way as in the table.
+
+Here's a minimal R Markdown document with a nicely formatted table that uses the `sp500` dataset. That table object is assigned to `tbl` and is used in two instances of inline code (with `r`) that calls `extract_cells()` (pulling a single value in both cases).
+
+````{verbatim}
+---
+    output: html_document
+---
+    ```{r echo=FALSE}
+library(gt)
+library(dplyr)
+tbl <-
+    sp500 %>%
+    dplyr::filter(
+        date >= "1970-06-01" &
+            date <= "1970-06-30"
+    ) %>%
+    dplyr::select(-adj_close) %>%
+    dplyr::mutate(date = as.character(date)) %>%
+    dplyr::mutate(dow = date) %>%
+    dplyr::arrange(date) %>%
+    gt(rowname_col = "date") %>%
+    cols_move_to_start(columns = dow) %>%
+    fmt_datetime(
+        columns = dow,
+        format = "EEEEEE"
+    ) %>%
+    cols_merge(
+        columns = c(date, dow),
+        pattern = "{1} ({2})"
+    ) %>%
+    fmt_currency(
+        columns = c(open, high, low, close),
+        currency = "USD"
+    ) %>%
+    fmt_number(
+        columns = volume,
+        suffixing = TRUE
+    ) %>%
+    cols_label(
+        date = "Date", open = "Open", high = "High",
+        low = "Low", close = "Close", volume = "Volume"
+    ) %>%
+    opt_vertical_padding(scale = 0.35) %>%
+    tab_options(table.font.size = px(12))
+tbl
+```
+On the 15th of June, 1970 (a `r vec_fmt_datetime("1970-06-15", format = "EEEE")`), the S&P 500 closed at a value of `r extract_cells(tbl, close, "1970-06-15")` with a volume of `r extract_cells(tbl, volume, "1970-06-15")` (the lowest that month).
+````
+
+The rendered document gives us exactly what we need since the inline code statements get the correctly formatted text for the paragraph (and without any worry of reproducibility problems). The formatted values `"$74.58"` and `"6.92M"` will appear in the text where the final two bits of inline code are positioned.
+
+The bonus usage of `vec_fmt_datetime()` in the first inline code statement utilizes new date and time formatting capabilities. This will be discussed in a later section of this post.
+
+## Decimal Alignment for Numerical Values in a Column
+
+We can now have decimal alignment for numeric values and this is made possible with the new `cols_align_decimal()` function. The function ensures that columns targeted are right-aligned, that accounting notation is supported, footnote marks don't interfere, and whole numbers align correctly.
+
+```{r}
+dplyr::tibble(
+  char = LETTERS[1:9],
+  num = c(1.2, -33.52, 9023.2, -283.527, NA, 0.401, -123.1, NA, 41)
+) %>%
+  gt() %>%
+  fmt_number(
+    columns = num,
+    decimals = 3,
+    drop_trailing_zeros = TRUE
+  ) %>%
+  cols_align_decimal()
+```
+
+For now, this function only works adequately for HTML table output. We'll be working to ensure that `cols_align_decimal()` will operate with all other output formats in a future release.
+
+## Getting a Table with Information About Your Table (So Meta!)
+
+If you find yourself not knowing the ID values of certain cells in the table (sometimes necessary for adding footnotes, styles, etc.) the new `tab_info()` function can help. Here's an example where a small table is generated from the `gtcars` dataset.
+
+```{r}
+gt_tbl <-
+  gtcars %>%
+  dplyr::select(
+    c(model, year, starts_with(c("hp", "mpg")))
+  ) %>%
+  dplyr::slice(1:4) %>%
+  gt(rowname_col = "model") %>%
+  tab_spanner(
+    label = "performance",
+    columns = starts_with(c("hp", "mpg"))
+  ) %>%
+  cols_merge(columns = starts_with("hp"), pattern = "{1} ({2})") %>%
+  cols_merge(columns = starts_with("mpg"), pattern = "{1} city / {2} hwy") %>%
+  cols_label(year = md("*YR*"), hp = "HP", mpg_c = "MPG")
+gt_tbl
+```
+
+You might receive this table and not know the `id` value or column number for the `mpg_c` column (it has the `"MPG"` label now). Through use of `tab_info()` we can get an informative table that summarizes all of the table's ID values, their indices, and their associated labels.
+
+```{r}
+tab_info(gt_tbl)
+```
+
+With this information at hand we see that the column with the `"MPG"` label has the `mpg_c` ID value. Knowing this, we could successfully use `tab_style()` to style the body cells below that column. Like this:
+
+    ```{r}
+    gt_tbl %>%
+    tab_style(
+        style = cell_fill(color = "lightblue"),
+        locations = cells_body(columns = mpg_c)
+    )
+    ```
+
+We intend to continuously improve this function in later versions of **gt** so you'll have even more useful information when you need it.
+
+## Safe Removals of Table Components (the `rm_*()` Family)
+
+Much of **gt** is about adding things to a table but what about doing the opposite (taking things away)? The new family of `rm_*()` functions (`rm_header()`, `rm_stubhead()`, `rm_spanners()`, `rm_footnotes()`, `rm_source_notes()`, and `rm_caption()`) let us safely remove parts of a **gt** table. This can be advantageous in those instances where one might obtain a **gt** table through other means (perhaps from another package that produces **gt** tables?) but would prefer to excise some parts of it.
+
+For example, the [**gtsummary** package](https://github.com/ddsjoberg/gtsummary) is built on **gt** and can generate summary tables that are coercible to the `gt_tbl` class. Let's make a summary statistics table with the `trial` dataset in **gtsummary**.
+
+```{r}
+summary_tbl <-
+    trial %>%
+    tbl_continuous(
+        variable = age,
+        by = trt, include = grade
+    ) %>%
+    add_overall(last = TRUE)
+summary_tbl
+```
+
+If we don't want any of the included footnotes, we can transform the **gtsummary** table to a **gt** one, and then perform the removal with `rm_footnotes()`.
+
+```{r}
+summary_tbl %>%
+  as_gt() %>%
+  rm_footnotes()
+```
+
+With those footnotes gone, we are free to add our own custom footnotes (since we now have a `gt_tbl` object) or just carry on with a more minimal table.
+
+## `tab_caption()`: Another Way to Add (or Edit) a Table Caption
+
+We can easily add a caption to a **gt** table (or replace an existing one) with the new and convenient `tab_caption()` function. You might not have known that it was possible before to add a caption (the other option is through the `gt()` function's `caption` argument). The new function makes this capability more obvious, and makes the caption editable in cases where you receive a **gt** table as output.
+
+Here's an example of how to use `tab_caption()` in a table built with some of the `gtcars` dataset.
+
+```{r}
+gtcars %>%
+  dplyr::select(mfr, model, msrp) %>%
+  dplyr::slice(1:5) %>%
+  gt() %>%
+  tab_header(
+    title = md("Data listing from **gtcars**"),
+    subtitle = md("`gtcars` is an R dataset")
+  ) %>%
+  tab_caption(caption = md("**gt** table example."))
+```
+
+## Making Your Numerals Roman
+
+The new formatter function `fmt_roman()` lets us easily format numbers to Roman numerals (either as uppercase or lowercase letters). The `vec_fmt_roman()` vector-formatting function was also introduced here as all `fmt_*()` functions get a matching `vec_fmt_*()` analogue. Let's see how this works with a practical example.
+
+We could have a numerical label in the table stub and format those numbers to (lowercase) Roman numerals. We could also use the `pattern` argument to combine the formatted value with template text. Here's how that looks in code and rendered as an HTML table:
+
+```{r}
+dplyr::tibble(part = 1:5, value = c(2.3, 6.3, 1.7, 0.2, 7.9)) %>%
+  gt(rowname_col = "part") %>%
+  fmt_roman(columns = stub(), case = "lower", pattern = "part {x}.") %>%
+  cols_align(align = "left", columns = stub())
+```
+
+There's a few other things at play here. New in `v0.8.0` is the `stub()` helper function, allowing for easier targeting of the stub column. Also new is the ability to use a `fmt_*()` function on a stub column, and, `cols_align()` on a stub column is now allowed.
+
+## Improvements to Date and Time Formatting
+
+The `fmt_date()` and `fmt_time()` functions (used to format dates and times) now have many more date and time styles. Dates and times can be translated to different spoken languages and the new `locale` argument has been added to these functions to provide localization control. These improvements also apply to the `vec_fmt_date()` and `vec_fmt_time()` vector-formatting variants, so let's use those for two examples.
+
+Let's define a string-based datetime value. This is acceptable input for all date/time formatting functions so long as ISO-8601 formatting is used.
+
+```{r}
+str_dt <- "2018-07-04 22:05"
+```
+
+We can use `date_style` and `time_style` keywords with `vec_fmt_date()` and `vec_fmt_time()`, respectively, to easily format to a date or time.
+
+```{r}
+vec_fmt_date(str_dt, date_style = "wday_month_day_year")
+```
+
+```{r}
+vec_fmt_time(str_dt, time_style = "h_m_p")
+```
+
+There are now 41 different date formatting styles and 25 different time formatting styles. Many of these styles are flexible, meaning that the structure of the format will adapt to different locales. We can always use `info_date_style()` or `info_time_style()` to call up info tables that serve as handy references to all of the `date_style` and `time_style` options.
+
+The `fmt_datetime()` and `vec_fmt_datetime()` functions allow the use of date and time styles to generate a formatted datetime. Let's use the `"yMMMEd"` date style and `"hms"` time style (both flexible) to generate a datetime string with `vec_fmt_datetime()`:
+
+```{r}
+vec_fmt_datetime(str_dt, date_style = "yMMMEd", time_style = "hms")
+```
+
+Let's perform the same type of formatting in the French (`"fr"`) locale:
+
+    ```{r}
+    vec_fmt_datetime(str_dt, date_style = "yMMMd", time_style = "hms", locale = "fr")
+    ```
+
+Aside from the translated month name, notice that the date formatting here with `"yMMMd"` automatically conformed to the French locale by putting the day number at the front and adjusting punctuation (this is what is meant by the 'flexible' terminology).
+
+Unlike the specialized date and time formatting functions, `fmt_datetime()` and `vec_fmt_datetime()` also include the `format` argument so anyone can provide a `strptime` format to get the formatting just right. New in `v0.8.0` is the ability to provide a CLDR (*Common Locale Data Repository*, a Unicode project) datetime pattern to `format`, allowing for even more highly customized output that is locale-aware. Let's demonstrate this with `vec_fmt_datetime()` (the vector formatting version of `fmt_datetime()` which gets all of the same enhancements).
+
+Using the same datetime value of `"2018-07-04 22:05"`, let's use the CLDR pattern of `"EEEE, MMMM d, y, h:mm a"` to get a formatted datetime:
+
+    ```{r}
+    vec_fmt_datetime(str_dt, format = "EEEE, MMMM d, y, h:mm a")
+    ```
+
+By using the `locale` argument, this can be formatted as a Dutch datetime value:
+
+    ```{r}
+    vec_fmt_datetime(str_dt, format = "EEEE, MMMM d, y, h:mm a", locale = "nl")
+    ```
+
+Learning about CLDR datetime formatting can be difficult at first but the help articles for [`fmt_datetime()`](https://gt.rstudio.com/reference/fmt_datetime.html) and [`vec_fmt_datetime()`](https://gt.rstudio.com/reference/vec_fmt_datetime.html) have been completely overhauled and the updated documentation goes at length to explain the new formatting functionality.
+
+## Improvements to HTML Outputs
+
+The `as_raw_html()` function is useful for generating an HTML string for table-in-HTML-email situations (i.e., using the [**blastula**](https://pkgs.rstudio.com/blastula/) package) and for HTML embedding purposes. By default, the function performs CSS-inlining to make those use cases more robust and while this was mostly fine prior to `v0.8.0`, it had two major problems: (1) it was *slow*, and (2) the underlying R code couldn't always keep up with changes to our SCSS styles, resulting in incorrect HTML output.
+
+This is now solved by integrating the [**juicyjuice**](https://rich-iannone.github.io/juicyjuice/) package into `as_raw_html()`. That package uses the *juice* JS library for a far more performant and correct CSS-inlining solution.
+
+While we're talking about HTML output, tables now have some padding (and a way to control the values through `tab_options()`). Tables in rendered HTML documents produced by R Markdown and Quarto used to be *way* too close to adjacent paragraphs of text. But now there is a comfortable amount of space.
+
+## Color Contrast Improvements in `data_color()`
+
+The `data_color()` function allows us to color the background of cells based on data, and **gt** smartly chooses a text color that tries to provide the most contrast between text and background. We wanted to improve that feature so now `data_color()` has a `contrast_algo` argument that allows us to choose between two color contrast algorithms: `"apca"` (*Accessible Perceptual Contrast Algorithm*, the default algo) and `"wcag"` (*Web Content Accessibility Guidelines*). Check out the code and complete output of a comparison table at [this GitHub gist](https://gist.github.com/rich-iannone/55ffa2cf293313e70468ca8447dd3d97)), it compares the two color contrast algorithms used in `data_color()`.
+
+With darker backgrounds (somewhere in the midrange), the APCA algorithm tends to favor light text in the foreground. This can be seen in the table excerpt with the X11 colors `"antiquewhite4"`,`"aquamarine4"`, and `"azure4"`; all of these have light text with APCA whereas WCAG uses dark text. We believe that the APCA algorithm is the better choice but we also included the widely-used WCAG here so that you have options.
+
+## More Accessibility Enhancements for HTML Table Outputs
+
+HTML tables as produced by **gt** can be structurally complex. One can include row groups, column spanners, summary sections, and more. We did some work in `v0.7.0` to make screen readers (applications that allow blind or visually impaired users to read the text that is displayed on the computer screen) better parse certain tables, and, we continued the work for this release.
+
+Dr. JooYoung Seo ([`@jooyoungseo`, on GitHub](https://github.com/jooyoungseo), now a co-author of the package) led the work in improving the accessibility of structurally-complicated **gt** tables (those with multi-level headings, irregular headers, row groups, etc.). We adhered to the W3C WAI (*Web Accessibility Initiative*) guidance while working through this and now, with `v0.8.0`, screen readers can better describe **gt** tables having such complex structures.

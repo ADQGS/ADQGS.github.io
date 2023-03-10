@@ -1,0 +1,284 @@
+---
+title: "Aula10-Pop_de_dados_e_datas"
+author: "BragatteMAS"
+format: html
+editor: visual
+---
+
+# Populações de dados e datas
+
+Seguindo a lista dos erros mais frequentes:
+
+1.  ~~dado de entrada não formatados~~
+
+2.  ~~erros de digitação~~
+
+3.  erros nos objetos ou classes **(tipos de variáveis)**
+
+    -   fct: significa variável fator, também conhecida como variável categórica.
+
+    -   int: significa uma variável quantitativa \| números inteiros.
+
+    -   dbl: significa dupla precisão, uma variável quantitativa que essencialmente é contínua \| valores decimais.
+
+    -   date: datas \| (y-m-d) = ano-mês-dia
+
+4.  erros em datas
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, error = FALSE, warning = FALSE, message = FALSE, results = 'asis')
+```
+
+## 1. Raciocínio e configurações do projeto
+
+```{r}
+## Sempre começar definindo o caminho:
+setwd("~/Documents/Github/ADQGS.github.io") ##colocar AQUI o nome da pasta do seu computador - caminho onde os arquivos estarão salvos
+getwd() ##mostra o caminho definido
+```
+
+### DataSUS
+
+```{r}
+# install.packages("devtools")
+# install.packages("remotes")
+# remotes::install_github("rfsaldanha/microdatasus")
+```
+
+### Instalar e carregar pacotes
+
+```{r}
+pacotes <-
+    c(
+        "microdatasus", ##dados do SUS
+        "janitor", ## manipulação para limpeza dos dados 
+        "tidytable", ## manipular dados
+        "lubridate", ## correção de datas
+        "esquisse", ## gráficos criados com interface
+        "ggplot2", ## gráficos
+        "plotly", ## gráficos interativos
+    )
+## se necessário instalar algum pacote retirar a `#` da próxima linha
+if(!require(pacotes))lapply(pacotes, install.packages, character.only = TRUE)
+
+lapply(pacotes, require, character.only = TRUE)
+```
+
+Observações para as \# ou \## dentro dos blocos de código:
+
+`## comentário para texto = explicação`
+
+`#comentário para código = código que pode ser rodado se tirar #`
+
+## 2. Manipulação de Dados do SUS
+
+```{r}
+## qual novo nome 
+mortES <- 
+    #selecionando dados do SUS
+    fetch_datasus(
+    year_start = 2021,
+    month_start = 1,
+    year_end = 2021,
+    month_end = 12,
+    uf="ES",
+    information_system = "SIM-DO"
+)
+## ATENÇÃO
+# mortES <- process_sim(mortES, municipality_data = TRUE)
+```
+
+```{r}
+## Salvar dados
+write.csv(mortES, file = "SIM_ES_21.csv")
+```
+
+## 3. Janitor lembretes adicionais
+
+Caso seja possível, comente seu código para facilitar o processo de replicar para seu futuro eu.
+
+```{r}
+## Renomear as colunas do data frame
+## qual novo nome 
+mortes <- 
+    ## limpar os nomes das colunas dos dados "covid_br"
+    clean_names(mortES)
+```
+
+Frequentemente temos valores ausentes ou nulos.
+
+***remove_empty()*** - remover linhas com valores ausentes (não preenchidas) em uma tabela de dados.
+
+```{r}
+## Preencher valores ausentes com zero no data frame
+## qual novo nome 
+mortes_z <-
+    ## qual arquivo original
+    mortes |> 
+    ## remover linhas e colunas vazias
+    remove_empty(c("rows","cols"))
+```
+
+***drop_na()*** - remover valores ausentes em coluna específica. Deixar o `NA` é útil!
+
+```{r}
+mortes_drop <- drop_na(mortes_z)
+```
+
+## Verificando o dataset
+
+-   summary
+
+```{r}
+summary(mortes_z)
+```
+
+-   glimpse
+
+```{r}
+glimpse(mortes_z)
+```
+
+-   tibble
+
+```{r}
+tibble::as_tibble(mortes_z)
+```
+
+## 4. Tidytable (versão mais moderna do dplyr) e Rbase
+
+### Corrigir idades
+
+A coluna idade é composta de dois subcampos, o primeiro indica a unidade da idade (1 para horas, 2 para dias, 3 para meses, 4 para anos e 5 para mais de 100 anos) e o segundo indica a quantidade de unidades.
+
+```{r}
+## substituir a coluna idade existente com as idades corrigidas
+mortes_z$idade <- case_when(
+  substr(mortes_z$idade, 1, 1) == "0" ~ 0, ## idade menor de 1 hora
+  substr(mortes_z$idade, 1, 1) == "1" ~ as.integer(substr(mortes_z$idade, 2, 3)), ## horas
+  substr(mortes_z$idade, 1, 1) == "2" ~ as.integer(substr(mortes_z$idade, 2, 3)), ## dias
+  substr(mortes_z$idade, 1, 1) == "3" ~ as.integer(substr(mortes_z$idade, 2, 3)), ## meses
+  substr(mortes_z$idade, 1, 1) == "4" ~ as.integer(substr(mortes_z$idade, 2, 3)), ## anos
+  substr(mortes_z$idade, 1, 1) == "5" ~ as.integer(substr(mortes_z$idade, 2, 3))+100, ## anos (mais de 100 anos)
+  TRUE ~ NA_integer_
+)
+```
+
+### Criar dataframe para sexo, idade e raça
+
+```{r}
+## qual novo nome - mortes com sexo idade raça
+mortes_sir <-
+    ## qual arquivo original
+    mortes_z |>
+        ## quais colunas eu quero
+        select.(
+            tipobito,
+            dtobito, 
+            idade,
+            sexo,
+            racacor,
+            estciv, 
+            esc2010, 
+            causabas_o, 
+            codmunres,
+            ) |>
+        ## quais filtros quero aplicar
+        filter.(tipobito == 2, ## 2 = não fetal
+                ) |>  
+        mutate.(
+            genero = case_when(  ## caso quando
+                sexo == 1 ~ "M", ## na coluna sexo 1 será M de masculino
+                sexo == 2 ~ "F", ## na coluna sexo 1 será F de feminino
+                sexo == 0 ~ "I", ## na coluna sexo 1 será I de inconclusivo
+                TRUE ~ NA_character_
+                ),
+            etnia = case_when(       ## caso quando   
+                racacor == 1 ~ "Br", ## na coluna racacor 1 será Branca
+                racacor == 2 ~ "Pr", ## na coluna racacor 2 será Preta
+                racacor == 3 ~ "Am", ## na coluna racacor 3 será Amarela
+                racacor == 4 ~ "Pa", ## na coluna racacor 4 será Parda
+                racacor == 5 ~ "In", ## na coluna racacor 5 será Indígena
+                TRUE ~ NA_character_
+                )
+            ) |> 
+        relocate(genero, .after = "sexo")  |> 
+        relocate(etnia, .after = "racacor")
+```
+
+```{r}
+mortes_sir |> summary()
+```
+
+## 5. Lubridate e Rbase
+
+Transformando a coluna com Rbase
+
+```{r}
+mortes_sir$dtobito <- as.Date(mortes_sir$dtobito, format = "%d%m%Y")
+```
+
+Lubridate
+
+```{r}
+mortes_sir$dia <- day(mortes_sir$dtobito)
+mortes_sir$mes <- month(mortes_sir$dtobito)
+mortes_sir$ano <- year(mortes_sir$dtobito)
+```
+
+## Gráficos
+
+### Esquisse
+
+```{r}
+## Descomentar para interagir com o gráfico
+# esquisser(mortes_sir)
+```
+
+```{r}
+## Filtros e configuração da imagem
+obitES <-
+mortes_sir %>%
+    filter(!(sexo %in% "0")) %>% 
+    filter(!(genero %in% "I")) %>%
+    filter(!is.na(racacor)) %>%
+    filter(!is.na(etnia)) %>%
+    filter(!is.na(estciv)) %>%
+    filter(!is.na(esc2010)) %>%
+    ggplot() +
+    ## mapa
+    aes(x = dtobito, fill = etnia) +
+    ## geometria
+    geom_histogram(bins = 50L, position = "dodge") +
+    ## formatações
+    scale_fill_hue(direction = 1) +
+    labs(
+        x = "Data das mortes",
+        y = "quantidade de mortes",
+        title = "Mortes no ES",
+        subtitle = "Por etnia e gênero"
+    ) +
+    theme_gray() +
+    theme(plot.title = element_text(face = "bold",
+                                    hjust = 0.5)) +
+    facet_wrap(vars(genero))
+
+obitES
+```
+
+```{r}
+## pacote plotly
+ggplotly(obitES)
+
+```
+
+## Refs
+
+### Mortes no Espirito Santo
+
+-   [rfsaldanha/microdatasus: Download de dados do DataSUS e pré-processamento no R.](https://github.com/rfsaldanha/microdatasus)
+
+### SIM
+
+-   [Tabulação de Dados - SIM - CGIAE - DAENT - SVS/MS](https://svs.aids.gov.br/daent/cgiae/sim/tabulacao/)
+-   [Dicionario_de_Dados_SIM_tabela_DO_v2.docx](https://svs.aids.gov.br/daent/cgiae/sim/documentacao/dicionario-de-dados-SIM-tabela-DO.pdf)

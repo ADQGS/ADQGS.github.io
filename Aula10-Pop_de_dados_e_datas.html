@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="BragatteMAS">
+
+<title>Aula10-Pop_de_dados_e_datas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/quarto-html/quarto.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/quarto-html/popper.min.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Aula10-Pop_de_dados_e_datas_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Aula10-Pop_de_dados_e_datas_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Aula10-Pop_de_dados_e_datas_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Aula10-Pop_de_dados_e_datas_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="Aula10-Pop_de_dados_e_datas_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="Aula10-Pop_de_dados_e_datas_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="Aula10-Pop_de_dados_e_datas_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula10-Pop_de_dados_e_datas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>BragatteMAS </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="populações-de-dados-e-datas" class="level1">
+<h1>Populações de dados e datas</h1>
+<p>Seguindo a lista dos erros mais frequentes:</p>
+<ol type="1">
+<li><p><del>dado de entrada não formatados</del></p></li>
+<li><p><del>erros de digitação</del></p></li>
+<li><p>erros nos objetos ou classes <strong>(tipos de variáveis)</strong></p>
+<ul>
+<li><p>fct: significa variável fator, também conhecida como variável categórica.</p></li>
+<li><p>int: significa uma variável quantitativa | números inteiros.</p></li>
+<li><p>dbl: significa dupla precisão, uma variável quantitativa que essencialmente é contínua | valores decimais.</p></li>
+<li><p>date: datas | (y-m-d) = ano-mês-dia</p></li>
+</ul></li>
+<li><p>erros em datas</p></li>
+</ol>
+<section id="raciocínio-e-configurações-do-projeto" class="level2">
+<h2 class="anchored" data-anchor-id="raciocínio-e-configurações-do-projeto">1. Raciocínio e configurações do projeto</h2>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sempre começar definindo o caminho:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"~/Documents/Github/ADQGS.github.io"</span>) <span class="do">##colocar AQUI o nome da pasta do seu computador - caminho onde os arquivos estarão salvos</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="do">##mostra o caminho definido</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[1] “/Users/a033270622/Documents/GitHub/ADQGS.github.io”</p>
+<section id="datasus" class="level3">
+<h3 class="anchored" data-anchor-id="datasus">DataSUS</h3>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("rfsaldanha/microdatasus")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="instalar-e-carregar-pacotes" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-e-carregar-pacotes">Instalar e carregar pacotes</h3>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pacotes <span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"microdatasus"</span>, <span class="do">##dados do SUS</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"janitor"</span>, <span class="do">## manipulação para limpeza dos dados </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tidytable"</span>, <span class="do">## manipular dados</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"lubridate"</span>, <span class="do">## correção de datas</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"esquisse"</span>, <span class="do">## gráficos criados com interface</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ggplot2"</span>, <span class="do">## gráficos</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"plotly"</span> <span class="do">## gráficos interativos</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## se necessário instalar algum pacote retirar a `#` da próxima linha</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#lapply(pacotes, install.packages, character.only = TRUE) </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(pacotes, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[[1]] [1] TRUE</p>
+<p>[[2]] [1] TRUE</p>
+<p>[[3]] [1] TRUE</p>
+<p>[[4]] [1] TRUE</p>
+<p>[[5]] [1] TRUE</p>
+<p>[[6]] [1] TRUE</p>
+<p>[[7]] [1] TRUE</p>
+<p>Observações para as # ou ## dentro dos blocos de código:</p>
+<p><code>## comentário para texto = explicação</code></p>
+<p><code>#comentário para código = código que pode ser rodado se tirar #</code></p>
+</section>
+</section>
+<section id="manipulação-de-dados-do-sus" class="level2">
+<h2 class="anchored" data-anchor-id="manipulação-de-dados-do-sus">2. Manipulação de Dados do SUS</h2>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## qual novo nome </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mortES <span class="ot">&lt;-</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#selecionando dados do SUS</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch_datasus</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">year_start =</span> <span class="dv">2021</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">month_start =</span> <span class="dv">1</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">year_end =</span> <span class="dv">2021</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">month_end =</span> <span class="dv">12</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">uf=</span><span class="st">"ES"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">information_system =</span> <span class="st">"SIM-DO"</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## ATENÇÃO</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># mortES &lt;- process_sim(mortES, municipality_data = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Salvar dados</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mortES, <span class="at">file =</span> <span class="st">"SIM_ES_21.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="janitor-lembretes-adicionais" class="level2">
+<h2 class="anchored" data-anchor-id="janitor-lembretes-adicionais">3. Janitor lembretes adicionais</h2>
+<p>Caso seja possível, comente seu código para facilitar o processo de replicar para seu futuro eu.</p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Renomear as colunas do data frame</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## qual novo nome </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mortes <span class="ot">&lt;-</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="do">## limpar os nomes das colunas dos dados "covid_br"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>(mortES)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Frequentemente temos valores ausentes ou nulos.</p>
+<p><strong><em>remove_empty()</em></strong> - remover linhas com valores ausentes (não preenchidas) em uma tabela de dados.</p>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Preencher valores ausentes com zero no data frame</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## qual novo nome </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mortes_z <span class="ot">&lt;-</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="do">## qual arquivo original</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    mortes <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="do">## remover linhas e colunas vazias</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_empty</span>(<span class="fu">c</span>(<span class="st">"rows"</span>,<span class="st">"cols"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>drop_na()</em></strong> - remover valores ausentes em coluna específica. Deixar o <code>NA</code> é útil!</p>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mortes_drop <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(mortes_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="verificando-o-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="verificando-o-dataset">Verificando o dataset</h2>
+<ul>
+<li>summary</li>
+</ul>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mortes_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>origem tipobito dtobito horaobito natural<br>
+1:32765 2:32765 10042021: 168 0600 : 321 832 :20812<br>
+27032021: 161 0500 : 308 831 : 3798<br>
+03042021: 159 0800 : 264 829 : 1452<br>
+11042021: 159 0900 : 246 833 : 968<br>
+01042021: 157 1000 : 244 800 : 891<br>
+04042021: 154 (Other):29129 (Other): 939<br>
+(Other) :31807 NA’s : 2253 NA’s : 3905<br>
+codmunnatu dtnasc idade sexo racacor<br>
+320000 : 2598 13061929: 9 469 : 743 0: 22 1 :13025<br>
+320530 : 2086 10081950: 8 468 : 728 1:18271 2 : 3049<br>
+320150 : 1621 11101952: 8 467 : 725 2:14472 3 : 70<br>
+320120 : 925 12051957: 8 478 : 718 4 :12337<br>
+320520 : 889 16061959: 8 470 : 706 5 : 43<br>
+(Other):19760 (Other) :32621 471 : 704 NA’s: 4241<br>
+NA’s : 4886 NA’s : 103 (Other):28441<br>
+estciv esc esc2010 seriescfal ocup<br>
+1 :5663 1 :3586 9 :9700 4 : 2781 999993 :6608<br>
+2 :9255 2 :4516 1 :7297 3 : 1413 998999 :3600<br>
+3 :5964 3 :4641 0 :3586 8 : 1257 999992 :2900<br>
+4 :2004 4 :4449 3 :3192 2 : 137 621005 :1304<br>
+5 : 557 5 :1411 2 :3116 5 : 87 622020 : 981<br>
+9 :6222 9 :9705 (Other):1411 (Other): 170 (Other):8277<br>
+NA’s:3100 NA’s:4457 NA’s :4463 NA’s :26920 NA’s :9095<br>
+codmunres lococor codestab codmunocor idademae<br>
+320520 : 4077 1:23431 7257406: 2225 320530 : 6014 20 : 34<br>
+320500 : 3712 2: 1803 2550687: 1332 320500 : 5201 26 : 30<br>
+320130 : 3373 3: 5472 0011738: 1140 320520 : 4215 22 : 25<br>
+320530 : 2842 4: 1075 2486199: 1020 320120 : 2485 31 : 25<br>
+320120 : 1696 5: 939 2494442: 910 320150 : 1942 21 : 24<br>
+320320 : 1216 9: 45 (Other):18607 320490 : 1660 (Other): 370<br>
+(Other):15849 NA’s : 7531 (Other):11248 NA’s :32257<br>
+escmae escmae2010 seriescmae ocupmae qtdfilvivo<br>
+1 : 14 3 : 213 3 : 110 999992 : 165 01 : 203<br>
+2 : 18 2 : 117 8 : 39 999991 : 27 02 : 110<br>
+3 : 87 5 : 60 1 : 9 998999 : 18 00 : 92<br>
+4 : 252 9 : 54 4 : 9 354705 : 16 03 : 58<br>
+5 : 82 1 : 27 7 : 8 411010 : 15 04 : 35<br>
+9 : 55 (Other): 35 (Other): 14 (Other): 189 (Other): 27<br>
+NA’s:32257 NA’s :32259 NA’s :32576 NA’s :32335 NA’s :32240<br>
+qtdfilmort gravidez semagestac gestacao parto<br>
+00 : 387 1 : 467 25 : 40 2 : 166 1 : 198<br>
+01 : 86 2 : 60 38 : 39 5 : 152 2 : 323<br>
+02 : 19 9 : 10 34 : 35 4 : 94 9 : 16<br>
+03 : 3 NA’s:32228 40 : 35 3 : 68 NA’s:32228<br>
+04 : 4 37 : 33 1 : 21<br>
+99 : 3 (Other): 326 (Other): 7<br>
+NA’s:32263 NA’s :32257 NA’s :32257<br>
+obitoparto peso tpmorteoco obitograv obitopuerp<br>
+3 : 526 0700 : 6 8 : 1197 1 : 19 1 : 29<br>
+9 : 14 0500 : 4 9 : 1034 2 : 1249 2 : 23<br>
+NA’s:32225 0600 : 4 4 : 29 9 : 1034 3 : 1216<br>
+0620 : 4 5 : 23 NA’s:30463 9 : 1034<br>
+0650 : 4 1 : 13 NA’s:30463<br>
+(Other): 478 (Other): 6<br>
+NA’s :32265 NA’s :30463<br>
+assistmed necropsia linhaa linhab<br>
+1 :22891 1 : 3708 <em>A419 : 7041 </em>J189 : 2438<br>
+2 : 4319 2 :23073 <em>J960 : 2978 </em>A419 : 1518<br>
+9 : 2159 9 : 2625 <em>R092 : 1659 </em>B342<em>U071: 1037<br>
+NA’s: 3396 NA’s: 3359 </em>J969 : 1567 <em>I219 : 910<br>
+</em>I219 : 1290 <em>J159 : 900<br>
+(Other):17510 (Other) :20377<br>
+NA’s : 720 NA’s : 5585<br>
+linhac linhad linhaii causabas<br>
+</em>B342<em>U071: 1837 </em>B342<em>U071: 2437 </em>I10X : 2263 B342 : 6282<br>
+<em>I10X : 1242 </em>I10X : 899 <em>I10X</em>E149: 909 I219 : 2045<br>
+<em>J189 : 894 </em>B948<em>U099: 753 </em>E149 : 466 B948 : 1137<br>
+<em>E149 : 508 </em>B342<em>U072: 455 </em>F172 : 318 E149 : 1028<br>
+<em>I709 : 436 </em>E149 : 424 <em>E149</em>I10X: 274 G309 : 783<br>
+(Other) :14101 (Other) : 4778 (Other) :10166 I110 : 711<br>
+NA’s :13747 NA’s :23019 NA’s :18369 (Other):20779<br>
+comunsvoim dtatestado circobito acidtrab fonte<br>
+320530 : 6047 10042021: 167 1 : 1638 1 : 87 1 : 1865<br>
+320120 : 608 18042021: 161 2 : 211 2 : 526 2 : 246<br>
+320320 : 585 04042021: 160 3 : 1092 9 : 626 3 : 56<br>
+320150 : 330 07042021: 157 4 : 33 NA’s:31526 4 : 119<br>
+320520 : 36 28032021: 157 9 : 753 9 : 1223<br>
+(Other): 103 (Other) :31940 NA’s:29038 NA’s:29256<br>
+NA’s :25056 NA’s : 23<br>
+numerolote tppos dtinvestig causabas_o<br>
+20210010: 1130 N :22553 12052021: 136 B342 : 6795<br>
+20210037: 1031 S : 7481 03052021: 115 I219 : 2004<br>
+20210058: 937 NA’s: 2731 07022022: 112 E149 : 955<br>
+20210047: 930 19102021: 101 G309 : 728<br>
+20220001: 750 25052021: 100 I110 : 602<br>
+20210027: 717 (Other) : 6408 (Other):21680<br>
+(Other) :27270 NA’s :25793 NA’s : 1<br>
+dtcadastro atestante stcodifica codificado versaosist versaoscb<br>
+05052021: 245 1 :9721 S:32765 S:32765 3.2.00: 246 3.2 : 10<br>
+17032021: 245 2 :7973 3.2.02: 4 3.3 :10713<br>
+16032021: 238 3 :3593 3.2.30:32513 3.4 :22016<br>
+19112021: 238 4 :4169 3.2.50: 2 NA’s: 26<br>
+22112021: 233 5 :6604<br>
+21062021: 222 NA’s: 705<br>
+(Other) :31344<br>
+fonteinv dtrecebim atestado dtrecoriga<br>
+4 : 4391 22122021: 1890 R99 : 160 17052021: 1238<br>
+3 : 1047 29102021: 1759 I219 : 159 15042021: 1003<br>
+6 : 586 17052021: 838 J960/B342 U071 : 153 23022021: 1001<br>
+7 : 473 30122021: 814 C349 : 123 29102021: 924<br>
+1 : 410 08112021: 768 J960/J189/B342 U071: 103 22122021: 866<br>
+(Other): 518 (Other) :26693 Y349 : 99 05072021: 863<br>
+NA’s :25340 NA’s : 3 (Other) :31968 (Other) :26870<br>
+causamat escmaeagr1 escfalagr1 stdoepidem stdonova O937: 1 06 : 109 09 :9700 0:32765 1:32765<br>
+NA’s:32764 12 : 94 10 :4274<br>
+08 : 60 00 :3586<br>
+11 : 58 02 :2781<br>
+09 : 54 12 :1812<br>
+(Other): 131 (Other):6149<br>
+NA’s :32259 NA’s :4463<br>
+difdata nudiasobco dtcadinv tpobitocor<br>
+032 : 527 114 : 26 17062021: 36 9 : 1528<br>
+030 : 519 49 : 24 08072021: 29 5 : 31<br>
+034 : 515 117 : 20 30122021: 26 6 : 24<br>
+026 : 513 124 : 20 14052021: 23 1 : 13<br>
+036 : 510 33 : 20 06072021: 22 8 : 9<br>
+031 : 502 (Other): 1492 (Other) : 1475 (Other): 6<br>
+(Other):29679 NA’s :31163 NA’s :31154 NA’s :31154<br>
+dtconinv fontes tpresginfo tpnivelinv dtcadinf<br>
+17062021: 32 XXSXXX : 89 1 : 62 E : 1 10082021: 10<br>
+01062021: 21 SXSXXX : 81 2 : 7 M : 1613 14122021: 9<br>
+06072021: 21 SXXXXX : 81 3 : 6 NA’s:31151 27092021: 9<br>
+11082021: 19 SXXSXX : 76 NA’s:32690 21072021: 8<br>
+08072021: 18 SXSSXX : 70 22092021: 8<br>
+(Other) : 1488 (Other): 189 (Other) : 542<br>
+NA’s :31166 NA’s :32179 NA’s :32179<br>
+morteparto dtconcaso altcausa contador<br>
+1 : 5 09122021: 7 1 : 88 1000312: 1<br>
+3 : 535 10012022: 7 2 : 456 1000313: 1<br>
+9 : 46 14122021: 7 NA’s:32221 1000314: 1<br>
+NA’s:32179 20072021: 7 1000315: 1<br>
+02022022: 6 1000316: 1<br>
+(Other) : 483 1000317: 1<br>
+NA’s :32248 (Other):32759</p>
+<ul>
+<li>glimpse</li>
+</ul>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mortes_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Rows: 32,765 Columns: 80 $ origem <fct> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,… $ tipobito <fct> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,… $ dtobito <fct> 28022021, 08032021, 09032021, 11032021, 29012021, 29012021,… $ horaobito <fct> 1430, 1030, 1430, 0102, 0810, 0530, 0600, 0600, 0531, 1305,… $ natural <fct> 832, 832, 832, 832, 831, 832, 832, 831, 832, 832, 833, 832,… $ codmunnatu <fct> 320130, 320020, 320010, 320150, 315820, 320130, 320210, 310… $ dtnasc <fct> 10071951, 08061944, 06031947, 10091943, 02051944, 17021950,… $ idade <fct> 469, 476, 474, 477, 476, 470, 467, 459, 462, 478, 467, 488,… $ sexo <fct> 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1,… $ racacor <fct> 4, 1, NA, 1, 4, 1, 4, 4, 2, 1, 1, 1, 1, 4, 4, 1, 4, 4, 4, 1… $ estciv <fct> 4, NA, NA, 2, 3, 1, 2, 4, 1, 4, 2, 9, 3, NA, 9, 2, 9, 3, 3,… $ esc <fct> 3, NA, NA, 2, 2, 2, 1, 4, 5, 5, 9, 9, 1, NA, NA, 4, 4, 3, 9… $ esc2010 <fct> 1, NA, NA, 1, 1, 1, 0, 3, 5, 5, 9, 9, 0, NA, NA, 2, 2, 1, 9… $ seriescfal <fct> 4, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, … $ ocup <fct> 999994, NA, NA, 354705, 999992, 354705, 999992, 517315, 999… $ codmunres <fct> 320130, 320520, 320510, 320320, 320210, 320130, 320130, 320… $ lococor <fct> 1, 2, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,… $ codestab <fct> 2486199, 0228494, NA, 0228494, 0228494, 0228494, 0228494, 0… $ codmunocor <fct> 320500, 320500, 320500, 320500, 320500, 320500, 320500, 320… $ idademae <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ escmae <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ escmae2010 <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ seriescmae <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ ocupmae <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ qtdfilvivo <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ qtdfilmort <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ gravidez <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ semagestac <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ gestacao <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ parto <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ obitoparto <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ peso <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ tpmorteoco <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ obitograv <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ obitopuerp <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ assistmed <fct> NA, NA, NA, 1, NA, NA, NA, NA, NA, 1, 1, 1, 1, 1, 1, 1, 1, … $ necropsia <fct> NA, NA, NA, 2, NA, NA, NA, NA, NA, 2, 2, 2, 2, 2, 2, 2, 2, … $ linhaa <fct> <em>A419, </em>I639, <em>R54X, </em>C793, <em>I64X, </em>R54X, <em>I639, </em>I630, <em>J1… $ linhab <fct> </fct></em>J180, <em>I709, </em>E46X, <em>C349, </em>I709, <em>I639, </em>I709, <em>I709, </em>C7… $ linhac <fct> <em>J449, </em>E789, <em>B909, NA, </em>E789, <em>I709, NA, NA, </em>C12X, NA, <em>… $ linhad <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, </fct></em>B948<em>U099, NA,… $ linhaii <fct> </fct></em>R570<em>I500, NA, NA, </em>I10X, NA, <em>I10X, NA, NA, </em>I10X, <em>F209,… $ causabas <fct> J440, E789, B909, C349, E789, I639, I639, I630, C12, B342, … $ comunsvoim <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ dtatestado <fct> 28022021, 08032021, 09032021, 11032021, 29012021, 29012021,… $ circobito <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ acidtrab <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ fonte <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ numerolote <fct> 20210007, 20210007, 20210007, 20210029, 20210007, 20210007,… $ tppos <fct> N, N, N, S, N, N, N, N, N, S, S, S, S, S, S, S, S, S, S, S,… $ dtinvestig <fct> NA, NA, NA, 08092021, NA, NA, NA, NA, NA, 03052021, 0305202… $ causabas_o <fct> J440, E789, B909, C349, E789, I639, I639, I630, C12, B342, … $ dtcadastro <fct> 26032021, 27032021, 27032021, 27032021, 27032021, 27032021,… $ atestante <fct> 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2,… $ stcodifica <fct> S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,… $ codificado <fct> S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,… $ versaosist <fct> 3.2.30, 3.2.30, 3.2.30, 3.2.30, 3.2.30, 3.2.30, 3.2.30, 3.2… $ versaoscb <fct> 3.3, 3.3, 3.3, 3.4, 3.3, 3.3, 3.3, 3.3, 3.4, 3.3, 3.3, 3.4,… $ fonteinv <fct> NA, NA, NA, 4, NA, NA, NA, NA, NA, 4, 4, 4, 4, 4, 4, 4, 4, … $ dtrecebim <fct> 15042021, 15042021, 15042021, 24092021, 15042021, 15042021,… $ atestado <fct> A419/J180/J449</fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></em>R570 I500, I639/I709/E789, R54/E46/B909, C79… $ dtrecoriga <fct> 15042021, 15042021, 15042021, 15042021, 15042021, 15042021,… $ causamat <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ escmaeagr1 <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ escfalagr1 <fct> 02, NA, NA, 10, 10, 10, 00, 12, 08, 08, 09, 09, 00, NA, NA,… $ stdoepidem <fct> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,… $ stdonova <fct> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,… $ difdata <fct> 046, 038, 037, 197, 076, 076, 071, 066, 031, 033, 033, 110,… $ nudiasobco <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ dtcadinv <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ tpobitocor <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ dtconinv <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ fontes <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ tpresginfo <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ tpnivelinv <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ dtcadinf <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ morteparto <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ dtconcaso <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ altcausa <fct> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,… $ contador <fct> 39, 40, 41, 42, 43, 44, 45, 46, 152, 817, 818, 819, 820, 82…</fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></p>
+<ul>
+<li>tibble</li>
+</ul>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>(mortes_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="a-tibble-32765-80" class="level1">
+<h1>A tibble: 32,765 × 80</h1>
+<p>origem tipobito dtobito horaobito natural codmu…¹ dtnasc idade sexo racacor <fct> <fct> <fct> <fct> <fct> <fct> <fct> <fct> <fct> <fct><br>
+1 1 2 28022021 1430 832 320130 10071… 469 1 4<br>
+2 1 2 08032021 1030 832 320020 08061… 476 2 1<br>
+3 1 2 09032021 1430 832 320010 06031… 474 1 <na><br>
+4 1 2 11032021 0102 832 320150 10091… 477 1 1<br>
+5 1 2 29012021 0810 831 315820 02051… 476 2 4<br>
+6 1 2 29012021 0530 832 320130 17021… 470 1 1<br>
+7 1 2 03022021 0600 832 320210 24051… 467 2 4<br>
+8 1 2 08022021 0600 831 310110 23081… 459 1 4<br>
+9 1 2 27062021 0531 832 320210 20061… 462 2 2<br>
+10 1 2 14042021 1305 832 320000 25101… 478 1 1<br>
+# … with 32,755 more rows, 70 more variables: estciv <fct>, esc <fct>, # esc2010 <fct>, seriescfal <fct>, ocup <fct>, codmunres <fct>, # lococor <fct>, codestab <fct>, codmunocor <fct>, idademae <fct>, # escmae <fct>, escmae2010 <fct>, seriescmae <fct>, ocupmae <fct>, # qtdfilvivo <fct>, qtdfilmort <fct>, gravidez <fct>, semagestac <fct>, # gestacao <fct>, parto <fct>, obitoparto <fct>, peso <fct>, # tpmorteoco <fct>, obitograv <fct>, obitopuerp <fct>, assistmed <fct>, …</fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></na></fct></fct></fct></fct></fct></fct></fct></fct></fct></fct></p>
+<section id="tidytable-versão-mais-moderna-do-dplyr-e-rbase" class="level2">
+<h2 class="anchored" data-anchor-id="tidytable-versão-mais-moderna-do-dplyr-e-rbase">4. Tidytable (versão mais moderna do dplyr) e Rbase</h2>
+<section id="corrigir-idades" class="level3">
+<h3 class="anchored" data-anchor-id="corrigir-idades">Corrigir idades</h3>
+<p>A coluna idade é composta de dois subcampos, o primeiro indica a unidade da idade (1 para horas, 2 para dias, 3 para meses, 4 para anos e 5 para mais de 100 anos) e o segundo indica a quantidade de unidades.</p>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## substituir a coluna idade existente com as idades corrigidas</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mortes_z<span class="sc">$</span>idade <span class="ot">&lt;-</span> <span class="fu">case_when</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="st">"0"</span> <span class="sc">~</span> <span class="dv">0</span>, <span class="do">## idade menor de 1 hora</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">~</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">2</span>, <span class="dv">3</span>)), <span class="do">## horas</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="st">"2"</span> <span class="sc">~</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">2</span>, <span class="dv">3</span>)), <span class="do">## dias</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="st">"3"</span> <span class="sc">~</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">2</span>, <span class="dv">3</span>)), <span class="do">## meses</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="st">"4"</span> <span class="sc">~</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">2</span>, <span class="dv">3</span>)), <span class="do">## anos</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">==</span> <span class="st">"5"</span> <span class="sc">~</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(mortes_z<span class="sc">$</span>idade, <span class="dv">2</span>, <span class="dv">3</span>))<span class="sc">+</span><span class="dv">100</span>, <span class="do">## anos (mais de 100 anos)</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_integer_</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="criar-dataframe-para-sexo-idade-e-raça" class="level3">
+<h3 class="anchored" data-anchor-id="criar-dataframe-para-sexo-idade-e-raça">Criar dataframe para sexo, idade e raça</h3>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## qual novo nome - mortes com sexo idade raça</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>mortes_sir <span class="ot">&lt;-</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">## qual arquivo original</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    mortes_z <span class="sc">|&gt;</span>     </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="do">## quais colunas eu quero</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">select.</span>(</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>            tipobito,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>            dtobito, </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            idade,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>            sexo,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>            racacor,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>            estciv, </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>            esc2010, </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>            causabas_o, </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>            codmunres,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">|&gt;</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>        <span class="do">## quais filtros quero aplicar</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter.</span>(tipobito <span class="sc">==</span> <span class="dv">2</span>, <span class="do">## 2 = não fetal</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>                ) <span class="sc">|&gt;</span>  </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate.</span>(</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">genero =</span> <span class="fu">case_when</span>(  <span class="do">## caso quando</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>                sexo <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"M"</span>, <span class="do">## na coluna sexo 1 será M de masculino</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>                sexo <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"F"</span>, <span class="do">## na coluna sexo 1 será F de feminino</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>                sexo <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"I"</span>, <span class="do">## na coluna sexo 1 será I de inconclusivo</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">etnia =</span> <span class="fu">case_when</span>(       <span class="do">## caso quando   </span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>                racacor <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Br"</span>, <span class="do">## na coluna racacor 1 será Branca</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>                racacor <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Pr"</span>, <span class="do">## na coluna racacor 2 será Preta</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>                racacor <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Am"</span>, <span class="do">## na coluna racacor 3 será Amarela</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>                racacor <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"Pa"</span>, <span class="do">## na coluna racacor 4 será Parda</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>                racacor <span class="sc">==</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">"In"</span>, <span class="do">## na coluna racacor 5 será Indígena</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">|&gt;</span> </span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">relocate</span>(genero, <span class="at">.after =</span> <span class="st">"sexo"</span>)  <span class="sc">|&gt;</span> </span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">relocate</span>(etnia, <span class="at">.after =</span> <span class="st">"racacor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mortes_sir <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>tipobito dtobito idade sexo genero<br>
+2:32765 10042021: 168 Min. : 0.00 0: 22 Length:32765<br>
+27032021: 161 1st Qu.: 55.00 1:18271 Class :character<br>
+03042021: 159 Median : 69.00 2:14472 Mode :character<br>
+11042021: 159 Mean : 65.89<br>
+01042021: 157 3rd Qu.: 81.00<br>
+04042021: 154 Max. :121.00<br>
+(Other) :31807 NA’s :79<br>
+racacor etnia estciv esc2010 causabas_o<br>
+1 :13025 Length:32765 1 :5663 9 :9700 B342 : 6795<br>
+2 : 3049 Class :character 2 :9255 1 :7297 I219 : 2004<br>
+3 : 70 Mode :character 3 :5964 0 :3586 E149 : 955<br>
+4 :12337 4 :2004 3 :3192 G309 : 728<br>
+5 : 43 5 : 557 2 :3116 I110 : 602<br>
+NA’s: 4241 9 :6222 (Other):1411 (Other):21680<br>
+NA’s:3100 NA’s :4463 NA’s : 1<br>
+codmunres<br>
+320520 : 4077<br>
+320500 : 3712<br>
+320130 : 3373<br>
+320530 : 2842<br>
+320120 : 1696<br>
+320320 : 1216<br>
+(Other):15849</p>
+</section>
+</section>
+<section id="lubridate-e-rbase" class="level2">
+<h2 class="anchored" data-anchor-id="lubridate-e-rbase">5. Lubridate e Rbase</h2>
+<p>Transformando a coluna com Rbase</p>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mortes_sir<span class="sc">$</span>dtobito <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(mortes_sir<span class="sc">$</span>dtobito, <span class="at">format =</span> <span class="st">"%d%m%Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lubridate</p>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mortes_sir<span class="sc">$</span>dia <span class="ot">&lt;-</span> <span class="fu">day</span>(mortes_sir<span class="sc">$</span>dtobito)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>mortes_sir<span class="sc">$</span>mes <span class="ot">&lt;-</span> <span class="fu">month</span>(mortes_sir<span class="sc">$</span>dtobito)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>mortes_sir<span class="sc">$</span>ano <span class="ot">&lt;-</span> <span class="fu">year</span>(mortes_sir<span class="sc">$</span>dtobito)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="gráficos" class="level2">
+<h2 class="anchored" data-anchor-id="gráficos">Gráficos</h2>
+<section id="esquisse" class="level3">
+<h3 class="anchored" data-anchor-id="esquisse">Esquisse</h3>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Descomentar para interagir com o gráfico</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># esquisser(mortes_sir)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Filtros e configuração da imagem</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>obitES <span class="ot">&lt;-</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>mortes_sir <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(sexo <span class="sc">%in%</span> <span class="st">"0"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span>(genero <span class="sc">%in%</span> <span class="st">"I"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(racacor)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(etnia)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(estciv)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(esc2010)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="do">## mapa</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> dtobito, <span class="at">fill =</span> etnia) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="do">## geometria</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> 50L, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## formatações</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_hue</span>(<span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Data das mortes"</span>,</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"quantidade de mortes"</span>,</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Mortes no ES"</span>,</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"Por etnia e gênero"</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_gray</span>() <span class="sc">+</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(genero))</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>obitES</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Aula10-Pop_de_dados_e_datas_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## pacote plotly</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(obitES)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2456098b6983ad60356b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2456098b6983ad60356b">{"x":{"data":[{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18627.8857142857,18635.3142857143,18642.7428571429,18650.1714285714,18657.6,18665.0285714286,18672.4571428571,18679.8857142857,18687.3142857143,18694.7428571429,18702.1714285714,18709.6,18717.0285714286,18724.4571428571,18731.8857142857,18739.3142857143,18746.7428571429,18754.1714285714,18761.6,18769.0285714286,18776.4571428571,18783.8857142857,18791.3142857143,18798.7428571429,18806.1714285714,18813.6,18821.0285714286,18828.4571428571,18835.8857142857,18843.3142857143,18850.7428571429,18858.1714285714,18865.6,18873.0285714286,18880.4571428571,18887.8857142857,18895.3142857143,18902.7428571429,18910.1714285714,18917.6,18925.0285714286,18932.4571428571,18939.8857142857,18947.3142857143,18954.7428571429,18962.1714285714,18969.6,18977.0285714286,18984.4571428571,18991.8857142857],"y":[0,0,0,0,1,0,1,0,1,1,1,0,0,0,0,1,2,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,1,2,2,0,1,1,0,0,0,0,1,2,0,1,0,0,2,0],"text":["count:   0<br />dtobito: 18627.89<br />etnia: Am","count:   0<br />dtobito: 18635.31<br />etnia: Am","count:   0<br />dtobito: 18642.74<br />etnia: Am","count:   0<br />dtobito: 18650.17<br />etnia: Am","count:   1<br />dtobito: 18657.60<br />etnia: Am","count:   0<br />dtobito: 18665.03<br />etnia: Am","count:   1<br />dtobito: 18672.46<br />etnia: Am","count:   0<br />dtobito: 18679.89<br />etnia: Am","count:   1<br />dtobito: 18687.31<br />etnia: Am","count:   1<br />dtobito: 18694.74<br />etnia: Am","count:   1<br />dtobito: 18702.17<br />etnia: Am","count:   0<br />dtobito: 18709.60<br />etnia: Am","count:   0<br />dtobito: 18717.03<br />etnia: Am","count:   0<br />dtobito: 18724.46<br />etnia: Am","count:   0<br />dtobito: 18731.89<br />etnia: Am","count:   1<br />dtobito: 18739.31<br />etnia: Am","count:   2<br />dtobito: 18746.74<br />etnia: Am","count:   0<br />dtobito: 18754.17<br />etnia: Am","count:   0<br />dtobito: 18761.60<br />etnia: Am","count:   0<br />dtobito: 18769.03<br />etnia: Am","count:   1<br />dtobito: 18776.46<br />etnia: Am","count:   0<br />dtobito: 18783.89<br />etnia: Am","count:   1<br />dtobito: 18791.31<br />etnia: Am","count:   0<br />dtobito: 18798.74<br />etnia: Am","count:   0<br />dtobito: 18806.17<br />etnia: Am","count:   0<br />dtobito: 18813.60<br />etnia: Am","count:   0<br />dtobito: 18821.03<br />etnia: Am","count:   0<br />dtobito: 18828.46<br />etnia: Am","count:   1<br />dtobito: 18835.89<br />etnia: Am","count:   0<br />dtobito: 18843.31<br />etnia: Am","count:   0<br />dtobito: 18850.74<br />etnia: Am","count:   0<br />dtobito: 18858.17<br />etnia: Am","count:   1<br />dtobito: 18865.60<br />etnia: Am","count:   2<br />dtobito: 18873.03<br />etnia: Am","count:   2<br />dtobito: 18880.46<br />etnia: Am","count:   0<br />dtobito: 18887.89<br />etnia: Am","count:   1<br />dtobito: 18895.31<br />etnia: Am","count:   1<br />dtobito: 18902.74<br />etnia: Am","count:   0<br />dtobito: 18910.17<br />etnia: Am","count:   0<br />dtobito: 18917.60<br />etnia: Am","count:   0<br />dtobito: 18925.03<br />etnia: Am","count:   0<br />dtobito: 18932.46<br />etnia: Am","count:   1<br />dtobito: 18939.89<br />etnia: Am","count:   2<br />dtobito: 18947.31<br />etnia: Am","count:   0<br />dtobito: 18954.74<br />etnia: Am","count:   1<br />dtobito: 18962.17<br />etnia: Am","count:   0<br />dtobito: 18969.60<br />etnia: Am","count:   0<br />dtobito: 18977.03<br />etnia: Am","count:   2<br />dtobito: 18984.46<br />etnia: Am","count:   0<br />dtobito: 18991.89<br />etnia: Am"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Am","legendgroup":"Am","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18627.8857142857,18635.3142857143,18642.7428571429,18650.1714285714,18657.6,18665.0285714286,18672.4571428571,18679.8857142857,18687.3142857143,18694.7428571429,18702.1714285714,18709.6,18717.0285714286,18724.4571428571,18731.8857142857,18739.3142857143,18746.7428571429,18754.1714285714,18761.6,18769.0285714286,18776.4571428571,18783.8857142857,18791.3142857143,18798.7428571429,18806.1714285714,18813.6,18821.0285714286,18828.4571428571,18835.8857142857,18843.3142857143,18850.7428571429,18858.1714285714,18865.6,18873.0285714286,18880.4571428571,18887.8857142857,18895.3142857143,18902.7428571429,18910.1714285714,18917.6,18925.0285714286,18932.4571428571,18939.8857142857,18947.3142857143,18954.7428571429,18962.1714285714,18969.6,18977.0285714286,18984.4571428571,18991.8857142857],"y":[0,1,0,1,1,1,0,0,3,0,4,1,0,0,1,2,3,1,0,2,0,0,0,2,0,0,0,0,1,0,1,1,0,0,0,0,1,0,1,1,1,1,2,0,0,2,0,0,0,0],"text":["count:   0<br />dtobito: 18627.89<br />etnia: Am","count:   1<br />dtobito: 18635.31<br />etnia: Am","count:   0<br />dtobito: 18642.74<br />etnia: Am","count:   1<br />dtobito: 18650.17<br />etnia: Am","count:   1<br />dtobito: 18657.60<br />etnia: Am","count:   1<br />dtobito: 18665.03<br />etnia: Am","count:   0<br />dtobito: 18672.46<br />etnia: Am","count:   0<br />dtobito: 18679.89<br />etnia: Am","count:   3<br />dtobito: 18687.31<br />etnia: Am","count:   0<br />dtobito: 18694.74<br />etnia: Am","count:   4<br />dtobito: 18702.17<br />etnia: Am","count:   1<br />dtobito: 18709.60<br />etnia: Am","count:   0<br />dtobito: 18717.03<br />etnia: Am","count:   0<br />dtobito: 18724.46<br />etnia: Am","count:   1<br />dtobito: 18731.89<br />etnia: Am","count:   2<br />dtobito: 18739.31<br />etnia: Am","count:   3<br />dtobito: 18746.74<br />etnia: Am","count:   1<br />dtobito: 18754.17<br />etnia: Am","count:   0<br />dtobito: 18761.60<br />etnia: Am","count:   2<br />dtobito: 18769.03<br />etnia: Am","count:   0<br />dtobito: 18776.46<br />etnia: Am","count:   0<br />dtobito: 18783.89<br />etnia: Am","count:   0<br />dtobito: 18791.31<br />etnia: Am","count:   2<br />dtobito: 18798.74<br />etnia: Am","count:   0<br />dtobito: 18806.17<br />etnia: Am","count:   0<br />dtobito: 18813.60<br />etnia: Am","count:   0<br />dtobito: 18821.03<br />etnia: Am","count:   0<br />dtobito: 18828.46<br />etnia: Am","count:   1<br />dtobito: 18835.89<br />etnia: Am","count:   0<br />dtobito: 18843.31<br />etnia: Am","count:   1<br />dtobito: 18850.74<br />etnia: Am","count:   1<br />dtobito: 18858.17<br />etnia: Am","count:   0<br />dtobito: 18865.60<br />etnia: Am","count:   0<br />dtobito: 18873.03<br />etnia: Am","count:   0<br />dtobito: 18880.46<br />etnia: Am","count:   0<br />dtobito: 18887.89<br />etnia: Am","count:   1<br />dtobito: 18895.31<br />etnia: Am","count:   0<br />dtobito: 18902.74<br />etnia: Am","count:   1<br />dtobito: 18910.17<br />etnia: Am","count:   1<br />dtobito: 18917.60<br />etnia: Am","count:   1<br />dtobito: 18925.03<br />etnia: Am","count:   1<br />dtobito: 18932.46<br />etnia: Am","count:   2<br />dtobito: 18939.89<br />etnia: Am","count:   0<br />dtobito: 18947.31<br />etnia: Am","count:   0<br />dtobito: 18954.74<br />etnia: Am","count:   2<br />dtobito: 18962.17<br />etnia: Am","count:   0<br />dtobito: 18969.60<br />etnia: Am","count:   0<br />dtobito: 18977.03<br />etnia: Am","count:   0<br />dtobito: 18984.46<br />etnia: Am","count:   0<br />dtobito: 18991.89<br />etnia: Am"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Am","legendgroup":"Am","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18629.3714285714,18636.8,18644.2285714286,18651.6571428571,18659.0857142857,18666.5142857143,18673.9428571429,18681.3714285714,18688.8,18696.2285714286,18703.6571428571,18711.0857142857,18718.5142857143,18725.9428571429,18733.3714285714,18740.8,18748.2285714286,18755.6571428571,18763.0857142857,18770.5142857143,18777.9428571429,18785.3714285714,18792.8,18800.2285714286,18807.6571428571,18815.0857142857,18822.5142857143,18829.9428571429,18837.3714285714,18844.8,18852.2285714286,18859.6571428571,18867.0857142857,18874.5142857143,18881.9428571429,18889.3714285714,18896.8,18904.2285714286,18911.6571428571,18919.0857142857,18926.5142857143,18933.9428571429,18941.3714285714,18948.8,18956.2285714286,18963.6571428571,18971.0857142857,18978.5142857143,18985.9428571429,18993.3714285714],"y":[89,124,102,117,106,92,112,91,113,104,146,178,173,206,158,150,128,147,140,95,107,92,112,120,102,136,92,123,102,114,91,101,106,83,101,99,103,96,114,104,83,81,90,104,95,104,102,100,133,15],"text":["count:  89<br />dtobito: 18629.37<br />etnia: Br","count: 124<br />dtobito: 18636.80<br />etnia: Br","count: 102<br />dtobito: 18644.23<br />etnia: Br","count: 117<br />dtobito: 18651.66<br />etnia: Br","count: 106<br />dtobito: 18659.09<br />etnia: Br","count:  92<br />dtobito: 18666.51<br />etnia: Br","count: 112<br />dtobito: 18673.94<br />etnia: Br","count:  91<br />dtobito: 18681.37<br />etnia: Br","count: 113<br />dtobito: 18688.80<br />etnia: Br","count: 104<br />dtobito: 18696.23<br />etnia: Br","count: 146<br />dtobito: 18703.66<br />etnia: Br","count: 178<br />dtobito: 18711.09<br />etnia: Br","count: 173<br />dtobito: 18718.51<br />etnia: Br","count: 206<br />dtobito: 18725.94<br />etnia: Br","count: 158<br />dtobito: 18733.37<br />etnia: Br","count: 150<br />dtobito: 18740.80<br />etnia: Br","count: 128<br />dtobito: 18748.23<br />etnia: Br","count: 147<br />dtobito: 18755.66<br />etnia: Br","count: 140<br />dtobito: 18763.09<br />etnia: Br","count:  95<br />dtobito: 18770.51<br />etnia: Br","count: 107<br />dtobito: 18777.94<br />etnia: Br","count:  92<br />dtobito: 18785.37<br />etnia: Br","count: 112<br />dtobito: 18792.80<br />etnia: Br","count: 120<br />dtobito: 18800.23<br />etnia: Br","count: 102<br />dtobito: 18807.66<br />etnia: Br","count: 136<br />dtobito: 18815.09<br />etnia: Br","count:  92<br />dtobito: 18822.51<br />etnia: Br","count: 123<br />dtobito: 18829.94<br />etnia: Br","count: 102<br />dtobito: 18837.37<br />etnia: Br","count: 114<br />dtobito: 18844.80<br />etnia: Br","count:  91<br />dtobito: 18852.23<br />etnia: Br","count: 101<br />dtobito: 18859.66<br />etnia: Br","count: 106<br />dtobito: 18867.09<br />etnia: Br","count:  83<br />dtobito: 18874.51<br />etnia: Br","count: 101<br />dtobito: 18881.94<br />etnia: Br","count:  99<br />dtobito: 18889.37<br />etnia: Br","count: 103<br />dtobito: 18896.80<br />etnia: Br","count:  96<br />dtobito: 18904.23<br />etnia: Br","count: 114<br />dtobito: 18911.66<br />etnia: Br","count: 104<br />dtobito: 18919.09<br />etnia: Br","count:  83<br />dtobito: 18926.51<br />etnia: Br","count:  81<br />dtobito: 18933.94<br />etnia: Br","count:  90<br />dtobito: 18941.37<br />etnia: Br","count: 104<br />dtobito: 18948.80<br />etnia: Br","count:  95<br />dtobito: 18956.23<br />etnia: Br","count: 104<br />dtobito: 18963.66<br />etnia: Br","count: 102<br />dtobito: 18971.09<br />etnia: Br","count: 100<br />dtobito: 18978.51<br />etnia: Br","count: 133<br />dtobito: 18985.94<br />etnia: Br","count:  15<br />dtobito: 18993.37<br />etnia: Br"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(163,165,0,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Br","legendgroup":"Br","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18629.3714285714,18636.8,18644.2285714286,18651.6571428571,18659.0857142857,18666.5142857143,18673.9428571429,18681.3714285714,18688.8,18696.2285714286,18703.6571428571,18711.0857142857,18718.5142857143,18725.9428571429,18733.3714285714,18740.8,18748.2285714286,18755.6571428571,18763.0857142857,18770.5142857143,18777.9428571429,18785.3714285714,18792.8,18800.2285714286,18807.6571428571,18815.0857142857,18822.5142857143,18829.9428571429,18837.3714285714,18844.8,18852.2285714286,18859.6571428571,18867.0857142857,18874.5142857143,18881.9428571429,18889.3714285714,18896.8,18904.2285714286,18911.6571428571,18919.0857142857,18926.5142857143,18933.9428571429,18941.3714285714,18948.8,18956.2285714286,18963.6571428571,18971.0857142857,18978.5142857143,18985.9428571429,18993.3714285714],"y":[102,122,112,124,110,95,125,94,118,99,137,199,189,209,180,169,140,133,150,109,139,107,132,117,102,150,119,120,102,124,93,95,123,100,109,98,113,89,111,117,103,116,88,108,110,105,106,105,119,17],"text":["count: 102<br />dtobito: 18629.37<br />etnia: Br","count: 122<br />dtobito: 18636.80<br />etnia: Br","count: 112<br />dtobito: 18644.23<br />etnia: Br","count: 124<br />dtobito: 18651.66<br />etnia: Br","count: 110<br />dtobito: 18659.09<br />etnia: Br","count:  95<br />dtobito: 18666.51<br />etnia: Br","count: 125<br />dtobito: 18673.94<br />etnia: Br","count:  94<br />dtobito: 18681.37<br />etnia: Br","count: 118<br />dtobito: 18688.80<br />etnia: Br","count:  99<br />dtobito: 18696.23<br />etnia: Br","count: 137<br />dtobito: 18703.66<br />etnia: Br","count: 199<br />dtobito: 18711.09<br />etnia: Br","count: 189<br />dtobito: 18718.51<br />etnia: Br","count: 209<br />dtobito: 18725.94<br />etnia: Br","count: 180<br />dtobito: 18733.37<br />etnia: Br","count: 169<br />dtobito: 18740.80<br />etnia: Br","count: 140<br />dtobito: 18748.23<br />etnia: Br","count: 133<br />dtobito: 18755.66<br />etnia: Br","count: 150<br />dtobito: 18763.09<br />etnia: Br","count: 109<br />dtobito: 18770.51<br />etnia: Br","count: 139<br />dtobito: 18777.94<br />etnia: Br","count: 107<br />dtobito: 18785.37<br />etnia: Br","count: 132<br />dtobito: 18792.80<br />etnia: Br","count: 117<br />dtobito: 18800.23<br />etnia: Br","count: 102<br />dtobito: 18807.66<br />etnia: Br","count: 150<br />dtobito: 18815.09<br />etnia: Br","count: 119<br />dtobito: 18822.51<br />etnia: Br","count: 120<br />dtobito: 18829.94<br />etnia: Br","count: 102<br />dtobito: 18837.37<br />etnia: Br","count: 124<br />dtobito: 18844.80<br />etnia: Br","count:  93<br />dtobito: 18852.23<br />etnia: Br","count:  95<br />dtobito: 18859.66<br />etnia: Br","count: 123<br />dtobito: 18867.09<br />etnia: Br","count: 100<br />dtobito: 18874.51<br />etnia: Br","count: 109<br />dtobito: 18881.94<br />etnia: Br","count:  98<br />dtobito: 18889.37<br />etnia: Br","count: 113<br />dtobito: 18896.80<br />etnia: Br","count:  89<br />dtobito: 18904.23<br />etnia: Br","count: 111<br />dtobito: 18911.66<br />etnia: Br","count: 117<br />dtobito: 18919.09<br />etnia: Br","count: 103<br />dtobito: 18926.51<br />etnia: Br","count: 116<br />dtobito: 18933.94<br />etnia: Br","count:  88<br />dtobito: 18941.37<br />etnia: Br","count: 108<br />dtobito: 18948.80<br />etnia: Br","count: 110<br />dtobito: 18956.23<br />etnia: Br","count: 105<br />dtobito: 18963.66<br />etnia: Br","count: 106<br />dtobito: 18971.09<br />etnia: Br","count: 105<br />dtobito: 18978.51<br />etnia: Br","count: 119<br />dtobito: 18985.94<br />etnia: Br","count:  17<br />dtobito: 18993.37<br />etnia: Br"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(163,165,0,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Br","legendgroup":"Br","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18630.8571428571,18638.2857142857,18645.7142857143,18653.1428571429,18660.5714285714,18668,18675.4285714286,18682.8571428571,18690.2857142857,18697.7142857143,18705.1428571429,18712.5714285714,18720,18727.4285714286,18734.8571428571,18742.2857142857,18749.7142857143,18757.1428571429,18764.5714285714,18772,18779.4285714286,18786.8571428571,18794.2857142857,18801.7142857143,18809.1428571429,18816.5714285714,18824,18831.4285714286,18838.8571428571,18846.2857142857,18853.7142857143,18861.1428571429,18868.5714285714,18876,18883.4285714286,18890.8571428571,18898.2857142857,18905.7142857143,18913.1428571429,18920.5714285714,18928,18935.4285714286,18942.8571428571,18950.2857142857,18957.7142857143,18965.1428571429,18972.5714285714,18980,18987.4285714286,18994.8571428571],"y":[0,1,2,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,0,0,0,1,2,0,1,0,1,0,0,0,0,1,0,1,0,1,0,0,0,1,1,1,0,0,1,2,0,0,0],"text":["count:   0<br />dtobito: 18630.86<br />etnia: In","count:   1<br />dtobito: 18638.29<br />etnia: In","count:   2<br />dtobito: 18645.71<br />etnia: In","count:   0<br />dtobito: 18653.14<br />etnia: In","count:   0<br />dtobito: 18660.57<br />etnia: In","count:   0<br />dtobito: 18668.00<br />etnia: In","count:   0<br />dtobito: 18675.43<br />etnia: In","count:   0<br />dtobito: 18682.86<br />etnia: In","count:   0<br />dtobito: 18690.29<br />etnia: In","count:   1<br />dtobito: 18697.71<br />etnia: In","count:   0<br />dtobito: 18705.14<br />etnia: In","count:   1<br />dtobito: 18712.57<br />etnia: In","count:   0<br />dtobito: 18720.00<br />etnia: In","count:   1<br />dtobito: 18727.43<br />etnia: In","count:   0<br />dtobito: 18734.86<br />etnia: In","count:   1<br />dtobito: 18742.29<br />etnia: In","count:   0<br />dtobito: 18749.71<br />etnia: In","count:   0<br />dtobito: 18757.14<br />etnia: In","count:   0<br />dtobito: 18764.57<br />etnia: In","count:   0<br />dtobito: 18772.00<br />etnia: In","count:   0<br />dtobito: 18779.43<br />etnia: In","count:   0<br />dtobito: 18786.86<br />etnia: In","count:   1<br />dtobito: 18794.29<br />etnia: In","count:   2<br />dtobito: 18801.71<br />etnia: In","count:   0<br />dtobito: 18809.14<br />etnia: In","count:   1<br />dtobito: 18816.57<br />etnia: In","count:   0<br />dtobito: 18824.00<br />etnia: In","count:   1<br />dtobito: 18831.43<br />etnia: In","count:   0<br />dtobito: 18838.86<br />etnia: In","count:   0<br />dtobito: 18846.29<br />etnia: In","count:   0<br />dtobito: 18853.71<br />etnia: In","count:   0<br />dtobito: 18861.14<br />etnia: In","count:   1<br />dtobito: 18868.57<br />etnia: In","count:   0<br />dtobito: 18876.00<br />etnia: In","count:   1<br />dtobito: 18883.43<br />etnia: In","count:   0<br />dtobito: 18890.86<br />etnia: In","count:   1<br />dtobito: 18898.29<br />etnia: In","count:   0<br />dtobito: 18905.71<br />etnia: In","count:   0<br />dtobito: 18913.14<br />etnia: In","count:   0<br />dtobito: 18920.57<br />etnia: In","count:   1<br />dtobito: 18928.00<br />etnia: In","count:   1<br />dtobito: 18935.43<br />etnia: In","count:   1<br />dtobito: 18942.86<br />etnia: In","count:   0<br />dtobito: 18950.29<br />etnia: In","count:   0<br />dtobito: 18957.71<br />etnia: In","count:   1<br />dtobito: 18965.14<br />etnia: In","count:   2<br />dtobito: 18972.57<br />etnia: In","count:   0<br />dtobito: 18980.00<br />etnia: In","count:   0<br />dtobito: 18987.43<br />etnia: In","count:   0<br />dtobito: 18994.86<br />etnia: In"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,125,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"In","legendgroup":"In","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18630.8571428571,18638.2857142857,18645.7142857143,18653.1428571429,18660.5714285714,18668,18675.4285714286,18682.8571428571,18690.2857142857,18697.7142857143,18705.1428571429,18712.5714285714,18720,18727.4285714286,18734.8571428571,18742.2857142857,18749.7142857143,18757.1428571429,18764.5714285714,18772,18779.4285714286,18786.8571428571,18794.2857142857,18801.7142857143,18809.1428571429,18816.5714285714,18824,18831.4285714286,18838.8571428571,18846.2857142857,18853.7142857143,18861.1428571429,18868.5714285714,18876,18883.4285714286,18890.8571428571,18898.2857142857,18905.7142857143,18913.1428571429,18920.5714285714,18928,18935.4285714286,18942.8571428571,18950.2857142857,18957.7142857143,18965.1428571429,18972.5714285714,18980,18987.4285714286,18994.8571428571],"y":[0,0,1,1,0,1,2,0,0,0,0,1,0,0,1,0,0,1,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0,0,1,0,2,0,0,0,1,0,0,0,0,0,0,0,0,0],"text":["count:   0<br />dtobito: 18630.86<br />etnia: In","count:   0<br />dtobito: 18638.29<br />etnia: In","count:   1<br />dtobito: 18645.71<br />etnia: In","count:   1<br />dtobito: 18653.14<br />etnia: In","count:   0<br />dtobito: 18660.57<br />etnia: In","count:   1<br />dtobito: 18668.00<br />etnia: In","count:   2<br />dtobito: 18675.43<br />etnia: In","count:   0<br />dtobito: 18682.86<br />etnia: In","count:   0<br />dtobito: 18690.29<br />etnia: In","count:   0<br />dtobito: 18697.71<br />etnia: In","count:   0<br />dtobito: 18705.14<br />etnia: In","count:   1<br />dtobito: 18712.57<br />etnia: In","count:   0<br />dtobito: 18720.00<br />etnia: In","count:   0<br />dtobito: 18727.43<br />etnia: In","count:   1<br />dtobito: 18734.86<br />etnia: In","count:   0<br />dtobito: 18742.29<br />etnia: In","count:   0<br />dtobito: 18749.71<br />etnia: In","count:   1<br />dtobito: 18757.14<br />etnia: In","count:   0<br />dtobito: 18764.57<br />etnia: In","count:   1<br />dtobito: 18772.00<br />etnia: In","count:   0<br />dtobito: 18779.43<br />etnia: In","count:   0<br />dtobito: 18786.86<br />etnia: In","count:   0<br />dtobito: 18794.29<br />etnia: In","count:   1<br />dtobito: 18801.71<br />etnia: In","count:   0<br />dtobito: 18809.14<br />etnia: In","count:   0<br />dtobito: 18816.57<br />etnia: In","count:   1<br />dtobito: 18824.00<br />etnia: In","count:   0<br />dtobito: 18831.43<br />etnia: In","count:   1<br />dtobito: 18838.86<br />etnia: In","count:   0<br />dtobito: 18846.29<br />etnia: In","count:   1<br />dtobito: 18853.71<br />etnia: In","count:   0<br />dtobito: 18861.14<br />etnia: In","count:   0<br />dtobito: 18868.57<br />etnia: In","count:   0<br />dtobito: 18876.00<br />etnia: In","count:   1<br />dtobito: 18883.43<br />etnia: In","count:   0<br />dtobito: 18890.86<br />etnia: In","count:   2<br />dtobito: 18898.29<br />etnia: In","count:   0<br />dtobito: 18905.71<br />etnia: In","count:   0<br />dtobito: 18913.14<br />etnia: In","count:   0<br />dtobito: 18920.57<br />etnia: In","count:   1<br />dtobito: 18928.00<br />etnia: In","count:   0<br />dtobito: 18935.43<br />etnia: In","count:   0<br />dtobito: 18942.86<br />etnia: In","count:   0<br />dtobito: 18950.29<br />etnia: In","count:   0<br />dtobito: 18957.71<br />etnia: In","count:   0<br />dtobito: 18965.14<br />etnia: In","count:   0<br />dtobito: 18972.57<br />etnia: In","count:   0<br />dtobito: 18980.00<br />etnia: In","count:   0<br />dtobito: 18987.43<br />etnia: In","count:   0<br />dtobito: 18994.86<br />etnia: In"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,125,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"In","legendgroup":"In","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18632.3428571429,18639.7714285714,18647.2,18654.6285714286,18662.0571428571,18669.4857142857,18676.9142857143,18684.3428571429,18691.7714285714,18699.2,18706.6285714286,18714.0571428571,18721.4857142857,18728.9142857143,18736.3428571429,18743.7714285714,18751.2,18758.6285714286,18766.0571428571,18773.4857142857,18780.9142857143,18788.3428571429,18795.7714285714,18803.2,18810.6285714286,18818.0571428571,18825.4857142857,18832.9142857143,18840.3428571429,18847.7714285714,18855.2,18862.6285714286,18870.0571428571,18877.4857142857,18884.9142857143,18892.3428571429,18899.7714285714,18907.2,18914.6285714286,18922.0571428571,18929.4857142857,18936.9142857143,18944.3428571429,18951.7714285714,18959.2,18966.6285714286,18974.0571428571,18981.4857142857,18988.9142857143,18996.3428571429],"y":[84,91,93,65,107,64,78,75,83,97,115,145,159,171,117,122,107,105,103,79,92,77,79,78,75,96,75,84,67,99,73,73,81,64,83,73,88,59,64,78,70,83,75,74,65,60,91,81,110,19],"text":["count:  84<br />dtobito: 18632.34<br />etnia: Pa","count:  91<br />dtobito: 18639.77<br />etnia: Pa","count:  93<br />dtobito: 18647.20<br />etnia: Pa","count:  65<br />dtobito: 18654.63<br />etnia: Pa","count: 107<br />dtobito: 18662.06<br />etnia: Pa","count:  64<br />dtobito: 18669.49<br />etnia: Pa","count:  78<br />dtobito: 18676.91<br />etnia: Pa","count:  75<br />dtobito: 18684.34<br />etnia: Pa","count:  83<br />dtobito: 18691.77<br />etnia: Pa","count:  97<br />dtobito: 18699.20<br />etnia: Pa","count: 115<br />dtobito: 18706.63<br />etnia: Pa","count: 145<br />dtobito: 18714.06<br />etnia: Pa","count: 159<br />dtobito: 18721.49<br />etnia: Pa","count: 171<br />dtobito: 18728.91<br />etnia: Pa","count: 117<br />dtobito: 18736.34<br />etnia: Pa","count: 122<br />dtobito: 18743.77<br />etnia: Pa","count: 107<br />dtobito: 18751.20<br />etnia: Pa","count: 105<br />dtobito: 18758.63<br />etnia: Pa","count: 103<br />dtobito: 18766.06<br />etnia: Pa","count:  79<br />dtobito: 18773.49<br />etnia: Pa","count:  92<br />dtobito: 18780.91<br />etnia: Pa","count:  77<br />dtobito: 18788.34<br />etnia: Pa","count:  79<br />dtobito: 18795.77<br />etnia: Pa","count:  78<br />dtobito: 18803.20<br />etnia: Pa","count:  75<br />dtobito: 18810.63<br />etnia: Pa","count:  96<br />dtobito: 18818.06<br />etnia: Pa","count:  75<br />dtobito: 18825.49<br />etnia: Pa","count:  84<br />dtobito: 18832.91<br />etnia: Pa","count:  67<br />dtobito: 18840.34<br />etnia: Pa","count:  99<br />dtobito: 18847.77<br />etnia: Pa","count:  73<br />dtobito: 18855.20<br />etnia: Pa","count:  73<br />dtobito: 18862.63<br />etnia: Pa","count:  81<br />dtobito: 18870.06<br />etnia: Pa","count:  64<br />dtobito: 18877.49<br />etnia: Pa","count:  83<br />dtobito: 18884.91<br />etnia: Pa","count:  73<br />dtobito: 18892.34<br />etnia: Pa","count:  88<br />dtobito: 18899.77<br />etnia: Pa","count:  59<br />dtobito: 18907.20<br />etnia: Pa","count:  64<br />dtobito: 18914.63<br />etnia: Pa","count:  78<br />dtobito: 18922.06<br />etnia: Pa","count:  70<br />dtobito: 18929.49<br />etnia: Pa","count:  83<br />dtobito: 18936.91<br />etnia: Pa","count:  75<br />dtobito: 18944.34<br />etnia: Pa","count:  74<br />dtobito: 18951.77<br />etnia: Pa","count:  65<br />dtobito: 18959.20<br />etnia: Pa","count:  60<br />dtobito: 18966.63<br />etnia: Pa","count:  91<br />dtobito: 18974.06<br />etnia: Pa","count:  81<br />dtobito: 18981.49<br />etnia: Pa","count: 110<br />dtobito: 18988.91<br />etnia: Pa","count:  19<br />dtobito: 18996.34<br />etnia: Pa"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,176,246,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Pa","legendgroup":"Pa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18632.3428571429,18639.7714285714,18647.2,18654.6285714286,18662.0571428571,18669.4857142857,18676.9142857143,18684.3428571429,18691.7714285714,18699.2,18706.6285714286,18714.0571428571,18721.4857142857,18728.9142857143,18736.3428571429,18743.7714285714,18751.2,18758.6285714286,18766.0571428571,18773.4857142857,18780.9142857143,18788.3428571429,18795.7714285714,18803.2,18810.6285714286,18818.0571428571,18825.4857142857,18832.9142857143,18840.3428571429,18847.7714285714,18855.2,18862.6285714286,18870.0571428571,18877.4857142857,18884.9142857143,18892.3428571429,18899.7714285714,18907.2,18914.6285714286,18922.0571428571,18929.4857142857,18936.9142857143,18944.3428571429,18951.7714285714,18959.2,18966.6285714286,18974.0571428571,18981.4857142857,18988.9142857143,18996.3428571429],"y":[146,133,107,116,124,92,128,109,146,112,137,217,188,214,185,177,153,145,155,121,157,115,142,126,103,123,102,133,112,152,110,97,121,127,125,106,120,100,119,97,88,116,102,116,109,105,117,95,123,19],"text":["count: 146<br />dtobito: 18632.34<br />etnia: Pa","count: 133<br />dtobito: 18639.77<br />etnia: Pa","count: 107<br />dtobito: 18647.20<br />etnia: Pa","count: 116<br />dtobito: 18654.63<br />etnia: Pa","count: 124<br />dtobito: 18662.06<br />etnia: Pa","count:  92<br />dtobito: 18669.49<br />etnia: Pa","count: 128<br />dtobito: 18676.91<br />etnia: Pa","count: 109<br />dtobito: 18684.34<br />etnia: Pa","count: 146<br />dtobito: 18691.77<br />etnia: Pa","count: 112<br />dtobito: 18699.20<br />etnia: Pa","count: 137<br />dtobito: 18706.63<br />etnia: Pa","count: 217<br />dtobito: 18714.06<br />etnia: Pa","count: 188<br />dtobito: 18721.49<br />etnia: Pa","count: 214<br />dtobito: 18728.91<br />etnia: Pa","count: 185<br />dtobito: 18736.34<br />etnia: Pa","count: 177<br />dtobito: 18743.77<br />etnia: Pa","count: 153<br />dtobito: 18751.20<br />etnia: Pa","count: 145<br />dtobito: 18758.63<br />etnia: Pa","count: 155<br />dtobito: 18766.06<br />etnia: Pa","count: 121<br />dtobito: 18773.49<br />etnia: Pa","count: 157<br />dtobito: 18780.91<br />etnia: Pa","count: 115<br />dtobito: 18788.34<br />etnia: Pa","count: 142<br />dtobito: 18795.77<br />etnia: Pa","count: 126<br />dtobito: 18803.20<br />etnia: Pa","count: 103<br />dtobito: 18810.63<br />etnia: Pa","count: 123<br />dtobito: 18818.06<br />etnia: Pa","count: 102<br />dtobito: 18825.49<br />etnia: Pa","count: 133<br />dtobito: 18832.91<br />etnia: Pa","count: 112<br />dtobito: 18840.34<br />etnia: Pa","count: 152<br />dtobito: 18847.77<br />etnia: Pa","count: 110<br />dtobito: 18855.20<br />etnia: Pa","count:  97<br />dtobito: 18862.63<br />etnia: Pa","count: 121<br />dtobito: 18870.06<br />etnia: Pa","count: 127<br />dtobito: 18877.49<br />etnia: Pa","count: 125<br />dtobito: 18884.91<br />etnia: Pa","count: 106<br />dtobito: 18892.34<br />etnia: Pa","count: 120<br />dtobito: 18899.77<br />etnia: Pa","count: 100<br />dtobito: 18907.20<br />etnia: Pa","count: 119<br />dtobito: 18914.63<br />etnia: Pa","count:  97<br />dtobito: 18922.06<br />etnia: Pa","count:  88<br />dtobito: 18929.49<br />etnia: Pa","count: 116<br />dtobito: 18936.91<br />etnia: Pa","count: 102<br />dtobito: 18944.34<br />etnia: Pa","count: 116<br />dtobito: 18951.77<br />etnia: Pa","count: 109<br />dtobito: 18959.20<br />etnia: Pa","count: 105<br />dtobito: 18966.63<br />etnia: Pa","count: 117<br />dtobito: 18974.06<br />etnia: Pa","count:  95<br />dtobito: 18981.49<br />etnia: Pa","count: 123<br />dtobito: 18988.91<br />etnia: Pa","count:  19<br />dtobito: 18996.34<br />etnia: Pa"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,176,246,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Pa","legendgroup":"Pa","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18633.8285714286,18641.2571428571,18648.6857142857,18656.1142857143,18663.5428571429,18670.9714285714,18678.4,18685.8285714286,18693.2571428571,18700.6857142857,18708.1142857143,18715.5428571429,18722.9714285714,18730.4,18737.8285714286,18745.2571428571,18752.6857142857,18760.1142857143,18767.5428571429,18774.9714285714,18782.4,18789.8285714286,18797.2571428571,18804.6857142857,18812.1142857143,18819.5428571429,18826.9714285714,18834.4,18841.8285714286,18849.2571428571,18856.6857142857,18864.1142857143,18871.5428571429,18878.9714285714,18886.4,18893.8285714286,18901.2571428571,18908.6857142857,18916.1142857143,18923.5428571429,18930.9714285714,18938.4,18945.8285714286,18953.2571428571,18960.6857142857,18968.1142857143,18975.5428571429,18982.9714285714,18990.4,18997.8285714286],"y":[25,22,16,12,22,22,19,19,25,15,32,35,39,50,34,28,24,29,34,26,27,28,26,20,24,27,17,27,19,18,12,20,23,13,26,19,20,13,18,21,21,19,16,26,19,20,17,15,29,5],"text":["count:  25<br />dtobito: 18633.83<br />etnia: Pr","count:  22<br />dtobito: 18641.26<br />etnia: Pr","count:  16<br />dtobito: 18648.69<br />etnia: Pr","count:  12<br />dtobito: 18656.11<br />etnia: Pr","count:  22<br />dtobito: 18663.54<br />etnia: Pr","count:  22<br />dtobito: 18670.97<br />etnia: Pr","count:  19<br />dtobito: 18678.40<br />etnia: Pr","count:  19<br />dtobito: 18685.83<br />etnia: Pr","count:  25<br />dtobito: 18693.26<br />etnia: Pr","count:  15<br />dtobito: 18700.69<br />etnia: Pr","count:  32<br />dtobito: 18708.11<br />etnia: Pr","count:  35<br />dtobito: 18715.54<br />etnia: Pr","count:  39<br />dtobito: 18722.97<br />etnia: Pr","count:  50<br />dtobito: 18730.40<br />etnia: Pr","count:  34<br />dtobito: 18737.83<br />etnia: Pr","count:  28<br />dtobito: 18745.26<br />etnia: Pr","count:  24<br />dtobito: 18752.69<br />etnia: Pr","count:  29<br />dtobito: 18760.11<br />etnia: Pr","count:  34<br />dtobito: 18767.54<br />etnia: Pr","count:  26<br />dtobito: 18774.97<br />etnia: Pr","count:  27<br />dtobito: 18782.40<br />etnia: Pr","count:  28<br />dtobito: 18789.83<br />etnia: Pr","count:  26<br />dtobito: 18797.26<br />etnia: Pr","count:  20<br />dtobito: 18804.69<br />etnia: Pr","count:  24<br />dtobito: 18812.11<br />etnia: Pr","count:  27<br />dtobito: 18819.54<br />etnia: Pr","count:  17<br />dtobito: 18826.97<br />etnia: Pr","count:  27<br />dtobito: 18834.40<br />etnia: Pr","count:  19<br />dtobito: 18841.83<br />etnia: Pr","count:  18<br />dtobito: 18849.26<br />etnia: Pr","count:  12<br />dtobito: 18856.69<br />etnia: Pr","count:  20<br />dtobito: 18864.11<br />etnia: Pr","count:  23<br />dtobito: 18871.54<br />etnia: Pr","count:  13<br />dtobito: 18878.97<br />etnia: Pr","count:  26<br />dtobito: 18886.40<br />etnia: Pr","count:  19<br />dtobito: 18893.83<br />etnia: Pr","count:  20<br />dtobito: 18901.26<br />etnia: Pr","count:  13<br />dtobito: 18908.69<br />etnia: Pr","count:  18<br />dtobito: 18916.11<br />etnia: Pr","count:  21<br />dtobito: 18923.54<br />etnia: Pr","count:  21<br />dtobito: 18930.97<br />etnia: Pr","count:  19<br />dtobito: 18938.40<br />etnia: Pr","count:  16<br />dtobito: 18945.83<br />etnia: Pr","count:  26<br />dtobito: 18953.26<br />etnia: Pr","count:  19<br />dtobito: 18960.69<br />etnia: Pr","count:  20<br />dtobito: 18968.11<br />etnia: Pr","count:  17<br />dtobito: 18975.54<br />etnia: Pr","count:  15<br />dtobito: 18982.97<br />etnia: Pr","count:  29<br />dtobito: 18990.40<br />etnia: Pr","count:   5<br />dtobito: 18997.83<br />etnia: Pr"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(231,107,243,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Pr","legendgroup":"Pr","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449,1.48571428571449],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[18633.8285714286,18641.2571428571,18648.6857142857,18656.1142857143,18663.5428571429,18670.9714285714,18678.4,18685.8285714286,18693.2571428571,18700.6857142857,18708.1142857143,18715.5428571429,18722.9714285714,18730.4,18737.8285714286,18745.2571428571,18752.6857142857,18760.1142857143,18767.5428571429,18774.9714285714,18782.4,18789.8285714286,18797.2571428571,18804.6857142857,18812.1142857143,18819.5428571429,18826.9714285714,18834.4,18841.8285714286,18849.2571428571,18856.6857142857,18864.1142857143,18871.5428571429,18878.9714285714,18886.4,18893.8285714286,18901.2571428571,18908.6857142857,18916.1142857143,18923.5428571429,18930.9714285714,18938.4,18945.8285714286,18953.2571428571,18960.6857142857,18968.1142857143,18975.5428571429,18982.9714285714,18990.4,18997.8285714286],"y":[32,20,30,26,32,33,29,26,32,29,36,55,51,68,44,51,37,35,35,37,36,18,30,31,30,45,33,26,34,34,31,29,30,35,16,17,33,23,32,36,19,32,35,26,29,26,28,50,35,3],"text":["count:  32<br />dtobito: 18633.83<br />etnia: Pr","count:  20<br />dtobito: 18641.26<br />etnia: Pr","count:  30<br />dtobito: 18648.69<br />etnia: Pr","count:  26<br />dtobito: 18656.11<br />etnia: Pr","count:  32<br />dtobito: 18663.54<br />etnia: Pr","count:  33<br />dtobito: 18670.97<br />etnia: Pr","count:  29<br />dtobito: 18678.40<br />etnia: Pr","count:  26<br />dtobito: 18685.83<br />etnia: Pr","count:  32<br />dtobito: 18693.26<br />etnia: Pr","count:  29<br />dtobito: 18700.69<br />etnia: Pr","count:  36<br />dtobito: 18708.11<br />etnia: Pr","count:  55<br />dtobito: 18715.54<br />etnia: Pr","count:  51<br />dtobito: 18722.97<br />etnia: Pr","count:  68<br />dtobito: 18730.40<br />etnia: Pr","count:  44<br />dtobito: 18737.83<br />etnia: Pr","count:  51<br />dtobito: 18745.26<br />etnia: Pr","count:  37<br />dtobito: 18752.69<br />etnia: Pr","count:  35<br />dtobito: 18760.11<br />etnia: Pr","count:  35<br />dtobito: 18767.54<br />etnia: Pr","count:  37<br />dtobito: 18774.97<br />etnia: Pr","count:  36<br />dtobito: 18782.40<br />etnia: Pr","count:  18<br />dtobito: 18789.83<br />etnia: Pr","count:  30<br />dtobito: 18797.26<br />etnia: Pr","count:  31<br />dtobito: 18804.69<br />etnia: Pr","count:  30<br />dtobito: 18812.11<br />etnia: Pr","count:  45<br />dtobito: 18819.54<br />etnia: Pr","count:  33<br />dtobito: 18826.97<br />etnia: Pr","count:  26<br />dtobito: 18834.40<br />etnia: Pr","count:  34<br />dtobito: 18841.83<br />etnia: Pr","count:  34<br />dtobito: 18849.26<br />etnia: Pr","count:  31<br />dtobito: 18856.69<br />etnia: Pr","count:  29<br />dtobito: 18864.11<br />etnia: Pr","count:  30<br />dtobito: 18871.54<br />etnia: Pr","count:  35<br />dtobito: 18878.97<br />etnia: Pr","count:  16<br />dtobito: 18886.40<br />etnia: Pr","count:  17<br />dtobito: 18893.83<br />etnia: Pr","count:  33<br />dtobito: 18901.26<br />etnia: Pr","count:  23<br />dtobito: 18908.69<br />etnia: Pr","count:  32<br />dtobito: 18916.11<br />etnia: Pr","count:  36<br />dtobito: 18923.54<br />etnia: Pr","count:  19<br />dtobito: 18930.97<br />etnia: Pr","count:  32<br />dtobito: 18938.40<br />etnia: Pr","count:  35<br />dtobito: 18945.83<br />etnia: Pr","count:  26<br />dtobito: 18953.26<br />etnia: Pr","count:  29<br />dtobito: 18960.69<br />etnia: Pr","count:  26<br />dtobito: 18968.11<br />etnia: Pr","count:  28<br />dtobito: 18975.54<br />etnia: Pr","count:  50<br />dtobito: 18982.97<br />etnia: Pr","count:  35<br />dtobito: 18990.40<br />etnia: Pr","count:   3<br />dtobito: 18997.83<br />etnia: Pr"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(231,107,243,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Pr","legendgroup":"Pr","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":55.4520547945205,"r":7.30593607305936,"b":40.1826484018265,"l":43.1050228310502},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"<b> Mortes no ES <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,0.489128071319852],"automargin":true,"type":"linear","autorange":false,"range":[18608.5714285714,19017.1428571429],"tickmode":"array","ticktext":["Jan 2021","Apr 2021","Jul 2021","Oct 2021","Jan 2022"],"tickvals":[18628,18718,18809,18901,18993],"categoryorder":"array","categoryarray":["Jan 2021","Apr 2021","Jul 2021","Oct 2021","Jan 2022"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"annotations":[{"text":"Data das mortes","x":0.5,"y":0,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis","yshift":-21.9178082191781},{"text":"quantidade de mortes","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-27.7625570776256},{"text":"F","x":0.244564035659926,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"M","x":0.755435964340074,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-10.85,227.85],"tickmode":"array","ticktext":["0","50","100","150","200"],"tickvals":[0,50,100,150,200],"categoryorder":"array","categoryarray":["0","50","100","150","200"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.489128071319852,"y0":0,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.489128071319852,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.510871928680148,"x1":1,"y0":0,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.510871928680148,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[18608.5714285714,19017.1428571429],"tickmode":"array","ticktext":["Jan 2021","Apr 2021","Jul 2021","Oct 2021","Jan 2022"],"tickvals":[18628,18718,18809,18901,18993],"categoryorder":"array","categoryarray":["Jan 2021","Apr 2021","Jul 2021","Oct 2021","Jan 2022"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.510871928680148,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"etnia","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"b24315fe9083":{"x":{},"fill":{},"type":"bar"}},"cur_data":"b24315fe9083","visdat":{"b24315fe9083":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</section>
+</section>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><section id="refs" class="level2">
+<h2 class="anchored" data-anchor-id="refs">Refs</h2>
+<section id="mortes-no-espirito-santo" class="level3">
+<h3 class="anchored" data-anchor-id="mortes-no-espirito-santo">Mortes no Espirito Santo</h3>
+<ul>
+<li><a href="https://github.com/rfsaldanha/microdatasus">rfsaldanha/microdatasus: Download de dados do DataSUS e pré-processamento no R.</a></li>
+</ul>
+</section>
+<section id="sim" class="level3">
+<h3 class="anchored" data-anchor-id="sim">SIM</h3>
+<ul>
+<li><a href="https://svs.aids.gov.br/daent/cgiae/sim/tabulacao/">Tabulação de Dados - SIM - CGIAE - DAENT - SVS/MS</a></li>
+<li><a href="https://svs.aids.gov.br/daent/cgiae/sim/documentacao/dicionario-de-dados-SIM-tabela-DO.pdf">Dicionario_de_Dados_SIM_tabela_DO_v2.docx</a></li>
+</ul>
+</section>
+</section></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

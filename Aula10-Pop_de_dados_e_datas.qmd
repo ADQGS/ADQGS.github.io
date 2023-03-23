@@ -60,7 +60,6 @@ pacotes <-
     )
 ## se necessário instalar algum pacote retirar a `#` da próxima linha
 if(!require(pacotes))lapply(pacotes, install.packages, character.only = TRUE)
-
 lapply(pacotes, require, character.only = TRUE)
 ```
 

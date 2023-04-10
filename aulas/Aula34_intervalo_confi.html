@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="@BragatteMAS">
+
+<title>intervalo_de_confianca</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Aula34_intervalo_confi_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/quarto-html/quarto.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/quarto-html/popper.min.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Aula34_intervalo_confi_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Aula34_intervalo_confi_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Aula34_intervalo_confi_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Aula34_intervalo_confi_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Aula34_intervalo_confi_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Aula34_intervalo_confi_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/plotly-binding-4.10.1/plotly.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="Aula34_intervalo_confi_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="Aula34_intervalo_confi_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="Aula34_intervalo_confi_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="Aula34_intervalo_confi_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="Aula34_intervalo_confi_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">intervalo_de_confianca</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><span class="citation" data-cites="BragatteMAS">@BragatteMAS</span> </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## remove da memória dados anteriores</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">collapse =</span> <span class="cn">TRUE</span>, <span class="at">error =</span> <span class="cn">FALSE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">results =</span> <span class="st">'asis'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="intervalo-de-confiança" class="level2">
+<h2 class="anchored" data-anchor-id="intervalo-de-confiança">Intervalo de confiança</h2>
+<p>Comentamos sobre intervalo de confiança e exploramos temas complementares como Razão de Chances e Risco Relativo nas aulas anteriores.</p>
+<ul>
+<li><p>População</p></li>
+<li><p>Amostra</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://1.bp.blogspot.com/-sYM3vDns3_A/XxjLoxLL1bI/AAAAAAAAALs/ztrUyo5p_YwIHvMWvtDMYYamZegfxpLlQCLcBGAsYHQ/s1600/foto%252B1.png" class="img-fluid figure-img" alt="pop_amostra"></p>
+</figure>
+</div>
+<p>Lembrando que <em>teremos sempre uma parte da população para estudar</em>, nossa dita <strong>população amostral</strong> e <em>usaremos uma parte desta amostra</em> para fazer os testes de hipóteses, ou seja, calcular sobre diferentes médias das amostras irá gerar diferentes resultados e alguns serão muito próximos ao resultado se pudessemos usar toda a população para o cálculo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://conteudo.imguol.com.br/c/entretenimento/af/2018/11/26/exame-de-sangue-1543244643923_v2_4x3.jpg" class="img-fluid figure-img" alt="sangue"></p>
+</figure>
+</div>
+<p>Intervalos de confiança são intervalos de valores com chance elevada de conter parâmetros da população.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://banderson02.files.wordpress.com/2014/05/f11-17_height_in_human__c.jpg" class="img-fluid figure-img" alt="altura"></p>
+</figure>
+</div>
+<p>Estimativa da população com um intervalo de confiança de 95%, em outras palavras significa de forma reducionista que a cada vinte pessoas que nós fossemos medir a altura, somente uma estaria fora do intervalo que nós definimos (nosso parâmetro).</p>
+<p>No exemplo acima seriam alturas em pés/polegadas (ft/in) de 5.0 até 6.5, o mesmo que 1,52 até 1,96 metros/centimetros (m/cm).</p>
+<ul>
+<li><p>5.0 = 5 pés e 6 polegadas</p></li>
+<li><p>1,52 = 1 metro e 52 centímetros</p></li>
+</ul>
+<p>Obs.: Importante lembrar a importância da amostra, se nossa amostra viesse dos jogadores de basquete (NBA ou NBB), certamente estaríamos fora do intervalo esperado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://fadeawayworld.net/.image/t_share/MTgwMzI0Nzg0OTY0MzgwNTI0/ranking-the-best-nba-players-by-height.jpg" class="img-fluid figure-img" alt="NBA"></p>
+</figure>
+</div>
+</section>
+<section id="exercício-com-dados-de-altura-fictícios" class="level2">
+<h2 class="anchored" data-anchor-id="exercício-com-dados-de-altura-fictícios">Exercício com dados de altura fictícios</h2>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## definir a média e o desvio padrão da distribuição normal</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>media_esperada <span class="ot">&lt;-</span> <span class="fl">1.73</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>desvio_padrao <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## criar vetor com as alturas de interesse em metros de 2 em 2 cm</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>alturas_m <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">1.50</span>, <span class="at">to =</span> <span class="fl">2.00</span>, <span class="at">by =</span> <span class="fl">0.02</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## converter as alturas para medida americana (pés e polegadas do exemplo da imagem e jogadores da NBA)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>alturas_ft <span class="ot">&lt;-</span> alturas_m <span class="sc">*</span> <span class="fl">3.28084</span> <span class="co">#valor para converter para pés</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>alturas_in <span class="ot">&lt;-</span> (alturas_ft <span class="sc">-</span> <span class="fu">floor</span>(alturas_ft)) <span class="sc">*</span> <span class="dv">12</span> <span class="co">#converter para polegadas</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>alturas_ft <span class="ot">&lt;-</span> <span class="fu">floor</span>(alturas_ft) <span class="co"># arredondar a medida de pés para inteiro</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">## calcular a quantidade de pessoas que teriam cada altura usando a função dnorm = já deixa nossa distribuição normal para o exemplo</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">## multiplicamos por 1000000 para transformar a densidade em uma quantidade aproximada de pessoas por metro em cada intervalo de altura</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>quantidades_abs <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(<span class="at">x =</span> alturas_m, <span class="at">mean =</span> media_esperada, <span class="at">sd =</span> desvio_padrao) <span class="sc">*</span> <span class="dv">1000000</span> <span class="sc">*</span> <span class="fl">0.02</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## criar tabela com as colunas "Altura (m)", "Altura (ft/in)", e "Quantidade (abs)"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>tabela <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"altura_m"</span> <span class="ot">=</span> alturas_m,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"altura_ft"</span> <span class="ot">=</span> <span class="fu">paste0</span>(alturas_ft, <span class="st">"'"</span>, <span class="fu">round</span>(alturas_in), <span class="st">"</span><span class="sc">\"</span><span class="st">"</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"quanti_pes"</span> <span class="ot">=</span> <span class="fu">round</span>(quantidades_abs)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="do">## se quiser salvar tabela em um arquivo CSV</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> tabela, <span class="at">file =</span> <span class="st">"distribuicao_alturas.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tabela)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>altura_m      altura_ft           quanti_pes   </code></pre>
+<p>Min. :1.500 Length:26 Min. : 2084<br>
+1st Qu.:1.625 Class :character 1st Qu.:13123<br>
+Median :1.750 Mode :character Median :34274<br>
+Mean :1.750 Mean :38053<br>
+3rd Qu.:1.875 3rd Qu.:62451<br>
+Max. :2.000 Max. :79391</p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggqqplot</span>(tabela<span class="sc">$</span>altura_m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Aula34_intervalo_confi_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<p>Se a distribuição é normal esperamos que os pontos façam uma linha reta, a faixa cinza é um limite inferior e superior teórico.</p>
+<hr>
+<section id="cálculando-intervalo-de-confiança-95" class="level3">
+<h3 class="anchored" data-anchor-id="cálculando-intervalo-de-confiança-95">Cálculando Intervalo de confiança 95%</h3>
+<section id="gerando-dados" class="level4">
+<h4 class="anchored" data-anchor-id="gerando-dados">Gerando Dados</h4>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Quantidade de pessoas que estão em nossa população amostral, consideramos que irá representar como se tivessemos medido todos os brasileiros ~208 mi</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>total_pes <span class="ot">&lt;-</span> <span class="fu">sum</span>(tabela<span class="sc">$</span>quanti_pes)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## média da altura dos brasileiros nesta população amostral </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>altura_media <span class="ot">&lt;-</span> <span class="fl">1.75</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="do">## desvio padrão da altura dos brasileiros nesta população amostral </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>altura_desvio <span class="ot">&lt;-</span> <span class="fu">sd</span>(tabela<span class="sc">$</span>altura_m)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="do">## intervalo de confiança teórico</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>conf_int_teor <span class="ot">&lt;-</span> <span class="fl">0.95</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="do">## graus de liberdade</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>gl <span class="ot">&lt;-</span> total_pes <span class="sc">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cálculos-para-exemplo" class="level4">
+<h4 class="anchored" data-anchor-id="cálculos-para-exemplo">Cálculos para exemplo</h4>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Calcular intervalo de confiança para a média por test t</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>conf_int_t_pes <span class="ot">&lt;-</span> <span class="fu">t.test</span>(tabela<span class="sc">$</span>quanti_pes)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="limites-do-intervalo-calculados-na-mão" class="level5">
+<h5 class="anchored" data-anchor-id="limites-do-intervalo-calculados-na-mão">Limites do intervalo calculados na mão</h5>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## confiança dos dados</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>conf_int <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.95</span>, <span class="at">df =</span> <span class="fu">nrow</span>(tabela) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> (tabela<span class="sc">$</span>quanti_pes <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(tabela<span class="sc">$</span>quanti_pes)))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="do">## limites</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>tabela<span class="sc">$</span>lim_inf <span class="ot">&lt;-</span> <span class="fu">round</span>(tabela<span class="sc">$</span>quanti_pes <span class="sc">-</span> conf_int)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>tabela<span class="sc">$</span>lim_sup <span class="ot">&lt;-</span> <span class="fu">round</span>(tabela<span class="sc">$</span>quanti_pes <span class="sc">+</span> conf_int)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">## definir limite inferior do intervalo - sinal negativo</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>lim_inf_mao <span class="ot">&lt;-</span> tabela<span class="sc">$</span>quanti_pes <span class="sc">-</span> <span class="fu">abs</span>(<span class="fu">qt</span>(<span class="at">p =</span> (<span class="dv">1</span> <span class="sc">-</span> conf_int_teor)<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> gl))<span class="sc">*</span>altura_desvio<span class="sc">/</span><span class="fu">sqrt</span>(total_pes)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="do">## definir limite superior do intervalo + sinal positivo</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>lim_sup_mao <span class="ot">&lt;-</span> tabela<span class="sc">$</span>quanti_pes <span class="sc">+</span> <span class="fu">abs</span>(<span class="fu">qt</span>(<span class="at">p =</span> (<span class="dv">1</span> <span class="sc">-</span> conf_int_teor)<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> gl))<span class="sc">*</span>altura_desvio<span class="sc">/</span><span class="fu">sqrt</span>(total_pes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="gráfico" class="level5">
+<h5 class="anchored" data-anchor-id="gráfico">Gráfico</h5>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Dados</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Cria o gráfico p de linha com altura no eixo x e quantidade de pessoas no eixo y</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(tabela, <span class="fu">aes</span>(<span class="at">x =</span> altura_m, <span class="at">y =</span> quanti_pes)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Geometria - Adiciona a linha ao gráfico</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Geometria - Adiciona o intervalo de confiança ao gráfico</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"loess"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="st">"jitter"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">#se = TRUE,</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"steelblue"</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"lightsteelblue"</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Adiciona intervalo de confiança ao gráfico dentro do erro padrão</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymin =</span> tabela<span class="sc">$</span>quanti_pes <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(tabela<span class="sc">$</span>quanti_pes),</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymax =</span> tabela<span class="sc">$</span>quanti_pes <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(tabela<span class="sc">$</span>quanti_pes)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.01</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"purple"</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Formatações - Adiciona título ao eixo x</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Altura (m)"</span>) <span class="sc">+</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Adiciona título ao eixo y</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Quantidade de pessoas"</span>) <span class="sc">+</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Adiciona título ao gráfico</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Quantidade de pessoas por altura"</span>) <span class="sc">+</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Define tema do gráfico</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Salva o gráfico em arquivo</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>  <span class="st">"intervalo_confi_ex.png"</span>,</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>  p,</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">4</span>,</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="do">## Imprime o gráfico</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Aula34_intervalo_confi_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c16426cb8ba1252ea05a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-c16426cb8ba1252ea05a">{"x":{"data":[{"x":[1.5,1.52,1.54,1.56,1.58,1.6,1.62,1.64,1.66,1.68,1.7,1.72,1.74,1.76,1.78,1.8,1.82,1.84,1.86,1.88,1.9,1.92,1.94,1.96,1.98,2],"y":[5665,8797,13123,18810,25904,34274,43570,53217,62451,70413,76278,79391,79391,76278,70413,62451,53217,43570,34274,25904,18810,13123,8797,5665,3506,2084],"text":["altura_m: 1.50<br />quanti_pes:  5665","altura_m: 1.52<br />quanti_pes:  8797","altura_m: 1.54<br />quanti_pes: 13123","altura_m: 1.56<br />quanti_pes: 18810","altura_m: 1.58<br />quanti_pes: 25904","altura_m: 1.60<br />quanti_pes: 34274","altura_m: 1.62<br />quanti_pes: 43570","altura_m: 1.64<br />quanti_pes: 53217","altura_m: 1.66<br />quanti_pes: 62451","altura_m: 1.68<br />quanti_pes: 70413","altura_m: 1.70<br />quanti_pes: 76278","altura_m: 1.72<br />quanti_pes: 79391","altura_m: 1.74<br />quanti_pes: 79391","altura_m: 1.76<br />quanti_pes: 76278","altura_m: 1.78<br />quanti_pes: 70413","altura_m: 1.80<br />quanti_pes: 62451","altura_m: 1.82<br />quanti_pes: 53217","altura_m: 1.84<br />quanti_pes: 43570","altura_m: 1.86<br />quanti_pes: 34274","altura_m: 1.88<br />quanti_pes: 25904","altura_m: 1.90<br />quanti_pes: 18810","altura_m: 1.92<br />quanti_pes: 13123","altura_m: 1.94<br />quanti_pes:  8797","altura_m: 1.96<br />quanti_pes:  5665","altura_m: 1.98<br />quanti_pes:  3506","altura_m: 2.00<br />quanti_pes:  2084"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.49775493361315,1.5044075763301,1.51481865117138,1.5189699364885,1.52490609545567,1.53151996491854,1.53887894081447,1.54249124585097,1.55143841799301,1.55853188483021,1.56487476246054,1.57002641072945,1.57410276969423,1.58412501903109,1.58882919457635,1.59538246762432,1.60283200177305,1.60842167296435,1.61522182634195,1.61948672368109,1.62522506716932,1.63302918581787,1.63998901999049,1.64646338398533,1.65185482134877,1.65785482605401,1.662036515579,1.67106916020518,1.67794011920997,1.68260952321506,1.69095925408875,1.69756278628366,1.70385311512347,1.70689843922995,1.71739596185522,1.72184461450228,1.72876973310485,1.73461312022697,1.74258017478322,1.7479964947269,1.75387456621032,1.75707680803688,1.76728380093752,1.77464180961133,1.78009114959454,1.78312248325541,1.78955491913742,1.79732975517576,1.80349781740504,1.81014809871705,1.8162865979538,1.8227273312751,1.82754394031731,1.83312943236714,1.84252448506252,1.850367407911,1.85239970552252,1.86012476616291,1.86813126003983,1.87393635732204,1.88084531249007,1.88844059333795,1.89182655982367,1.90009563427442,1.90708296919076,1.91017144273707,1.91556223349858,1.92472595937338,1.93032377713089,1.9341808852162,1.94453803337285,1.95017486751975,1.9571856534863,1.96038546501128,1.96717723196231,1.97610761957078,1.98027592217785,1.98878064640338,1.99328195313817,1.99792930973647],"y":[-1885.37848013074,989.193264282936,3804.76197116854,6632.22025209579,9488.29783039233,12310.3250729569,15090.9225208429,17830.4591227176,20533.8546733147,23198.5452647466,25827.7762728486,28455.2065698857,31069.4503499718,33662.7132550713,36220.6403942776,38727.5851370219,41173.7745310957,43544.8147986529,45827.3944526908,48010.2306417685,50252.1919265308,52653.8965164039,55152.902476872,57684.756335685,60186.1947783134,62598.0648906985,64854.3001535164,66894.8278091157,68654.9904306569,70131.6630029397,71547.3620469076,72895.8246347086,74141.5861383822,75246.4164164818,76173.4834018982,76881.4610972863,77337.7427513648,77498.9228509736,77332.9384252998,76722.1261471648,75691.5229773354,74352.6342451484,72825.6219915993,71229.2733411953,69678.8121210231,68019.1989414209,65769.2988167973,63113.2169550993,60261.7921766143,57431.4509360756,54837.17702177,52604.4255205684,50281.3591894601,47800.214192802,45212.0087274567,42569.0391432824,39923.6886049493,37326.5352576792,34835.0343724757,32495.5777506771,30365.7508523291,28356.977629764,26333.9254145558,24311.4498800852,22301.6429172765,20312.7841509565,18353.0473057053,16439.4832165603,14580.3355257932,12788.5434253595,11071.1165477511,9408.89502362047,7794.35774937205,6228.44711981562,4709.75760473893,3235.54552394237,1801.30444977083,408.337979751949,-947.397871233331,-2267.37860676763],"text":["altura_m: 1.497755<br />quanti_pes: -1885.3785","altura_m: 1.504408<br />quanti_pes:   989.1933","altura_m: 1.514819<br />quanti_pes:  3804.7620","altura_m: 1.518970<br />quanti_pes:  6632.2203","altura_m: 1.524906<br />quanti_pes:  9488.2978","altura_m: 1.531520<br />quanti_pes: 12310.3251","altura_m: 1.538879<br />quanti_pes: 15090.9225","altura_m: 1.542491<br />quanti_pes: 17830.4591","altura_m: 1.551438<br />quanti_pes: 20533.8547","altura_m: 1.558532<br />quanti_pes: 23198.5453","altura_m: 1.564875<br />quanti_pes: 25827.7763","altura_m: 1.570026<br />quanti_pes: 28455.2066","altura_m: 1.574103<br />quanti_pes: 31069.4503","altura_m: 1.584125<br />quanti_pes: 33662.7133","altura_m: 1.588829<br />quanti_pes: 36220.6404","altura_m: 1.595382<br />quanti_pes: 38727.5851","altura_m: 1.602832<br />quanti_pes: 41173.7745","altura_m: 1.608422<br />quanti_pes: 43544.8148","altura_m: 1.615222<br />quanti_pes: 45827.3945","altura_m: 1.619487<br />quanti_pes: 48010.2306","altura_m: 1.625225<br />quanti_pes: 50252.1919","altura_m: 1.633029<br />quanti_pes: 52653.8965","altura_m: 1.639989<br />quanti_pes: 55152.9025","altura_m: 1.646463<br />quanti_pes: 57684.7563","altura_m: 1.651855<br />quanti_pes: 60186.1948","altura_m: 1.657855<br />quanti_pes: 62598.0649","altura_m: 1.662037<br />quanti_pes: 64854.3002","altura_m: 1.671069<br />quanti_pes: 66894.8278","altura_m: 1.677940<br />quanti_pes: 68654.9904","altura_m: 1.682610<br />quanti_pes: 70131.6630","altura_m: 1.690959<br />quanti_pes: 71547.3620","altura_m: 1.697563<br />quanti_pes: 72895.8246","altura_m: 1.703853<br />quanti_pes: 74141.5861","altura_m: 1.706898<br />quanti_pes: 75246.4164","altura_m: 1.717396<br />quanti_pes: 76173.4834","altura_m: 1.721845<br />quanti_pes: 76881.4611","altura_m: 1.728770<br />quanti_pes: 77337.7428","altura_m: 1.734613<br />quanti_pes: 77498.9229","altura_m: 1.742580<br />quanti_pes: 77332.9384","altura_m: 1.747996<br />quanti_pes: 76722.1261","altura_m: 1.753875<br />quanti_pes: 75691.5230","altura_m: 1.757077<br />quanti_pes: 74352.6342","altura_m: 1.767284<br />quanti_pes: 72825.6220","altura_m: 1.774642<br />quanti_pes: 71229.2733","altura_m: 1.780091<br />quanti_pes: 69678.8121","altura_m: 1.783122<br />quanti_pes: 68019.1989","altura_m: 1.789555<br />quanti_pes: 65769.2988","altura_m: 1.797330<br />quanti_pes: 63113.2170","altura_m: 1.803498<br />quanti_pes: 60261.7922","altura_m: 1.810148<br />quanti_pes: 57431.4509","altura_m: 1.816287<br />quanti_pes: 54837.1770","altura_m: 1.822727<br />quanti_pes: 52604.4255","altura_m: 1.827544<br />quanti_pes: 50281.3592","altura_m: 1.833129<br />quanti_pes: 47800.2142","altura_m: 1.842524<br />quanti_pes: 45212.0087","altura_m: 1.850367<br />quanti_pes: 42569.0391","altura_m: 1.852400<br />quanti_pes: 39923.6886","altura_m: 1.860125<br />quanti_pes: 37326.5353","altura_m: 1.868131<br />quanti_pes: 34835.0344","altura_m: 1.873936<br />quanti_pes: 32495.5778","altura_m: 1.880845<br />quanti_pes: 30365.7509","altura_m: 1.888441<br />quanti_pes: 28356.9776","altura_m: 1.891827<br />quanti_pes: 26333.9254","altura_m: 1.900096<br />quanti_pes: 24311.4499","altura_m: 1.907083<br />quanti_pes: 22301.6429","altura_m: 1.910171<br />quanti_pes: 20312.7842","altura_m: 1.915562<br />quanti_pes: 18353.0473","altura_m: 1.924726<br />quanti_pes: 16439.4832","altura_m: 1.930324<br />quanti_pes: 14580.3355","altura_m: 1.934181<br />quanti_pes: 12788.5434","altura_m: 1.944538<br />quanti_pes: 11071.1165","altura_m: 1.950175<br />quanti_pes:  9408.8950","altura_m: 1.957186<br />quanti_pes:  7794.3577","altura_m: 1.960385<br />quanti_pes:  6228.4471","altura_m: 1.967177<br />quanti_pes:  4709.7576","altura_m: 1.976108<br />quanti_pes:  3235.5455","altura_m: 1.980276<br />quanti_pes:  1801.3044","altura_m: 1.988781<br />quanti_pes:   408.3380","altura_m: 1.993282<br />quanti_pes:  -947.3979","altura_m: 1.997929<br />quanti_pes: -2267.3786"],"type":"scatter","mode":"lines","name":"fitted values","line":{"width":3.77952755905512,"color":"rgba(70,130,180,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.49775493361315,1.5044075763301,1.51481865117138,1.5189699364885,1.52490609545567,1.53151996491854,1.53887894081447,1.54249124585097,1.55143841799301,1.55853188483021,1.56487476246054,1.57002641072945,1.57410276969423,1.58412501903109,1.58882919457635,1.59538246762432,1.60283200177305,1.60842167296435,1.61522182634195,1.61948672368109,1.62522506716932,1.63302918581787,1.63998901999049,1.64646338398533,1.65185482134877,1.65785482605401,1.662036515579,1.67106916020518,1.67794011920997,1.68260952321506,1.69095925408875,1.69756278628366,1.70385311512347,1.70689843922995,1.71739596185522,1.72184461450228,1.72876973310485,1.73461312022697,1.74258017478322,1.7479964947269,1.75387456621032,1.75707680803688,1.76728380093752,1.77464180961133,1.78009114959454,1.78312248325541,1.78955491913742,1.79732975517576,1.80349781740504,1.81014809871705,1.8162865979538,1.8227273312751,1.82754394031731,1.83312943236714,1.84252448506252,1.850367407911,1.85239970552252,1.86012476616291,1.86813126003983,1.87393635732204,1.88084531249007,1.88844059333795,1.89182655982367,1.90009563427442,1.90708296919076,1.91017144273707,1.91556223349858,1.92472595937338,1.93032377713089,1.9341808852162,1.94453803337285,1.95017486751975,1.9571856534863,1.96038546501128,1.96717723196231,1.97610761957078,1.98027592217785,1.98878064640338,1.99328195313817,1.99792930973647,1.99792930973647,1.99792930973647,1.99328195313817,1.98878064640338,1.98027592217785,1.97610761957078,1.96717723196231,1.96038546501128,1.9571856534863,1.95017486751975,1.94453803337285,1.9341808852162,1.93032377713089,1.92472595937338,1.91556223349858,1.91017144273707,1.90708296919076,1.90009563427442,1.89182655982367,1.88844059333795,1.88084531249007,1.87393635732204,1.86813126003983,1.86012476616291,1.85239970552252,1.850367407911,1.84252448506252,1.83312943236714,1.82754394031731,1.8227273312751,1.8162865979538,1.81014809871705,1.80349781740504,1.79732975517576,1.78955491913742,1.78312248325541,1.78009114959454,1.77464180961133,1.76728380093752,1.75707680803688,1.75387456621032,1.7479964947269,1.74258017478322,1.73461312022697,1.72876973310485,1.72184461450228,1.71739596185522,1.70689843922995,1.70385311512347,1.69756278628366,1.69095925408875,1.68260952321506,1.67794011920997,1.67106916020518,1.662036515579,1.65785482605401,1.65185482134877,1.64646338398533,1.63998901999049,1.63302918581787,1.62522506716932,1.61948672368109,1.61522182634195,1.60842167296435,1.60283200177305,1.59538246762432,1.58882919457635,1.58412501903109,1.57410276969423,1.57002641072945,1.56487476246054,1.55853188483021,1.55143841799301,1.54249124585097,1.53887894081447,1.53151996491854,1.52490609545567,1.5189699364885,1.51481865117138,1.5044075763301,1.49775493361315,1.49775493361315],"y":[-7727.98120868505,-4364.73666424484,-1100.90960059895,2128.89711626602,5340.51077728804,8472.45199580548,11515.8263052491,14470.2354923611,17341.0843749571,20127.9077643698,22838.1122842742,25512.6999450942,28146.8666488554,30738.7273151532,33279.2069163203,35757.2389090025,38166.9490489748,40497.2281715015,42737.5157966822,44878.8291900591,47090.3794048978,49474.7786518684,51959.4700418594,54470.6812750859,56939.5609427585,59306.85016858,61512.1989301766,63506.0816740207,65237.3125644526,66718.4840188006,68178.4324099368,69587.8033110848,70886.1044431288,72015.6830222887,72930.8428163394,73594.5079970357,73990.1856636482,74098.1114443038,73911.9906220924,73328.4178414736,72341.1431979713,71024.1377748253,69480.9385312663,67842.5370489715,66259.3541978014,64612.9407167607,62405.8736605242,59781.6246473568,56926.2607953323,54059.1559064375,51424.5442916159,49186.7476543641,46892.6130543651,44458.1129694622,41920.7940053381,39322.4053077275,36709.6135443502,34133.1028226667,31655.9165079402,29333.7652290442,27234.3494006198,25267.0989737554,23286.3387874044,21304.6243979644,19331.2966892571,17371.3506729993,15429.0613657871,13516.8995154439,11637.8289010018,9798.87943678509,8000.53514099682,6216.4706453888,4434.59229453018,2653.3236906113,870.50028632491,-915.959316282499,-2708.93660263003,-4504.97663412077,-6305.78150742739,-8110.51354942165,-8110.51354942165,3575.75633588639,4410.98576496073,5321.65259362467,6311.54550217169,7387.05036416724,8549.01492315296,9803.57054901995,11154.1232042139,12601.3194018521,14141.6979545054,15778.2074139339,17522.8421505847,19362.0669176767,21277.0332456234,23254.2176289138,25271.9891452958,27318.2753622061,29381.5120417072,31446.8562857727,33497.1523040385,35657.39027231,38014.1522370112,40519.9676926918,43137.7636655484,45815.6729788373,48503.2234495752,51142.3154161418,53670.1053245551,56022.1033867728,58249.809751924,60803.7459657137,63597.3235578963,66444.8092628419,69132.7239730705,71425.4571660811,73098.2700442447,74616.009633419,76170.3054519322,77681.1307154715,79041.9027566996,80115.834452856,80753.8862285073,80899.7342576433,80685.2998390813,80168.4141975369,79416.123987457,78477.149810675,77397.0678336355,76203.8459583324,74916.2916838784,73544.8419870787,72072.6682968613,70283.5739442107,68196.4013768562,65889.279612817,63432.8286138684,60898.8313962841,58346.3349118845,55833.0143809394,53414.0044481637,51141.6320934778,48917.2731086995,46592.4014258043,44180.6000132166,41697.9313650412,39162.0738722348,36586.6991949895,33992.0340510882,31397.7131946771,28817.440261423,26269.1827651234,23726.6249716723,21190.6827530741,18666.0187364368,16148.1981501084,13636.0848834966,11135.5433879256,8710.43354293603,6343.12319281071,3957.22424842356,-7727.98120868505],"text":["altura_m: 1.497755<br />quanti_pes: -1885.3785","altura_m: 1.504408<br />quanti_pes:   989.1933","altura_m: 1.514819<br />quanti_pes:  3804.7620","altura_m: 1.518970<br />quanti_pes:  6632.2203","altura_m: 1.524906<br />quanti_pes:  9488.2978","altura_m: 1.531520<br />quanti_pes: 12310.3251","altura_m: 1.538879<br />quanti_pes: 15090.9225","altura_m: 1.542491<br />quanti_pes: 17830.4591","altura_m: 1.551438<br />quanti_pes: 20533.8547","altura_m: 1.558532<br />quanti_pes: 23198.5453","altura_m: 1.564875<br />quanti_pes: 25827.7763","altura_m: 1.570026<br />quanti_pes: 28455.2066","altura_m: 1.574103<br />quanti_pes: 31069.4503","altura_m: 1.584125<br />quanti_pes: 33662.7133","altura_m: 1.588829<br />quanti_pes: 36220.6404","altura_m: 1.595382<br />quanti_pes: 38727.5851","altura_m: 1.602832<br />quanti_pes: 41173.7745","altura_m: 1.608422<br />quanti_pes: 43544.8148","altura_m: 1.615222<br />quanti_pes: 45827.3945","altura_m: 1.619487<br />quanti_pes: 48010.2306","altura_m: 1.625225<br />quanti_pes: 50252.1919","altura_m: 1.633029<br />quanti_pes: 52653.8965","altura_m: 1.639989<br />quanti_pes: 55152.9025","altura_m: 1.646463<br />quanti_pes: 57684.7563","altura_m: 1.651855<br />quanti_pes: 60186.1948","altura_m: 1.657855<br />quanti_pes: 62598.0649","altura_m: 1.662037<br />quanti_pes: 64854.3002","altura_m: 1.671069<br />quanti_pes: 66894.8278","altura_m: 1.677940<br />quanti_pes: 68654.9904","altura_m: 1.682610<br />quanti_pes: 70131.6630","altura_m: 1.690959<br />quanti_pes: 71547.3620","altura_m: 1.697563<br />quanti_pes: 72895.8246","altura_m: 1.703853<br />quanti_pes: 74141.5861","altura_m: 1.706898<br />quanti_pes: 75246.4164","altura_m: 1.717396<br />quanti_pes: 76173.4834","altura_m: 1.721845<br />quanti_pes: 76881.4611","altura_m: 1.728770<br />quanti_pes: 77337.7428","altura_m: 1.734613<br />quanti_pes: 77498.9229","altura_m: 1.742580<br />quanti_pes: 77332.9384","altura_m: 1.747996<br />quanti_pes: 76722.1261","altura_m: 1.753875<br />quanti_pes: 75691.5230","altura_m: 1.757077<br />quanti_pes: 74352.6342","altura_m: 1.767284<br />quanti_pes: 72825.6220","altura_m: 1.774642<br />quanti_pes: 71229.2733","altura_m: 1.780091<br />quanti_pes: 69678.8121","altura_m: 1.783122<br />quanti_pes: 68019.1989","altura_m: 1.789555<br />quanti_pes: 65769.2988","altura_m: 1.797330<br />quanti_pes: 63113.2170","altura_m: 1.803498<br />quanti_pes: 60261.7922","altura_m: 1.810148<br />quanti_pes: 57431.4509","altura_m: 1.816287<br />quanti_pes: 54837.1770","altura_m: 1.822727<br />quanti_pes: 52604.4255","altura_m: 1.827544<br />quanti_pes: 50281.3592","altura_m: 1.833129<br />quanti_pes: 47800.2142","altura_m: 1.842524<br />quanti_pes: 45212.0087","altura_m: 1.850367<br />quanti_pes: 42569.0391","altura_m: 1.852400<br />quanti_pes: 39923.6886","altura_m: 1.860125<br />quanti_pes: 37326.5353","altura_m: 1.868131<br />quanti_pes: 34835.0344","altura_m: 1.873936<br />quanti_pes: 32495.5778","altura_m: 1.880845<br />quanti_pes: 30365.7509","altura_m: 1.888441<br />quanti_pes: 28356.9776","altura_m: 1.891827<br />quanti_pes: 26333.9254","altura_m: 1.900096<br />quanti_pes: 24311.4499","altura_m: 1.907083<br />quanti_pes: 22301.6429","altura_m: 1.910171<br />quanti_pes: 20312.7842","altura_m: 1.915562<br />quanti_pes: 18353.0473","altura_m: 1.924726<br />quanti_pes: 16439.4832","altura_m: 1.930324<br />quanti_pes: 14580.3355","altura_m: 1.934181<br />quanti_pes: 12788.5434","altura_m: 1.944538<br />quanti_pes: 11071.1165","altura_m: 1.950175<br />quanti_pes:  9408.8950","altura_m: 1.957186<br />quanti_pes:  7794.3577","altura_m: 1.960385<br />quanti_pes:  6228.4471","altura_m: 1.967177<br />quanti_pes:  4709.7576","altura_m: 1.976108<br />quanti_pes:  3235.5455","altura_m: 1.980276<br />quanti_pes:  1801.3044","altura_m: 1.988781<br />quanti_pes:   408.3380","altura_m: 1.993282<br />quanti_pes:  -947.3979","altura_m: 1.997929<br />quanti_pes: -2267.3786","altura_m: 1.997929<br />quanti_pes: -2267.3786","altura_m: 1.997929<br />quanti_pes: -2267.3786","altura_m: 1.993282<br />quanti_pes:  -947.3979","altura_m: 1.988781<br />quanti_pes:   408.3380","altura_m: 1.980276<br />quanti_pes:  1801.3044","altura_m: 1.976108<br />quanti_pes:  3235.5455","altura_m: 1.967177<br />quanti_pes:  4709.7576","altura_m: 1.960385<br />quanti_pes:  6228.4471","altura_m: 1.957186<br />quanti_pes:  7794.3577","altura_m: 1.950175<br />quanti_pes:  9408.8950","altura_m: 1.944538<br />quanti_pes: 11071.1165","altura_m: 1.934181<br />quanti_pes: 12788.5434","altura_m: 1.930324<br />quanti_pes: 14580.3355","altura_m: 1.924726<br />quanti_pes: 16439.4832","altura_m: 1.915562<br />quanti_pes: 18353.0473","altura_m: 1.910171<br />quanti_pes: 20312.7842","altura_m: 1.907083<br />quanti_pes: 22301.6429","altura_m: 1.900096<br />quanti_pes: 24311.4499","altura_m: 1.891827<br />quanti_pes: 26333.9254","altura_m: 1.888441<br />quanti_pes: 28356.9776","altura_m: 1.880845<br />quanti_pes: 30365.7509","altura_m: 1.873936<br />quanti_pes: 32495.5778","altura_m: 1.868131<br />quanti_pes: 34835.0344","altura_m: 1.860125<br />quanti_pes: 37326.5353","altura_m: 1.852400<br />quanti_pes: 39923.6886","altura_m: 1.850367<br />quanti_pes: 42569.0391","altura_m: 1.842524<br />quanti_pes: 45212.0087","altura_m: 1.833129<br />quanti_pes: 47800.2142","altura_m: 1.827544<br />quanti_pes: 50281.3592","altura_m: 1.822727<br />quanti_pes: 52604.4255","altura_m: 1.816287<br />quanti_pes: 54837.1770","altura_m: 1.810148<br />quanti_pes: 57431.4509","altura_m: 1.803498<br />quanti_pes: 60261.7922","altura_m: 1.797330<br />quanti_pes: 63113.2170","altura_m: 1.789555<br />quanti_pes: 65769.2988","altura_m: 1.783122<br />quanti_pes: 68019.1989","altura_m: 1.780091<br />quanti_pes: 69678.8121","altura_m: 1.774642<br />quanti_pes: 71229.2733","altura_m: 1.767284<br />quanti_pes: 72825.6220","altura_m: 1.757077<br />quanti_pes: 74352.6342","altura_m: 1.753875<br />quanti_pes: 75691.5230","altura_m: 1.747996<br />quanti_pes: 76722.1261","altura_m: 1.742580<br />quanti_pes: 77332.9384","altura_m: 1.734613<br />quanti_pes: 77498.9229","altura_m: 1.728770<br />quanti_pes: 77337.7428","altura_m: 1.721845<br />quanti_pes: 76881.4611","altura_m: 1.717396<br />quanti_pes: 76173.4834","altura_m: 1.706898<br />quanti_pes: 75246.4164","altura_m: 1.703853<br />quanti_pes: 74141.5861","altura_m: 1.697563<br />quanti_pes: 72895.8246","altura_m: 1.690959<br />quanti_pes: 71547.3620","altura_m: 1.682610<br />quanti_pes: 70131.6630","altura_m: 1.677940<br />quanti_pes: 68654.9904","altura_m: 1.671069<br />quanti_pes: 66894.8278","altura_m: 1.662037<br />quanti_pes: 64854.3002","altura_m: 1.657855<br />quanti_pes: 62598.0649","altura_m: 1.651855<br />quanti_pes: 60186.1948","altura_m: 1.646463<br />quanti_pes: 57684.7563","altura_m: 1.639989<br />quanti_pes: 55152.9025","altura_m: 1.633029<br />quanti_pes: 52653.8965","altura_m: 1.625225<br />quanti_pes: 50252.1919","altura_m: 1.619487<br />quanti_pes: 48010.2306","altura_m: 1.615222<br />quanti_pes: 45827.3945","altura_m: 1.608422<br />quanti_pes: 43544.8148","altura_m: 1.602832<br />quanti_pes: 41173.7745","altura_m: 1.595382<br />quanti_pes: 38727.5851","altura_m: 1.588829<br />quanti_pes: 36220.6404","altura_m: 1.584125<br />quanti_pes: 33662.7133","altura_m: 1.574103<br />quanti_pes: 31069.4503","altura_m: 1.570026<br />quanti_pes: 28455.2066","altura_m: 1.564875<br />quanti_pes: 25827.7763","altura_m: 1.558532<br />quanti_pes: 23198.5453","altura_m: 1.551438<br />quanti_pes: 20533.8547","altura_m: 1.542491<br />quanti_pes: 17830.4591","altura_m: 1.538879<br />quanti_pes: 15090.9225","altura_m: 1.531520<br />quanti_pes: 12310.3251","altura_m: 1.524906<br />quanti_pes:  9488.2978","altura_m: 1.518970<br />quanti_pes:  6632.2203","altura_m: 1.514819<br />quanti_pes:  3804.7620","altura_m: 1.504408<br />quanti_pes:   989.1933","altura_m: 1.497755<br />quanti_pes: -1885.3785","altura_m: 1.497755<br />quanti_pes: -1885.3785"],"type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"rgba(70,130,180,0.4)","dash":"solid"},"fill":"toself","fillcolor":"rgba(176,196,222,0.4)","hoveron":"points","hoverinfo":"x+y","showlegend":false,"xaxis":"x","yaxis":"y","frame":null},{"x":[1.5,1.52,1.54,1.56,1.58,1.6,1.62,1.64,1.66,1.68,1.7,1.72,1.74,1.76,1.78,1.8,1.82,1.84,1.86,1.88,1.9,1.92,1.94,1.96,1.98,2],"y":[5665,8797,13123,18810,25904,34274,43570,53217,62451,70413,76278,79391,79391,76278,70413,62451,53217,43570,34274,25904,18810,13123,8797,5665,3506,2084],"text":["altura_m: 1.50<br />quanti_pes:  5665<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes):  5517.478<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes):  5812.522","altura_m: 1.52<br />quanti_pes:  8797<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes):  8613.167<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes):  8980.833","altura_m: 1.54<br />quanti_pes: 13123<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 12898.471<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 13347.529","altura_m: 1.56<br />quanti_pes: 18810<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 18541.187<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 19078.813","altura_m: 1.58<br />quanti_pes: 25904<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 25588.543<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 26219.457","altura_m: 1.60<br />quanti_pes: 34274<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 33911.141<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 34636.859","altura_m: 1.62<br />quanti_pes: 43570<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 43160.881<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 43979.119","altura_m: 1.64<br />quanti_pes: 53217<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 52764.851<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 53669.149","altura_m: 1.66<br />quanti_pes: 62451<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 61961.192<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 62940.808","altura_m: 1.68<br />quanti_pes: 70413<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 69892.905<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 70933.095","altura_m: 1.70<br />quanti_pes: 76278<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 75736.678<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 76819.322","altura_m: 1.72<br />quanti_pes: 79391<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 78838.742<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 79943.258","altura_m: 1.74<br />quanti_pes: 79391<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 78838.742<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 79943.258","altura_m: 1.76<br />quanti_pes: 76278<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 75736.678<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 76819.322","altura_m: 1.78<br />quanti_pes: 70413<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 69892.905<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 70933.095","altura_m: 1.80<br />quanti_pes: 62451<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 61961.192<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 62940.808","altura_m: 1.82<br />quanti_pes: 53217<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 52764.851<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 53669.149","altura_m: 1.84<br />quanti_pes: 43570<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 43160.881<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 43979.119","altura_m: 1.86<br />quanti_pes: 34274<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 33911.141<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 34636.859","altura_m: 1.88<br />quanti_pes: 25904<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 25588.543<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 26219.457","altura_m: 1.90<br />quanti_pes: 18810<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 18541.187<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 19078.813","altura_m: 1.92<br />quanti_pes: 13123<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes): 12898.471<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes): 13347.529","altura_m: 1.94<br />quanti_pes:  8797<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes):  8613.167<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes):  8980.833","altura_m: 1.96<br />quanti_pes:  5665<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes):  5517.478<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes):  5812.522","altura_m: 1.98<br />quanti_pes:  3506<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes):  3389.945<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes):  3622.055","altura_m: 2.00<br />quanti_pes:  2084<br />tabela$quanti_pes - 1.96 * sqrt(tabela$quanti_pes):  1994.524<br />tabela$quanti_pes + 1.96 * sqrt(tabela$quanti_pes):  2173.476"],"type":"scatter","mode":"lines","opacity":1,"line":{"color":"transparent"},"error_y":{"array":[147.52174077064,183.832954608253,224.529100118449,268.813124679582,315.456504767299,362.859474728168,409.119190456768,452.148678202204,489.807882337554,520.094780592917,541.322052756033,552.257608005544,552.257608005544,541.322052756033,520.094780592917,489.807882337554,452.148678202204,409.119190456768,362.859474728168,315.456504767299,268.813124679582,224.529100118449,183.832954608253,147.52174077064,116.054511329806,89.4756637304245],"arrayminus":[147.52174077064,183.832954608253,224.529100118449,268.813124679582,315.456504767299,362.859474728168,409.119190456768,452.148678202204,489.807882337554,520.094780592917,541.322052756033,552.257608005544,552.257608005544,541.322052756033,520.094780592917,489.807882337554,452.148678202204,409.119190456768,362.859474728168,315.456504767299,268.813124679582,224.529100118449,183.832954608253,147.52174077064,116.054511329806,89.4756637304245],"type":"data","width":2.99465240641705,"symmetric":false,"color":"rgba(160,32,240,1)"},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":44.8252386882524,"r":7.30593607305936,"b":43.1050228310502,"l":60.1079286010793},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"<b> Quantidade de pessoas por altura <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1.4695,2.0305],"tickmode":"array","ticktext":["1.5","1.6","1.7","1.8","1.9","2.0"],"tickvals":[1.5,1.6,1.7,1.8,1.9,2],"categoryorder":"array","categoryarray":["1.5","1.6","1.7","1.8","1.9","2.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.2835201328352},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Altura (m)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-12561.0259397749,85350.2466479966],"tickmode":"array","ticktext":["0","20000","40000","60000","80000"],"tickvals":[0,20000,40000,60000,80000],"categoryorder":"array","categoryarray":["0","20000","40000","60000","80000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":13.2835201328352},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Quantidade de pessoas","font":{"color":"rgba(0,0,0,1)","family":"","size":15.9402241594022}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":13.2835201328352}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"efb73f73a5b1":{"x":{},"y":{},"type":"scatter"},"efb741832802":{"x":{},"y":{}},"efb79b7bce8":{"x":{},"y":{},"ymin":{},"ymax":{}}},"cur_data":"efb73f73a5b1","visdat":{"efb73f73a5b1":["function (y) ","x"],"efb741832802":["function (y) ","x"],"efb79b7bce8":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="referência" class="level2">
+<h2 class="anchored" data-anchor-id="referência">Referência</h2>
+<p>Material adicional para leitura:</p>
+<p>Exemplo real de <code>como calcular a eficácia da vacina do Butantan</code>, com os primeiros dados disponibilizados em janeiro de 2021, com risco relativo:</p>
+<ul>
+<li><a href="https://twitter.com/MarceloBragatte/status/1348001039954436099">fio original do twitter</a> ou <a href="https://threadreaderapp.com/thread/1348001039954436099.html">link alternativo para leitura</a></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

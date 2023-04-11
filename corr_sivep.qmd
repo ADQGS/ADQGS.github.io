@@ -1,0 +1,40 @@
+---
+title: "Corr_SIVEP"
+author: "@BragatteMAS"
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, error = FALSE, warning = FALSE, message = FALSE, results = 'asis')
+```
+
+```{r}
+## remove da memória dados anteriores
+rm(list = ls())
+```
+
+## Bibliotecas
+
+```{r}
+#install.packages("microdatasus")
+library(microdatasus)
+```
+
+```{r}
+## adiciona as bibliotecas de interesse
+pacotes <-
+    c(
+        "microdatasus", ##dados do SUS
+        "janitor", ## manipulação para limpeza dos dados 
+        "tidytable", ## manipular dados
+        "tidyverse", ##ferramentas
+        "rcompanion", ## plotNormalidade
+        "skimr", #analise exploratorio
+        "ggpubr" #checar distribuição
+    )
+## regra para se não instalado, instalar
+if(!require(pacotes))lapply(pacotes, install.packages, character.only = FALSE)
+lapply(pacotes, require, character.only = TRUE)
+```
+
+
+

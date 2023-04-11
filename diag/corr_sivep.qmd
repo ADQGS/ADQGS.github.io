@@ -1,0 +1,89 @@
+---
+title: "Corr_SIVEP"
+author: "@BragatteMAS"
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, error = FALSE, warning = FALSE, message = FALSE, results = 'asis')
+```
+
+```{r}
+## remove da memória dados anteriores
+rm(list = ls())
+```
+
+## Libs
+
+```{r}
+#install.packages("microdatasus")
+#library(microdatasus)
+```
+
+```{r}
+## adiciona as bibliotecas de interesse
+pacotes <-
+    c(
+        "microdatasus", ##dados do SUS
+        "janitor", ## manipulação para limpeza dos dados 
+        "tidytable", ## manipular dados
+        "tidyverse", ##ferramentas
+        "rcompanion", ## plotNormalidade
+        "skimr", #analise exploratorio
+        "ggpubr", #checar distribuição
+        "urltools",
+        "vroom"
+    )
+## regra para se não instalado, instalar
+#if(!require(pacotes))lapply(pacotes, install.packages, character.only = FALSE)
+lapply(pacotes, require, character.only = TRUE)
+```
+
+### Datasets
+
+##### SIVEP
+
+```{r}
+## Set the path to the file
+sivep <- "C:/Users/033270622.ITAUCULTURAL/Documents/GitHub/ADQGS.github.io/diag/INFLUD23-03-04-2023.csv"
+```
+
+```{r}
+library(readr)
+INFLUD23_03_04_2023 <- read_delim("diag/INFLUD23-03-04-2023.csv", 
+    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+View(INFLUD23_03_04_2023)
+```
+
+```{r}
+df_sivep <- vroom(sivep)
+```
+
+```{r}
+df_sivep <-
+    ## limpar os nomes das colunas dos dados "covid_br"
+    clean_names(df_sivep)
+```
+
+##### MicrodadosSUS
+
+```{r}
+## qual novo nome 
+mortes <- 
+    #selecionando dados do SUS
+    fetch_datasus(
+    year_start = 2021,
+    month_start = 1,
+    year_end = 2021,
+    month_end = 12,
+    uf="SP",
+    information_system = "SIM-DO"
+)
+## ATENÇÃO
+mortES <- process_sim(mortes, municipality_data = TRUE)
+```
+
+```{r}
+library(microdatasus)
+dados <- fetch_datasus(year_start = 2013, year_end = 2014, uf = "RJ", information_system = "SIM-DO")
+dados <- process_sim(dados)
+```

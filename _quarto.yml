@@ -14,8 +14,8 @@ book:
     - index.qmd
     - intro.qmd
     - summary.qmd
+    - mod1.qmd
     - mod2.qmd
-    - sem1.qmd
     - references.qmd
 
 reader-mode: true
@@ -26,7 +26,7 @@ page-footer:
   right: |
       Este livro foi construído com <a href="https://quarto.org/">Quarto</a>.
 
-cover-image: cover.png
+cover-image: imgs/cover.png
 
 
 bibliography: references.bib
@@ -42,13 +42,13 @@ format:
       dark: darkly
 
   #define pdf
-  pdf: default
+  # pdf: default
 
 
   # Define the name of the latex output file for PDF builds
-  latex:
-    latex_documents:
-      targetname: book.tex
+  # latex:
+  #   latex_documents:
+  #     targetname: book.tex
 
 
 editor: visual

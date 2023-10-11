@@ -5,11 +5,11 @@ project:
 book:
   title: "ADQGS_ICEPi_book"
   author: "Bragatte"
-  date: "2/16/2023"
+  date: "10/06/2023"
   site-url: https://adqgs.github.io/
   repo-url: https://github.com/ADQGS/ADQGS.github.io
   repo-actions: [edit]
-  downloads: [pdf,docx]
+  # downloads: [pdf,docx]
   chapters:
     - index.qmd
     - intro.qmd

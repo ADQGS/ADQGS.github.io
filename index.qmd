@@ -3,13 +3,3 @@
 Este é um livro on-line feito com Quarto para alunos do ICEPi.
 
 Para aprender mais sobre livros com Quarto visite <https://quarto.org/docs/books> (site em inglês).
-
-```{r}
-#| label: load-packages
-#| echo: true
-#| warning: false
-
-
-# nestes espaços teremos códigos de exemplos
-1 + 1
-```

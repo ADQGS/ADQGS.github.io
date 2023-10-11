@@ -5,4 +5,20 @@ Este livro esta sendo criado ao longo do curso:\
 
 Acesse o [portal do aluno](https://ead.icepi.es.gov.br/icepi/) através do link disponibilizado pela plataforma moodle do ICEPi para maiores informações.
 
+![](https://i.imgur.com/g0CXXGX.png){fig-align="center"}
+
+Este livro irá conter os scripts e aulas disponibilizadas pelos instrutores do curso ADQGS do ICEPi.
+
+## Autores
+
+-   Marcelo A. S. **Bragatte**
+
+-   **Isaac** N. Schrarstzhaupt
+
+-   Adelmo I. **Bertolde**
+
+-   Marcos V. C. **Vital**
+
+-   **Mikael** A. G. Lemos
+
 Curadoria deste livro on-line por Bragatte MAS.

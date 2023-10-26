@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://adqgs.github.io/index.html</loc>
-    <lastmod>2023-03-23T20:10:59.632Z</lastmod>
+    <lastmod>2023-10-26T19:13:58.425Z</lastmod>
   </url>
   <url>
     <loc>https://adqgs.github.io/sem1.html</loc>
@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://adqgs.github.io/references.html</loc>
-    <lastmod>2023-03-23T20:11:09.065Z</lastmod>
+    <lastmod>2023-10-26T19:13:58.734Z</lastmod>
   </url>
   <url>
     <loc>https://adqgs.github.io/summary.html</loc>
-    <lastmod>2023-03-02T01:25:43.889Z</lastmod>
+    <lastmod>2023-10-26T19:13:58.584Z</lastmod>
   </url>
   <url>
     <loc>https://adqgs.github.io/mod2.html</loc>
@@ -22,6 +22,18 @@
   </url>
   <url>
     <loc>https://adqgs.github.io/intro.html</loc>
-    <lastmod>2023-03-03T07:56:30.893Z</lastmod>
+    <lastmod>2023-10-26T19:13:58.478Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adqgs.github.io/ementa.html</loc>
+    <lastmod>2023-10-26T19:14:04.092Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adqgs.github.io/aulas_modulo1.html</loc>
+    <lastmod>2023-10-26T19:13:58.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adqgs.github.io/aulas_modulo2.html</loc>
+    <lastmod>2023-10-26T19:13:58.670Z</lastmod>
   </url>
 </urlset>

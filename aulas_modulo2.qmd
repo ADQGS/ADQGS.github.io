@@ -1,0 +1,613 @@
+# CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 2
+
+# Semana 1
+
+1.  
+
+    ## Aula 01-1
+
+    [Convocação aos alunos](https://www.youtube.com/watch?v=el9Jd8vErcI "começando")
+
+2.  
+
+    ## Aula 01-2
+
+    [Revisão de estatística](https://www.youtube.com/watch?v=m3Cf4IqNovc "revisando")
+
+3.  
+
+    ## Aula 02
+
+    [De volta ao R com tranquilidade](https://www.youtube.com/watch?v=n7ooofzPDL8 "voltando")
+
+4.  
+
+    ## Aula 03
+
+    [Revisão de Ciência de Dados](https://www.youtube.com/watch?v=emjVIu_ZITc "revisão")
+
+5.  
+
+    ## Aula 04
+
+    [Pensando no nosso projeto](https://www.youtube.com/watch?v=k997WIbwo4o "projeto")
+
+6.  
+
+    ## Aula 05
+
+    [Livro online ICEPi](https://www.youtube.com/watch?v=d94t9zInwuI&feature=youtu.be&themeRefresh=1 "livro online")
+
+# Semana 2
+
+7.  
+
+    ## Aula 06
+
+    [Conceitos iniciais de inferência](https://www.youtube.com/watch?v=C1AcDzTvItY "inferência")
+
+8.  
+
+    ## Aula 07-1
+
+    [Amostragem no R](https://www.youtube.com/watch?v=ET9MdrphaZw "amostragem")
+
+9.  
+
+    ## Aula 07-2
+
+    [Amostragem no R](https://www.youtube.com/watch?v=qjGSBUcLF_8 "amostragem-2")
+
+10. 
+
+    ## Aula 08
+
+    [Inferência estatística: um exemplo na saúde](https://www.youtube.com/watch?v=WDwHXyJKdfQ&t=7s "inferência-saúde")
+
+11. 
+
+    ## Aula 09
+
+    [População de dados](https://www.youtube.com/watch?v=o1dk6YdVxYM "população-dados")
+
+12. 
+
+    ## Aula 10
+
+    [População de dados e data](https://www.youtube.com/watch?v=o1dk6YdVxYM&t=1s "população-dados-data")
+
+# Semana 3
+
+13. 
+
+    ## Aula 11
+
+    [Conceitos de probabilidade para dados contínuos](https://www.youtube.com/watch?v=k3wyPNskVtc "probabilidade")
+
+14. 
+
+    ## Aula 12-1
+
+    [Lidando com a distribuição normal](https://www.youtube.com/watch?v=nn6CMkvOyLE "normal")
+
+15. 
+
+    ## Aula 12-2
+
+    [Lidando com a distribuição normal](https://www.youtube.com/watch?v=eEbnvGMnass "normal-2")
+
+16. 
+
+    ## Aula 13
+
+    [Variáveis de confusão e DAGs](https://www.youtube.com/watch?v=MsPlOuq7nWM "confusão-DAGs")
+
+17. 
+
+    ## Aula 14
+
+    [Exemplo de interação entre variáveis no R](https://www.youtube.com/watch?v=GvQSJdltqLc "variáveis-R")
+
+18. 
+
+    ## Aula 15
+
+    [Analisando distribuição](https://www.youtube.com/watch?v=HNnwOu7xvFY "distribuição")
+
+# Semana 4
+
+19. 
+
+    ## Aula 16
+
+    [Distribuições amostrais](https://www.youtube.com/watch?v=osjfCxTAZDc "distribuições-amostrais")
+
+20. 
+
+    ## Aula 17
+
+    [Conceitos de estimação para média](https://www.youtube.com/watch?v=pP6chFcq2EQ "estimação-média")
+
+21. 
+
+    ## Aula 18
+
+    [Amostrando médias no R](https://www.youtube.com/watch?v=8NT3yow4_fE "médias-R")
+
+22. 
+
+    ## Aula 19-1
+
+    [Calculando intervalos de confiança](https://www.youtube.com/watch?v=4cZ53TVAUg0 "intervalos-confiança")
+
+23. 
+
+    ## Aula 19-2
+
+    [Calculando intervalos de confiança](https://www.youtube.com/watch?v=UYkH2c17D8M "intervalos-confiança2")
+
+24. 
+
+    ## Aula 20
+
+    [Exemplo de cascata de cuidado no R (HIV)](https://www.youtube.com/watch?v=yA8MbACOzL0 "cascata-HIV")
+
+# Semana 5
+
+25. 
+
+    ## Encontro Síncrono 01 - 20/03/2023 - 16h
+
+    [Encontro Síncrono 01 - 20/03/2023 - 16h](https://www.youtube.com/watch?v=eyZPRXhcp4A "encontro-1")
+
+26. 
+
+    ## Aula 21
+
+    [Modelos de probabilidade para dados discretos](https://www.youtube.com/watch?v=rwiHXE-PKtM "modelos")
+
+27. 
+
+    ## Aula 22
+
+    [QQ Plot e distribuições](https://www.youtube.com/watch?v=Ua2HJvjKEak "QQ-plot")
+
+28. 
+
+    ## Aula 23
+
+    [Distribuicoes_e_pacotes](https://www.youtube.com/watch?v=l1aZk1kDtSQ "distros-pacotes")
+
+29. 
+
+    ## Aula 24
+
+    [ChatGPT + R](https://www.youtube.com/watch?v=mfWOgphIyXU "ChatGPT-R")
+
+# Semana 6
+
+30. 
+
+    ## Aula 25
+
+    [RR e OR](https://www.youtube.com/watch?v=bkqn2mraCes "RR_OR")
+
+31. 
+
+    ## Aula 26-1
+
+    [Risco relativo no R](https://www.youtube.com/watch?v=tS853rHo7OQ "risco_relativo")
+
+32. 
+
+    ## Aula 26-2
+
+    [Risco relativo no R](https://www.youtube.com/watch?v=2eIkqcPXulY "risco_relativo2")
+
+33. 
+
+    ## Aula 27-1
+
+    [Criando função para RR e OR](https://www.youtube.com/watch?v=fjTpjszmdkc "função_RR_OR")
+
+34. 
+
+    ## Aula 27-2
+
+    [Criando função para RR e OR](https://www.youtube.com/watch?v=os2AMzcHZtk "função_RR_OR2")
+
+35. 
+
+    ## Aula 28
+
+    [Risco relativo em artigos](https://www.youtube.com/watch?v=ReWZt2PDbKk "rr_artigos")
+
+36. 
+
+    ## Aula 29
+
+    [Razão de chances em artigos publicados](https://www.youtube.com/watch?v=XNR2WUFaWyo "rc_artigos")
+
+# Semana 7
+
+37. 
+
+    ## Aula 30
+
+    [Teste de hipóteses I](https://www.youtube.com/watch?v=zx5e475FdPY "teste_hipótese")
+
+38. 
+
+    ## Aula 31
+
+    [Teste de hipóteses no R](https://www.youtube.com/watch?v=62mat00TMxk "teste_hipótese_R")
+
+39. 
+
+    ## Aula 32
+
+    [Método Hipotético Dedutivo](https://www.youtube.com/watch?v=30fvCPpHTkU "hipotético")
+
+40. 
+
+    ## Aula 33
+
+    [Intervalo de confiança exemplos teóricos](https://www.youtube.com/watch?v=J6ls5EF8g_o "intervalo_confiança")
+
+41. 
+
+    ## Aula 34
+
+    [Intervalo de confiança exemplos práticos](https://www.youtube.com/watch?v=IN-9wHXwcbM "intervalo_confiança_praticos")
+
+# Semana 8
+
+42. 
+
+    ## Encontro Síncrono 02 - módulo 02 - 10/04/2023
+
+    [Encontro Síncrono 02 - módulo 02 - 10/04/2023](https://www.youtube.com/watch?v=hOk-d0XyeyI "encontro-2")
+
+43. 
+
+    ## Aula 35
+
+    [Teste de hipóteses II](https://www.youtube.com/watch?v=g78hwpLQc18 "teste_hipoteses2")
+
+44. 
+
+    ## Aula 36
+
+    [Teste T de Student](https://www.youtube.com/watch?v=ZlyxrNU-XHw "teste_t_student")
+
+45. 
+
+    ## Aula 37
+
+    [Relatório de teste T](https://www.youtube.com/watch?v=OnFhgPyLmIY "relatório_teste_t")
+
+46. 
+
+    ## Aula 38
+
+    [Teste de hipóteses na saúde pública](https://www.youtube.com/watch?v=Y2PCG8m_r2E "teste_hipótese_saúde")
+
+# Semana 9
+
+47. 
+
+    ## Aula 39
+
+    [Produto Monitoramentos Hospitalares com quarto](https://www.youtube.com/watch?v=X5khu6k_65E "monitoramento_quarto")
+
+48. 
+
+    ## Aula 40
+
+    [Regressão Linear Simples I](https://www.youtube.com/watch?v=NqCNerGu92A "regressão_linear")
+
+49. 
+
+    ## Aula 41
+
+    [Regressão Linear Simples II](https://www.youtube.com/watch?v=WWxfVDUpfkk "regressão_linear_2")
+
+50. 
+
+    ## Aula 42
+
+    [anova simples no R](https://www.youtube.com/watch?v=NM6pVrF3m94 "anova")
+
+# Semana 10
+
+51. 
+
+    ## Aula 43
+
+    [colisor](https://www.youtube.com/watch?v=xaJ6YNEboHc "colisor")
+
+52. 
+
+    ## Aula 44-1
+
+    [Regressão simples no R](https://www.youtube.com/watch?v=mMX2EYjnTm4 "regressão")
+
+53. 
+
+    ## Aula 44-2
+
+    [Regressão simples no R](https://www.youtube.com/watch?v=t9kDWd1U91Q "regressão2")
+
+54. 
+
+    ## Aula 44-3
+
+    [Regressão simples no R](https://www.youtube.com/watch?v=HTWujVTAF8I "regressão3")
+
+55. 
+
+    ## Aula 45
+
+    [Regressão linear múltipla](https://www.youtube.com/watch?v=FAKDEJM-c84 "regressão_múltipla")
+
+56. 
+
+    ## Aula 46
+
+    [Seleção de variáveis](https://www.youtube.com/watch?v=5_gKinsWH9o "seleção_var")
+
+57. 
+
+    ## Encontro Síncrono 03 - 28/04/23 - 16h
+
+    [Encontro Síncrono 03 - 28/04/23 - 16h](https://www.youtube.com/watch?v=_lNMvN9CsmY "encontro-3")
+
+# Semana 11
+
+58. 
+
+    ## Aula 47
+
+    [Introdução aos modelos de regressão logística](https://www.youtube.com/watch?v=HrfaEXNM4ck "regressão_log")
+
+59. 
+
+    ## Aula 48
+
+    [Exemplo de regressão logística](https://www.youtube.com/watch?v=Kx7YxQty6dE&t=1s "ex_regressão_log")
+
+60. 
+
+    ## Aula 49
+
+    [Exemplo do cuidado com vieses](https://www.youtube.com/watch?v=_jZiXFjdgxw "vieses")
+
+61. 
+
+    ## Aula 50
+
+    [Regressão múltipla no R](https://www.youtube.com/watch?v=TOreEZrR4M8 "regressão_mult_R")
+
+# Semanas 12 e 13
+
+62. 
+
+    ## Instrução em vídeo para avaliação
+
+    [Instrução em vídeo para avaliação](https://www.youtube.com/watch?v=XKWwjLxzrQ0 "instruções")
+
+# Semana 14
+
+63. 
+
+    ## Aula 51
+
+    [Introdução a machine learning](https://www.youtube.com/watch?v=4AVhDZF-1rs "ML")
+
+64. 
+
+    ## Aula 52
+
+    [KNN](https://www.youtube.com/watch?v=kFA1rZ-61Y0 "KNN")
+
+65. 
+
+    ## Aula 53
+
+    [Regressão Logística no R](https://www.youtube.com/watch?v=SrHykwjXb48 "regressão_log_R")
+
+66. 
+
+    ## Aula 54
+
+    [Algoritmo KNN (Parte 1)](https://www.youtube.com/watch?v=kbyFp6gCgHo "KNN-1")
+
+67. 
+
+    ## Aula 55
+
+    [KNN na prática (parte 1)](https://www.youtube.com/watch?v=TkVNpprNY5E "KNN_prática-1")
+
+# Semana 15
+
+68. 
+
+    ## Aula 56
+
+    [KNN na prática (parte 2)](https://www.youtube.com/watch?v=Se6ezvUzDpE "KNN_prática-2")
+
+69. 
+
+    ## Aula 57
+
+    [KNN na prática (parte 3)](https://www.youtube.com/watch?v=bAyVD90Dgks "KNN_prática-3")
+
+70. 
+
+    ## Aula 58
+
+    [Árvores](https://www.youtube.com/watch?v=iFoiaV8R95c "árvore")
+
+71. 
+
+    ## Aula 59
+
+    [Árvores de decisão em machine learning](https://www.youtube.com/watch?v=iFoiaV8R95c "árvore_ml")
+
+72. 
+
+    ## Aula 60
+
+    [Árvores na tomada de decisão em saúde](https://www.youtube.com/watch?v=2vJje0Ow4ks%22)
+
+# Semana 16
+
+73. 
+
+    ## Aula 61
+
+    [Florestas](https://www.youtube.com/watch?v=Pkgldo9tzZQ "florestas")
+
+74. 
+
+    ## Aula 62
+
+    [Métricas de ajuste](https://www.youtube.com/watch?v=xQQjpHc_tnk)
+
+75. 
+
+    ## Aula 63
+
+    [Teoria sobre árvores](https://www.youtube.com/watch?v=xQQjpHc_tnk)
+
+76. 
+
+    ## Aula 64
+
+    [Prática sobre árvores de decisão](https://www.youtube.com/watch?v=3R6r0pb5pt4 "árvores")
+
+77. 
+
+    ## Aula 65
+
+    [Prática sobre florestas aleatórias](https://www.youtube.com/watch?v=thLPKKK2eqY "árvores_al")
+
+# Semana 17
+
+78. 
+
+    ## Aula 66
+
+    [XGBoost](https://www.youtube.com/watch?v=EemkT4mB_-I "XGBoost")
+
+79. 
+
+    ## Aula 67
+
+    [Prática de XGBoost](https://www.youtube.com/watch?v=hAt-ifvnWUI "XGBoost_pratica")
+
+80. 
+
+    ## Aula 68
+
+    [XGBoost detalhado](https://www.youtube.com/watch?v=ezk6_AU5FOc "XGBoost_detalhado")
+
+81. 
+
+    ## Encontro Síncrono 06 - 14/06/23 - 16h
+
+    [Encontro Síncrono 06 - 14/06/23 - 16h](https://www.youtube.com/watch?v=aVsJHLDDG_Q "encontro-6")
+
+82. 
+
+    ## Aula 69
+
+    [Métricas de avaliação de modelos de machine learningo](https://www.youtube.com/watch?v=ugkOxweZkbs "metricas")
+
+83. 
+
+    ## Aula 70
+
+    [Métricas - Machine Learning](https://www.youtube.com/watch?v=rQS11u-POuo "metricas_ml")
+
+# Semana 18
+
+84. 
+
+    ## Aula 71
+
+    [Cluster hierárquico](https://www.youtube.com/watch?v=wzhZ6PYUO34 "cluster")
+
+85. 
+
+    ## Aula 72
+
+    [Análise fatorial](https://www.youtube.com/watch?v=pfWMZ11OMxM "Análise")
+
+86. 
+
+    ## Encontro Síncrono 07 - 20/06/23 - 16h
+
+    [Encontro Síncrono 07 - 20/06/23 - 16h](https://www.youtube.com/watch?v=aVsJHLDDG_Q "encontro-7")
+
+87. 
+
+    ## Aula 73
+
+    [Exemplo de análise fatorial](https://www.youtube.com/watch?v=pfWMZ11OMxM "fatorial")
+
+88. 
+
+    ## Aula 74-1
+
+    [Coeficiente de correlação cofenética](https://www.youtube.com/watch?v=ddBnoP4CfIw "correlação")
+
+89. 
+
+    ## Aula 74-2
+
+    [Coeficiente de correlação cofenética](https://www.youtube.com/watch?v=2o0znNPJopM "correlação")
+
+90. 
+
+    ## Aula 75
+
+    [Mapa de calor de matrizes de distância](https://www.youtube.com/watch?v=BONShIEl1G0 "mapa_calor")
+
+# Semana 18,20,21,22,23
+
+91. 
+
+    ## Encontro Síncrono 08 - 28/06/23 - 16h
+
+    [Encontro Síncrono 08 - 28/06/23 - 16h](https://www.youtube.com/watch?v=0L1fKZ59pBc "encontro-8")
+
+92. 
+
+    ## Encontro Síncrono 09 - Final
+
+    [Encontro Síncrono 09 - Final](https://www.youtube.com/watch?v=U7NR4rmV-yU "encontro-9")
+
+93. 
+
+    ## Vídeo do roteiro (passo a passo) do Prof. Bragatte
+
+    [Vídeo do roteiro (passo a passo) do Prof. Bragatte](https://www.youtube.com/watch?v=BQVyXABna7Y "Bragatte")
+
+94. 
+
+    ## Vídeo do roteiro (passo a passo) do Prof. Bertolde
+
+    [Vídeo do roteiro (passo a passo) do Prof. Bertolde](https://www.youtube.com/watch?v=2pwAxHEjBbM "Bertolde")
+
+95. 
+
+    ## Vídeo do roteiro (passo a passo) do Prof. Vital
+
+    [Vídeo do roteiro (passo a passo) do Prof. Vital](https://www.youtube.com/watch?v=csfCevAm4LY "Vital")
+
+96. 
+
+    ## Encontro Síncrono - Mais roteiros de projeto final!
+
+    [Encontro Síncrono - Mais roteiros de projeto final!](https://www.youtube.com/watch?v=U7NR4rmV-yU "encontro")

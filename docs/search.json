@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ADQGS_ICEPi_book",
     "section": "",
-    "text": "Prefácio\nEste é um livro on-line feito com Quarto para alunos do ICEPi.\nPara aprender mais sobre livros com Quarto visite https://quarto.org/docs/books (site em inglês).\n\nCode# nestes espaços teremos códigos de exemplos\n1 + 1\n\n[1] 2"
+    "text": "Prefácio\nEste é um livro on-line feito com Quarto para alunos do ICEPi.\nPara aprender mais sobre livros com Quarto visite https://quarto.org/docs/books (site em inglês)."
   },
   {
     "objectID": "intro.html",
@@ -53,7 +53,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Uma degustação para inspirar…\n\nCode# install.packages(\"pheatmap\")\nlibrary(pheatmap)\n\n# Data \nset.seed(8)\nm <- matrix(rnorm(200), 10, 10)\ncolnames(m) <- paste(\"Col\", 1:10)\nrownames(m) <- paste(\"Row\", 1:10)\n\n# Heat map\npheatmap(m,\n         display_numbers = TRUE,\n         number_color = \"black\", \n         fontsize_number = 8) \n\n\n\n\nRef"
+    "text": "Uma degustação para inspirar…\n\nCode# install.packages(\"pheatmap\")\nlibrary(pheatmap)\n\n# Data \nset.seed(8)\nm &lt;- matrix(rnorm(200), 10, 10)\ncolnames(m) &lt;- paste(\"Col\", 1:10)\nrownames(m) &lt;- paste(\"Row\", 1:10)\n\n# Heat map\npheatmap(m,\n         display_numbers = TRUE,\n         number_color = \"black\", \n         fontsize_number = 8) \n\n\n\n\nRef"
   },
   {
     "objectID": "summary.html#autores",
@@ -61,5 +61,229 @@
     "title": "Sumário",
     "section": "Autores",
     "text": "Autores\n\nMarcelo A. S. Bragatte\nIsaac N. Schrarstzhaupt\nAdelmo I. Bertolde\nMarcos V. C. Vital\nMikael A. G. Lemos"
+  },
+  {
+    "objectID": "ementa.html#objetivo-do-curso",
+    "href": "ementa.html#objetivo-do-curso",
+    "title": "Módulos",
+    "section": "Objetivo do Curso:",
+    "text": "Objetivo do Curso:\nO curso visa qualificar a tomada de decisão e a avaliação das políticas públicas de saúde, em especial as relacionadas à vigilância em saúde, por meio da formação em serviço de trabalhadores do Sistema Único de Saúde do ES sobre ferramentas de análise de dados e estatística e da realização de estudos e análises de dados epidemiológicos sob demanda relacionadas ao projeto.\n\nPúblico alvo:\nTrabalhadores do Sistema Único de Saúde do Espírito Santo\n\n\nMetodologia\nO curso é oferecido sob a forma de Educação a Distância, de forma assíncrona, com encontros de tutoria, sendo mediado por material didático e por encontros síncronos quinzenais.\n\n\nRecursos\nSerão utilizados vídeos, textos e scripts.\n\n\nAtividades\nAs atividades avaliativas são coerentes com os conteúdos propostos nos vídeos e textos. Para isso, serão utilizadas a avaliação processual realizada por meio de questionários compostos por questões de múltipla escolha."
+  },
+  {
+    "objectID": "ementa.html#ementa",
+    "href": "ementa.html#ementa",
+    "title": "Módulos",
+    "section": "Ementa",
+    "text": "Ementa\nNeste curso você aprenderá:\n\nMódulo Boas-Vindas\nConceitos de inferência estatística; principais modelos de probabilidade; estimação pontual e intervalar.\n\n\nMódulo I\nTestes de hipóteses para parâmetros; modelos de regressão linear simples e múltipla para dados quantitativos e qualitativos; seleção de modelos via métodos stepwise.\n\n\nMódulo II\nCoeficiente R2 e Teste F; dados supervisionados e não supervisionados. Exemplos reais;\n\n\nMódulo III\nexplorando técnicas de Machine Learning; modelos de Machine Learning para dados supervisionados: Regressão Logística, KNN e Florestas Aleatórias;\n\n\nMódulo IV\nmodelos de Machine Learning para dados não supervisionados: técnicas multivariadas de dados (análise de cluster e análise fatorial); métricas de ajustes de modelos: acurácia, sensibilidade, especificidade e índice kappa;\n\n\nMódulo V\nelaboração de projeto de análise exploratória de dados; uso de scripts e pacotes no R; Comunicando com visualização de dados e storytelling.\nCarga Horária Total: 60h\nTodo o processo é guiado com carga teórica e prática por intermédio da linguagem R."
+  },
+  {
+    "objectID": "intro.html#autores",
+    "href": "intro.html#autores",
+    "title": "Introdução",
+    "section": "Autores",
+    "text": "Autores\n\nMarcelo A. S. Bragatte\nIsaac N. Schrarstzhaupt\nAdelmo I. Bertolde\nMarcos V. C. Vital\nMikael A. G. Lemos\n\nCuradoria deste livro on-line por Bragatte MAS."
+  },
+  {
+    "objectID": "aulas_modulo1.html",
+    "href": "aulas_modulo1.html",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "",
+    "text": "2 Semana 1"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-52",
+    "href": "aulas_modulo1.html#aula-52",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.2 Aula 52",
+    "text": "14.2 Aula 52\nMapas com estimador bayesiano empírico"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-53-1",
+    "href": "aulas_modulo1.html#aula-53-1",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.3 Aula 53-1",
+    "text": "14.3 Aula 53-1\nRevendo o que aprendemos no R - Parte 1"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-53-2",
+    "href": "aulas_modulo1.html#aula-53-2",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.4 Aula 53-2",
+    "text": "14.4 Aula 53-2\nRevendo o que aprendemos no R - Parte 2"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-53-3",
+    "href": "aulas_modulo1.html#aula-53-3",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.5 Aula 53-3",
+    "text": "14.5 Aula 53-3\nRevendo o que aprendemos no R - Parte 3"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-54",
+    "href": "aulas_modulo1.html#aula-54",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.6 Aula 54",
+    "text": "14.6 Aula 54\nMeu script em PDF"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-55",
+    "href": "aulas_modulo1.html#aula-55",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.7 Aula 55",
+    "text": "14.7 Aula 55\nMapas no R (Tuberculose)"
+  },
+  {
+    "objectID": "aulas_modulo1.html#encontro-síncrono-07---parte-01---10112022",
+    "href": "aulas_modulo1.html#encontro-síncrono-07---parte-01---10112022",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.8 Encontro síncrono 07 - Parte 01 - 10/11/2022",
+    "text": "14.8 Encontro síncrono 07 - Parte 01 - 10/11/2022\nEncontro síncrono 07 - Parte 01 - 10/11/2022"
+  },
+  {
+    "objectID": "aulas_modulo1.html#encontro-síncrono-07---parte-02---11112022",
+    "href": "aulas_modulo1.html#encontro-síncrono-07---parte-02---11112022",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "14.9 Encontro síncrono 07 - Parte 02 - 11/11/2022",
+    "text": "14.9 Encontro síncrono 07 - Parte 02 - 11/11/2022\nEncontro síncrono 07 - Parte 02 - 11/11/2022"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-56",
+    "href": "aulas_modulo1.html#aula-56",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.1 Aula 56",
+    "text": "15.1 Aula 56\nAjuste de taxas brutas"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-57",
+    "href": "aulas_modulo1.html#aula-57",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.2 Aula 57",
+    "text": "15.2 Aula 57\nComo editar tabelas no R"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-58",
+    "href": "aulas_modulo1.html#aula-58",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.3 Aula 58",
+    "text": "15.3 Aula 58\nComunicação de Análises de Dados"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-59",
+    "href": "aulas_modulo1.html#aula-59",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.4 Aula 59",
+    "text": "15.4 Aula 59\nAnálise Exploratoria R"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-60-1",
+    "href": "aulas_modulo1.html#aula-60-1",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.5 Aula 60-1",
+    "text": "15.5 Aula 60-1\nCriando um painel de gráficos"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-60-2",
+    "href": "aulas_modulo1.html#aula-60-2",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.6 Aula 60-2",
+    "text": "15.6 Aula 60-2\nCriando um painel de gráficos"
+  },
+  {
+    "objectID": "aulas_modulo1.html#aula-60-3",
+    "href": "aulas_modulo1.html#aula-60-3",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "15.7 Aula 60-3",
+    "text": "15.7 Aula 60-3\nCriando um painel de gráficos"
+  },
+  {
+    "objectID": "aulas_modulo1.html#instruções-para-entrega-do-projeto-final-do-módulo-01",
+    "href": "aulas_modulo1.html#instruções-para-entrega-do-projeto-final-do-módulo-01",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.1 Instruções para entrega do projeto final do módulo 01",
+    "text": "16.1 Instruções para entrega do projeto final do módulo 01\nInstruções para entrega do projeto final do módulo 01"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-01-parte-01---dengue-no-es",
+    "href": "aulas_modulo1.html#proposta-01-parte-01---dengue-no-es",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.2 Proposta 01 (Parte 01) - Dengue no ES",
+    "text": "16.2 Proposta 01 (Parte 01) - Dengue no ES\nProposta 01 (Parte 01) - Dengue no ES(https://www.youtube.com/watch?v=1L0ZYmKenc4 ” Proposta 01 (Parte 01) - Dengue no ES”)"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-01-parte-02---dengue-no-es",
+    "href": "aulas_modulo1.html#proposta-01-parte-02---dengue-no-es",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.3 Proposta 01 (Parte 02) - Dengue no ES",
+    "text": "16.3 Proposta 01 (Parte 02) - Dengue no ES\nProposta 01 (Parte 02) - Dengue no ES(https://www.youtube.com/watch?v=nsypU0C06Tw ” Proposta 01 (Parte 02) - Dengue no ES”)"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-02---desigualdade-vacinal",
+    "href": "aulas_modulo1.html#proposta-02---desigualdade-vacinal",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.4 Proposta 02 - Desigualdade Vacinal",
+    "text": "16.4 Proposta 02 - Desigualdade Vacinal\nProposta 02 - Desigualdade Vacinal"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-03---empirical-bayes",
+    "href": "aulas_modulo1.html#proposta-03---empirical-bayes",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.5 Proposta 03 - Empirical Bayes",
+    "text": "16.5 Proposta 03 - Empirical Bayes\nProposta 03 - Empirical Bayes"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-04-parte-01---diabetes-mellitus",
+    "href": "aulas_modulo1.html#proposta-04-parte-01---diabetes-mellitus",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.6 Proposta 04 (Parte 01) - Diabetes Mellitus",
+    "text": "16.6 Proposta 04 (Parte 01) - Diabetes Mellitus\nProposta 04 (Parte 01) - Diabetes Mellitus"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-04-parte-02---diabetes-mellitus",
+    "href": "aulas_modulo1.html#proposta-04-parte-02---diabetes-mellitus",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.7 Proposta 04 (Parte 02) - Diabetes Mellitus",
+    "text": "16.7 Proposta 04 (Parte 02) - Diabetes Mellitus\nProposta 04 (Parte 02) - Diabetes Mellitus"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-05-parte-01--media-móvel-interativa",
+    "href": "aulas_modulo1.html#proposta-05-parte-01--media-móvel-interativa",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.8 Proposta 05 (Parte 01)- Media Móvel Interativa",
+    "text": "16.8 Proposta 05 (Parte 01)- Media Móvel Interativa\nProposta 05 (Parte 01)- Media Móvel Interativa"
+  },
+  {
+    "objectID": "aulas_modulo1.html#proposta-05-parte-02--media-móvel-interativa",
+    "href": "aulas_modulo1.html#proposta-05-parte-02--media-móvel-interativa",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.9 Proposta 05 (Parte 02)- Media Móvel Interativa",
+    "text": "16.9 Proposta 05 (Parte 02)- Media Móvel Interativa\nProposta 05 (Parte 02)- Media Móvel Interativa"
+  },
+  {
+    "objectID": "aulas_modulo1.html#encontro-síncrono-08---25112022",
+    "href": "aulas_modulo1.html#encontro-síncrono-08---25112022",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.10 Encontro síncrono 08 - 25/11/2022",
+    "text": "16.10 Encontro síncrono 08 - 25/11/2022\nEncontro síncrono 08 - 25/11/2022"
+  },
+  {
+    "objectID": "aulas_modulo1.html#encontro-síncrono-09---08122022",
+    "href": "aulas_modulo1.html#encontro-síncrono-09---08122022",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.11 Encontro síncrono 09 - 08/12/2022",
+    "text": "16.11 Encontro síncrono 09 - 08/12/2022\nEncontro síncrono 09 - 08/12/2022"
+  },
+  {
+    "objectID": "aulas_modulo1.html#encontro-síncrono-10---15122022",
+    "href": "aulas_modulo1.html#encontro-síncrono-10---15122022",
+    "title": "1  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1",
+    "section": "16.12 Encontro síncrono 10 - 15/12/2022",
+    "text": "16.12 Encontro síncrono 10 - 15/12/2022\nEncontro síncrono 10 - 15/12/2022"
+  },
+  {
+    "objectID": "aulas_modulo2.html",
+    "href": "aulas_modulo2.html",
+    "title": "2  CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 2",
+    "section": "",
+    "text": "3 Semana 1\n\n3.1 Aula 01-1\nConvocação aos alunos\n3.2 Aula 01-2\nRevisão de estatística\n3.3 Aula 02\nDe volta ao R com tranquilidade\n3.4 Aula 03\nRevisão de Ciência de Dados\n3.5 Aula 04\nPensando no nosso projeto\n3.6 Aula 05\nLivro online ICEPi\n\n\n\n4 Semana 2\n\n4.1 Aula 06\nConceitos iniciais de inferência\n4.2 Aula 07-1\nAmostragem no R\n4.3 Aula 07-2\nAmostragem no R\n4.4 Aula 08\nInferência estatística: um exemplo na saúde\n4.5 Aula 09\nPopulação de dados\n4.6 Aula 10\nPopulação de dados e data\n\n\n\n5 Semana 3\n\n5.1 Aula 11\nConceitos de probabilidade para dados contínuos\n5.2 Aula 12-1\nLidando com a distribuição normal\n5.3 Aula 12-2\nLidando com a distribuição normal\n5.4 Aula 13\nVariáveis de confusão e DAGs\n5.5 Aula 14\nExemplo de interação entre variáveis no R\n5.6 Aula 15\nAnalisando distribuição\n\n\n\n6 Semana 4\n\n6.1 Aula 16\nDistribuições amostrais\n6.2 Aula 17\nConceitos de estimação para média\n6.3 Aula 18\nAmostrando médias no R\n6.4 Aula 19-1\nCalculando intervalos de confiança\n6.5 Aula 19-2\nCalculando intervalos de confiança\n6.6 Aula 20\nExemplo de cascata de cuidado no R (HIV)\n\n\n\n7 Semana 5\n\n7.1 Encontro Síncrono 01 - 20/03/2023 - 16h\nEncontro Síncrono 01 - 20/03/2023 - 16h\n7.2 Aula 21\nModelos de probabilidade para dados discretos\n7.3 Aula 22\nQQ Plot e distribuições\n7.4 Aula 23\nDistribuicoes_e_pacotes\n7.5 Aula 24\nChatGPT + R\n\n\n\n8 Semana 6\n\n8.1 Aula 25\nRR e OR\n8.2 Aula 26-1\nRisco relativo no R\n8.3 Aula 26-2\nRisco relativo no R\n8.4 Aula 27-1\nCriando função para RR e OR\n8.5 Aula 27-2\nCriando função para RR e OR\n8.6 Aula 28\nRisco relativo em artigos\n8.7 Aula 29\nRazão de chances em artigos publicados\n\n\n\n9 Semana 7\n\n9.1 Aula 30\nTeste de hipóteses I\n9.2 Aula 31\nTeste de hipóteses no R\n9.3 Aula 32\nMétodo Hipotético Dedutivo\n9.4 Aula 33\nIntervalo de confiança exemplos teóricos\n9.5 Aula 34\nIntervalo de confiança exemplos práticos\n\n\n\n10 Semana 8\n\n10.1 Encontro Síncrono 02 - módulo 02 - 10/04/2023\nEncontro Síncrono 02 - módulo 02 - 10/04/2023\n10.2 Aula 35\nTeste de hipóteses II\n10.3 Aula 36\nTeste T de Student\n10.4 Aula 37\nRelatório de teste T\n10.5 Aula 38\nTeste de hipóteses na saúde pública\n\n\n\n11 Semana 9\n\n11.1 Aula 39\nProduto Monitoramentos Hospitalares com quarto\n11.2 Aula 40\nRegressão Linear Simples I\n11.3 Aula 41\nRegressão Linear Simples II\n11.4 Aula 42\nanova simples no R\n\n\n\n12 Semana 10\n\n12.1 Aula 43\ncolisor\n12.2 Aula 44-1\nRegressão simples no R\n12.3 Aula 44-2\nRegressão simples no R\n12.4 Aula 44-3\nRegressão simples no R\n12.5 Aula 45\nRegressão linear múltipla\n12.6 Aula 46\nSeleção de variáveis\n12.7 Encontro Síncrono 03 - 28/04/23 - 16h\nEncontro Síncrono 03 - 28/04/23 - 16h\n\n\n\n13 Semana 11\n\n13.1 Aula 47\nIntrodução aos modelos de regressão logística\n13.2 Aula 48\nExemplo de regressão logística\n13.3 Aula 49\nExemplo do cuidado com vieses\n13.4 Aula 50\nRegressão múltipla no R\n\n\n\n14 Semanas 12 e 13\n\n14.1 Instrução em vídeo para avaliação\nInstrução em vídeo para avaliação\n\n\n\n15 Semana 14\n\n15.1 Aula 51\nIntrodução a machine learning\n15.2 Aula 52\nKNN\n15.3 Aula 53\nRegressão Logística no R\n15.4 Aula 54\nAlgoritmo KNN (Parte 1)\n15.5 Aula 55\nKNN na prática (parte 1)\n\n\n\n16 Semana 15\n\n16.1 Aula 56\nKNN na prática (parte 2)\n16.2 Aula 57\nKNN na prática (parte 3)\n16.3 Aula 58\nÁrvores\n16.4 Aula 59\nÁrvores de decisão em machine learning\n16.5 Aula 60\nÁrvores na tomada de decisão em saúde\n\n\n\n17 Semana 16\n\n17.1 Aula 61\nFlorestas\n17.2 Aula 62\nMétricas de ajuste\n17.3 Aula 63\nTeoria sobre árvores\n17.4 Aula 64\nPrática sobre árvores de decisão\n17.5 Aula 65\nPrática sobre florestas aleatórias\n\n\n\n18 Semana 17\n\n18.1 Aula 66\nXGBoost\n18.2 Aula 67\nPrática de XGBoost\n18.3 Aula 68\nXGBoost detalhado\n18.4 Encontro Síncrono 06 - 14/06/23 - 16h\nEncontro Síncrono 06 - 14/06/23 - 16h\n18.5 Aula 69\nMétricas de avaliação de modelos de machine learningo\n18.6 Aula 70\nMétricas - Machine Learning\n\n\n\n19 Semana 18\n\n19.1 Aula 71\nCluster hierárquico\n19.2 Aula 72\nAnálise fatorial\n19.3 Encontro Síncrono 07 - 20/06/23 - 16h\nEncontro Síncrono 07 - 20/06/23 - 16h\n19.4 Aula 73\nExemplo de análise fatorial\n19.5 Aula 74-1\nCoeficiente de correlação cofenética\n19.6 Aula 74-2\nCoeficiente de correlação cofenética\n19.7 Aula 75\nMapa de calor de matrizes de distância\n\n\n\n20 Semana 18,20,21,22,23\n\n20.1 Encontro Síncrono 08 - 28/06/23 - 16h\nEncontro Síncrono 08 - 28/06/23 - 16h\n20.2 Encontro Síncrono 09 - Final\nEncontro Síncrono 09 - Final\n20.3 Vídeo do roteiro (passo a passo) do Prof. Bragatte\nVídeo do roteiro (passo a passo) do Prof. Bragatte\n20.4 Vídeo do roteiro (passo a passo) do Prof. Bertolde\nVídeo do roteiro (passo a passo) do Prof. Bertolde\n20.5 Vídeo do roteiro (passo a passo) do Prof. Vital\nVídeo do roteiro (passo a passo) do Prof. Vital\n20.6 Encontro Síncrono - Mais roteiros de projeto final!\nEncontro Síncrono - Mais roteiros de projeto final!"
   }
 ]

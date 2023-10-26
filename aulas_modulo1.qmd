@@ -1,15 +1,3 @@
----
-author: "Mikael Lemos"
-format: html
-PDF:
-link-external-icon: true
-link-external-newwindow: true
-editor: visual
-links: link-external-newwindow	
----
-
-## ![](icepi_bg.png)
-
 # CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1
 
 # Semana 1
@@ -650,53 +638,47 @@ links: link-external-newwindow
 
     [Estimador bayesiano empírico](https://www.youtube.com/watch?v=F4a7SSoGcM8 "Estimador bayesiano empírico")
 
-100.                                                  
-    
+100. 
+
 ## Aula 52
 
 [Mapas com estimador bayesiano empírico](https://www.youtube.com/watch?v=-oU3yDXPPZo "Mapas com estimador bayesiano empírico")
 
-101.                        
-            
-## Aula 53-1 
+101. 
+
+## Aula 53-1
 
 [Revendo o que aprendemos no R - Parte 1](https://www.youtube.com/watch?v=hJgPPdq9pDs "Revendo o que aprendemos no R - Parte 1")
 
-
-102.          
+102. 
 
 ## Aula 53-2
 
 [Revendo o que aprendemos no R - Parte 2](https://www.youtube.com/watch?v=WjwtxImnQ9s "Revendo o que aprendemos no R - Parte 2")
 
-
-103.         
+103. 
 
 ## Aula 53-3
 
 [Revendo o que aprendemos no R - Parte 3](https://www.youtube.com/watch?v=flRhLNDCcFk "Revendo o que aprendemos no R - Parte 3")
 
-
-104.                         
+104. 
 
 ## Aula 54
 
 [Meu script em PDF](https://www.youtube.com/watch?v=hHGA1hffHJs "Meu script em PDF")
 
-
-105.                                  
+105. 
 
 ## Aula 55
-    
+
 [Mapas no R (Tuberculose)](https://www.youtube.com/watch?v=tkpnVooRWso "Mapas no R (Tuberculose)")
 
-
-106.                 
+106. 
 
 ## Encontro síncrono 07 - Parte 01 - 10/11/2022
 
 [Encontro síncrono 07 - Parte 01 - 10/11/2022](https://www.youtube.com/watch?v=6p7HzejZlPw "Encontro síncrono 07 - Parte 01 - 10/11/2022")
-
 
 107. 
 
@@ -704,156 +686,120 @@ links: link-external-newwindow
 
 [Encontro síncrono 07 - Parte 02 - 11/11/2022](https://www.youtube.com/watch?v=E7IE-HzDPas "Encontro síncrono 07 - Parte 02 - 11/11/2022")
 
-
 # Semana 14
 
 108. 
 
-         
 ## Aula 56
 
 [Ajuste de taxas brutas](https://www.youtube.com/watch?v=-X-fc_eE4cU "Ajuste de taxas brutas")
 
-
 109. 
 
-         
 ## Aula 57
 
 [Como editar tabelas no R](https://www.youtube.com/watch?v=aJqeksFJXFA "Como editar tabelas no R")
 
-
 110. 
 
-         
 ## Aula 58
 
 [Comunicação de Análises de Dados](https://www.youtube.com/watch?v=i32bGVUvf6U "Comunicação de Análises de Dados")
 
-
 111. 
 
-        
 ## Aula 59
 
 [Análise Exploratoria R](https://www.youtube.com/watch?v=Q8kg-gkDLGs "Análise Exploratoria R")
 
-
 112. 
 
-        
 ## Aula 60-1
 
 [Criando um painel de gráficos](https://www.youtube.com/watch?v=2-Kk8qvSB9Q "Criando um painel de gráficos")
 
-
 113. 
 
-         
 ## Aula 60-2
 
 [Criando um painel de gráficos](https://www.youtube.com/watch?v=cXVb1SuzjAU "Criando um painel de gráficos")
 
-
 114. 
 
-         
 ## Aula 60-3
 
 [Criando um painel de gráficos](https://www.youtube.com/watch?v=1tPmXAPWiSI "Criando um painel de gráficos")
-
 
 # Semanas 15 e 16
 
 115. 
 
-        
 ## Instruções para entrega do projeto final do módulo 01
 
 [Instruções para entrega do projeto final do módulo 01](https://www.youtube.com/watch?v=tsJiN7aUdQ8 "Instruções para entrega do projeto final do módulo 01")
 
-
 116. 
 
-        
-##      Proposta 01 (Parte 01) - Dengue no ES
+## Proposta 01 (Parte 01) - Dengue no ES {#proposta-01-parte-01---dengue-no-es}
 
-[Proposta 01 (Parte 01) - Dengue no ES](https://www.youtube.com/watch?v=1L0ZYmKenc4 " Proposta 01 (Parte 01) - Dengue no ES")
-
+[Proposta 01 (Parte 01) - Dengue no ES](#proposta-01-parte-01---dengue-no-es)(https://www.youtube.com/watch?v=1L0ZYmKenc4 " Proposta 01 (Parte 01) - Dengue no ES")
 
 117. 
 
-         
-##  Proposta 01 (Parte 02) - Dengue no ES
+## Proposta 01 (Parte 02) - Dengue no ES {#proposta-01-parte-02---dengue-no-es}
 
-[ Proposta 01 (Parte 02) - Dengue no ES](https://www.youtube.com/watch?v=nsypU0C06Tw " Proposta 01 (Parte 02) - Dengue no ES")
-
+[Proposta 01 (Parte 02) - Dengue no ES](#proposta-01-parte-02---dengue-no-es)(https://www.youtube.com/watch?v=nsypU0C06Tw " Proposta 01 (Parte 02) - Dengue no ES")
 
 118. 
 
-         
 ## Proposta 02 - Desigualdade Vacinal
 
 [Proposta 02 - Desigualdade Vacinal](https://www.youtube.com/watch?v=6iJCEuoU7Ds "Proposta 02 - Desigualdade Vacinal")
 
-
 119. 
 
-         
 ## Proposta 03 - Empirical Bayes
 
 [Proposta 03 - Empirical Bayes](https://www.youtube.com/watch?v=IYmkqSiL3F8 "Proposta 03 - Empirical Bayes")
 
-
 120. 
 
-         
 ## Proposta 04 (Parte 01) - Diabetes Mellitus
 
 [Proposta 04 (Parte 01) - Diabetes Mellitus](https://www.youtube.com/watch?v=WW9ZeebDN30 "Proposta 04 (Parte 01) - Diabetes Mellitus")
 
+121. 
 
-121.          
-
-         
 ## Proposta 04 (Parte 02) - Diabetes Mellitus
 
 [Proposta 04 (Parte 02) - Diabetes Mellitus](https://www.youtube.com/watch?v=0YnwxscvfXo "Proposta 04 (Parte 02) - Diabetes Mellitus")
 
+122. 
 
-122.          
-
-        
 ## Proposta 05 (Parte 01)- Media Móvel Interativa
 
 [Proposta 05 (Parte 01)- Media Móvel Interativa](https://www.youtube.com/watch?v=oOwEvdyAbqo "Proposta 05 (Parte 01)- Media Móvel Interativa")
 
+123. 
 
-123.          
-        
 ## Proposta 05 (Parte 02)- Media Móvel Interativa
 
 [Proposta 05 (Parte 02)- Media Móvel Interativa](https://www.youtube.com/watch?v=GFVxFBBOEQk "Proposta 05 (Parte 02)- Media Móvel Interativa")
 
+124. 
 
-124.          
-         
-##  Encontro síncrono 08 - 25/11/2022
+## Encontro síncrono 08 - 25/11/2022
 
 [Encontro síncrono 08 - 25/11/2022](https://www.youtube.com/watch?v=nuM4CAQriA8 "Encontro síncrono 08 - 25/11/2022")
 
+125. 
 
-125.         
-
-         
-##  Encontro síncrono 09 - 08/12/2022
+## Encontro síncrono 09 - 08/12/2022
 
 [Encontro síncrono 09 - 08/12/2022](https://www.youtube.com/watch?v=VUrUpx-XCEY "Encontro síncrono 09 - 08/12/2022")
 
+126. 
 
-126.         
-
-##  Encontro síncrono 10 - 15/12/2022
+## Encontro síncrono 10 - 15/12/2022
 
 [Encontro síncrono 10 - 15/12/2022](https://www.youtube.com/watch?v=WXtt2T_o7-c "Encontro síncrono 10 - 15/12/2022")
-

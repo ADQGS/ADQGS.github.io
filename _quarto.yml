@@ -14,7 +14,7 @@ book:
     - index.qmd
     - intro.qmd
     - summary.qmd
-    - modulos.qmd
+    - ementa.qmd
     - aulas_modulo1.qmd
     - aulas_modulo2.qmd
     - references.qmd

@@ -5,7 +5,7 @@ project:
 book:
   title: "ADQGS_ICEPi_book"
   author: "Bragatte"
-  date: "10/06/2023"
+  date: "21/10/2023"
   site-url: https://adqgs.github.io/
   repo-url: https://github.com/ADQGS/ADQGS.github.io
   repo-actions: [edit]
@@ -14,8 +14,9 @@ book:
     - index.qmd
     - intro.qmd
     - summary.qmd
-    - mod1.qmd
-    - mod2.qmd
+    - modulos.qmd
+    - aulas_modulo1.qmd
+    - aulas_modulo2.qmd
     - references.qmd
 
 reader-mode: true

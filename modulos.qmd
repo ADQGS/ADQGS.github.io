@@ -1,4 +1,4 @@
-# Módulo II {.unnumbered}
+# Módulos {.unnumbered}
 
 ## Objetivo do Curso:
 

@@ -1,0 +1,859 @@
+---
+author: "Mikael Lemos"
+format: html
+PDF:
+link-external-icon: true
+link-external-newwindow: true
+editor: visual
+links: link-external-newwindow	
+---
+
+## ![](icepi_bg.png)
+
+# CAPACITAÇÃO EM ANÁLISE DE DADOS PARA A QUALIFICAÇÃO EM GESTÃO DA SAÚDE - INTERMEDIÁRIO - Módulo 1
+
+# Semana 1
+
+1.  
+
+    ## Aula 01-1
+
+    [Apresentação da equipe](https://www.youtube.com/watch?v=bDPXOrEm8ds "Apresentação da equipe")
+
+2.  
+
+    ## Aula 01-2
+
+    [Sobre o R](https://www.youtube.com/watch?v=lxgAoh8P9vw "Sobre o R")
+
+3.  
+
+    ## Aula 01-3
+
+    [Conceito de Storytelling com dados](https://www.youtube.com/watch?v=c4rVOqyTy-o "Conceito de Storytelling com dados")
+
+4.  
+
+    ## Aula 02-1
+
+    [Orientações sobre cadastros, tutorias, etc.](https://www.youtube.com/watch?v=ZrgIf41m9CU "Orientações sobre cadastros, tutorias, etc.")
+
+5.  
+
+    ## Aula 02-2
+
+    [Instalando o R e o RStudio](https://www.youtube.com/watch?v=f--Q5z8rIi8 "Instalando o R e o RStudio")
+
+6.  
+
+    ## Aula 03
+
+    [Exemplo real de análise de dados](https://www.youtube.com/watch?v=T8xYEeYSnwM "Exemplo real de análise de dados")
+
+7.  
+
+    ## Aula 04
+
+    [Comunicação e Oratória](https://www.youtube.com/watch?v=PaaeZ1I1KYU "Comunicação e Oratória")
+
+8.  
+
+    ## Aula 05-1
+
+    [Orientações motivacionais - R](https://www.youtube.com/watch?v=rQVEdyPUhfQ "Orientações motivacionais - R")
+
+9.  
+
+    ## Aula 05-2
+
+    [Orientações motivacionais - Estatística](https://www.youtube.com/watch?v=KQqhF7nZUgs "Orientações motivacionais - Estatística")
+
+10. 
+
+    ## Encontro síncrono 01 - 19/08/2022
+
+    [Encontro síncrono 01 - 19/08/2022](https://www.youtube.com/watch?v=lTmJyvL4JlI "Encontro síncrono 01 - 19/08/2022")
+
+# Semana 2
+
+11. 
+
+    ## Aula 06-1
+
+    [Comunicação de ciência: Exemplo da Rede Análise](https://www.youtube.com/watch?v=qaE1hrC8rWo "Comunicação de ciência: Exemplo da Rede Análise")
+
+12. 
+
+    ## Aula 06-2
+
+    [Comunicar é uma ciência](https://www.youtube.com/watch?v=otfDevd6Iv8 "Comunicar é uma ciência")
+
+13. 
+
+    ## Aula 07-1
+
+    [Epidemiologia Como Ferramenta De Gestão Da Saúde](https://www.youtube.com/watch?v=_A-aBzm3e60 "Epidemiologia Como Ferramenta De Gestão Da Saúde")
+
+14. 
+
+    ## Aula 07-2
+
+    [Storytelling como auxílio ao tomador de decisão](https://www.youtube.com/watch?v=59YVfkRUbsA "Storytelling como auxílio ao tomador de decisão")
+
+15. 
+
+    ## Aula 08
+
+    [Ciência de Dados](https://www.youtube.com/watch?v=TJxa7PYONBA "Ciência de Dados")
+
+16. 
+
+    ## Aula 09
+
+    [Estatística 01](https://www.youtube.com/watch?v=WbuUUv7d_MQ "Estatística 01")
+
+17. 
+
+    ## Aula 10
+
+    [Estatística 02](https://www.youtube.com/watch?v=GKpnOkeP7zA "Estatística 02")
+
+# Semana 3
+
+18. 
+
+    ## Aula 11
+
+    [Apresentação de conceitos e tipos de dados](https://www.youtube.com/watch?v=IV5tG0cwwG0 "Apresentação de conceitos e tipos de dados")
+
+19. 
+
+    ## Aula 12-1
+
+    [Apresentação dos tipos de séries de dados/variáveis](https://www.youtube.com/watch?v=SJUH6jo7G78 "Apresentação dos tipos de séries de dados/variáveis")
+
+20. 
+
+    ## Aula 12-2
+
+    [Organização dos dados em tabelas de frequência](https://www.youtube.com/watch?v=9kW8DRyavEI "Organização dos dados em tabelas de frequência")
+
+21. 
+
+    ## Aula 13
+
+    [Apresentação de tipos de gráficos](https://www.youtube.com/watch?v=72KfJmoZQs8 "Apresentação de tipos de gráficos")
+
+22. 
+
+    ## Aula 14-1
+
+    [Revisão e apresentação de algumas funcionalidades das abas do RStudio](https://www.youtube.com/watch?v=QrcamVCnWAU "Revisão e apresentação de algumas funcionalidades das abas do RStudio")
+
+23. 
+
+    ## Aula 14-2
+
+    [Primeiros passos no R](https://www.youtube.com/watch?v=UrWWayW_Cu8 "Primeiros passos no R")
+
+24. 
+
+    ## Aula 15-1
+
+    [Alguns fundamentos de R](https://www.youtube.com/watch?v=z6X51GLtHEA "Alguns fundamentos de R")
+
+25. 
+
+    ## Aula 15-2
+
+    [Um exemplo simples no R](https://www.youtube.com/watch?v=L-5dmXtOPRk "Um exemplo simples no R")
+
+26. 
+
+    ## Encontro síncrono 02 - 02/09/2022
+
+    [Encontro síncrono 02 - 02/09/2022](https://www.youtube.com/watch?v=w13JJe4pyRU "Encontro síncrono 02 - 02/09/2022")
+
+# Semana 4
+
+27. 
+
+    ## Aula 16-1
+
+    [Uso de pacotes no R](https://www.youtube.com/watch?v=ugdKUtnx9mE "Uso de pacotes no R")
+
+28. 
+
+    ## Aula 16-2
+
+    [Uso de pacotes no R](https://www.youtube.com/watch?v=YsyX5npLlMQ "Uso de pacotes no R")
+
+29. 
+
+    ## Aula 17-1
+
+    [Apresentação de exemplos no R](https://www.youtube.com/watch?v=50Aeoz9sl70 "Apresentação de exemplos no R")
+
+30. 
+
+    ## Aula 17-2
+
+    [Como acessar o TABWIN e como carregar arquivos DBC utilizando o R no RStudio](https://www.youtube.com/watch?v=Th9sdCjlYhc "Como acessar o TABWIN e como carregar arquivos DBC utilizando o R no RStudio")
+
+31. 
+
+    ## Aula 18-1
+
+    [Operações com dados no R](https://www.youtube.com/watch?v=rO0_HUyd_BU "Operações com dados no R")
+
+32. 
+
+    ## Aula 18-2-1
+
+    [Como criar o seu próprio guia de funções R em PDF utilizando a biblioteca rmarkdown](https://www.youtube.com/watch?v=K66jA9Djtr4 "Como criar o seu próprio guia de funções R em PDF utilizando a biblioteca rmarkdown")
+
+33. 
+
+    ## Aula 18-2-2
+
+    [Como criar o seu próprio guia de funções R em PDF utilizando a biblioteca rmarkdown](https://www.youtube.com/watch?v=2o4jNyHDHvE "Como criar o seu próprio guia de funções R em PDF utilizando a biblioteca rmarkdown")
+
+34. 
+
+    ## Aula 19
+
+    [Pílulas de storytelling: público alvo](https://www.youtube.com/watch?v=z_BAnqlaGBk "Pílulas de storytelling: público alvo")
+
+35. 
+
+    ## Aula 20-1
+
+    [Apresentação de exemplos em R](https://www.youtube.com/watch?v=RYKk6TUtpZ0 "Apresentação de exemplos em R")
+
+36. 
+
+    ## Aula 20-2
+
+    [Apresentação de exemplos em R](https://www.youtube.com/watch?v=3uNP1zQaVlk "Apresentação de exemplos em R")
+
+# Semana 5
+
+36. 
+
+    ## Aula 21-1
+
+    [Operações com dados qualitativos](https://www.youtube.com/watch?v=KIkj-j_hXgI "Operações com dados qualitativos")
+
+37. 
+
+    ## Aula 21-2
+
+    [Exemplo real com nomes das vacinas](https://www.youtube.com/watch?v=v-sI6ZLDt7M "Exemplo real com nomes das vacinas")
+
+38. 
+
+    ## Aula 22
+
+    [Operações com dados quantitativos](https://www.youtube.com/watch?v=ylVZTr66qGw%22%20Operações%20com%20dados%20quantitativos%22)
+
+39. 
+
+    ## Aula 23-1
+
+    [Explicação sobre nivelamento dos alunos do curso](https://www.youtube.com/watch?v=ENihmZxg4qg "Explicação sobre nivelamento dos alunos do curso")
+
+40. 
+
+    ## Aula 23-2
+
+    [Apresentação de dados](https://www.youtube.com/watch?v=SSHwZlAKLVk "Apresentação de dados")
+
+41. 
+
+    ## Aula 24-1
+
+    [Reclassificando dados no R](https://www.youtube.com/watch?v=PiNA4IcQ23Q "Reclassificando dados no R")
+
+42. 
+
+    ## Aula 24-2
+
+    [Comunidade do R](https://www.youtube.com/watch?v=xpuYn-vAXHc "Comunidade do R")
+
+43. 
+
+    ## Aula 24-3
+
+    [O que mais é possível fazeR com R?](https://www.youtube.com/watch?v=KDmRhoRoUCE "O que mais é possível fazeR com R?")
+
+44. 
+
+    ## Aula 25-1
+
+    [Alguns gráficos no R](https://www.youtube.com/watch?v=SsP5scHd1dM "Alguns gráficos no R")
+
+45. 
+
+    ## Aula 25-2
+
+    [Alguns gráficos no R](https://www.youtube.com/watch?v=sA1IHHInq3U "Alguns gráficos no R")
+
+46. 
+
+    ## Aula 25-3
+
+    [Alguns gráficos no R](https://www.youtube.com/watch?v=l1uMqupzOUU "Alguns gráficos no R")
+
+47. 
+
+    ## Encontro síncrono 03 - 15/09/2022
+
+    [Alguns gráficos no R](https://www.youtube.com/watch?v=AXElCMk7AQo "Alguns gráficos no R")
+
+# Semana 6
+
+48. 
+
+    ## Aula 25
+
+    [RR e OR](https://www.youtube.com/watch?v=bkqn2mraCes "RR_OR")
+
+49. 
+
+    ## Aula 26
+
+    [Estatística Descritiva](https://www.youtube.com/watch?v=YEsGcGBS08o "Estatística Descritiva")
+
+50. 
+
+    ## Aula 27
+
+    [Medidas estatísticas de resumo](https://www.youtube.com/watch?v=lnQVqbAoR0U "Medidas estatísticas de resumo")
+
+51. 
+
+    ## Aula 28-1
+
+    [Exemplos reais em R para média, mediana e moda](https://www.youtube.com/watch?v=P2FrtdDaCGw "Exemplos reais em R para média, mediana e moda")
+
+52. 
+
+    ## Aula 28-2
+
+    [Exemplos reais em R para média, mediana e moda](https://www.youtube.com/watch?v=v5oqgO0D_NU "Exemplos reais em R para média, mediana e moda")
+
+53. 
+
+    ## Aula 29
+
+    [Projeto com arboviroses](https://www.youtube.com/watch?v=knqmGO20Ez0 "Projeto com arboviroses")
+
+54. 
+
+    ## Aula 29-2
+
+    [Projeto com arboviroseslicados](https://www.youtube.com/watch?v=zV9uUcgYImQ "Projeto com arboviroses")
+
+55. 
+
+    ## Aula 29-3
+
+    [Projeto com arboviroseslicados](https://www.youtube.com/watch?v=Hd2QC6LRdWk "Projeto com arboviroses")
+
+56. 
+
+    ## Aula 30-1
+
+    [Uso de projetos no R (para organização das pastas)licados](https://www.youtube.com/watch?v=JybwnDP6pmc "Uso de projetos no R (para organização das pastas)")
+
+57. 
+
+    ## Aula 30-2
+
+    [Comandos simples no Rlicados](https://www.youtube.com/watch?v=HGkrxtyQ3qs "Comandos simples no R")
+
+# Semana 7
+
+58. 
+
+    ## Aula 31
+
+    [Estatística Descritiva 1](https://www.youtube.com/watch?v=QMTB39eCsA0 "Estatística Descritiva 1")
+
+59. 
+
+    ## Aula 32
+
+    [Estatística Descritiva 2](https://www.youtube.com/watch?v=oYXkjsfPp_U "Estatística Descritiva 2")
+
+60. 
+
+    ## Aula 33-1
+
+    [Documentando o aprendizado usando média, mediana e moda](https://www.youtube.com/watch?v=TI122uQdIEw "Documentando o aprendizado usando média, mediana e moda")
+
+61. 
+
+    ## Aula 33-2
+
+    [Documentando o aprendizado usando média, mediana e moda](https://www.youtube.com/watch?v=syCiemJyykY "Documentando o aprendizado usando média, mediana e moda")
+
+62. 
+
+    ## Aula 34-1
+
+    [Exercitando estatística descritiva](https://www.youtube.com/watch?v=vDkbf4ihpXM "Exercitando estatística descritiva")
+
+63. 
+
+    ## Aula 34-2
+
+    [Exercitando estatística descritiva](https://www.youtube.com/watch?v=vFidpwhatzI "Exercitando estatística descritiva")
+
+64. 
+
+    ## Aula 34-3
+
+    [Exercitando estatística descritiva](https://www.youtube.com/watch?v=kUaXJdTb2so "Exercitando estatística descritiva")
+
+65. 
+
+    ## Aula 35
+
+    [Fundamentos de visualização](https://www.youtube.com/watch?v=ag8EYXsi8mw "Fundamentos de visualização")
+
+66. 
+
+    ## Aula 34
+
+    [Encontro síncrono 04 - 29/09/2022](https://www.youtube.com/watch?v=ZVPFjn7OjPc "Encontro síncrono 04 - 29/09/2022")
+
+# Semana 8
+
+67. 
+
+    ## NivelaR 01
+
+    [NivelaR 01](https://www.youtube.com/watch?v=HSTHnQ1GzQ0 "NivelaR 01")
+
+68. 
+
+    ## NivelaR 02
+
+    [NivelaR 02](https://www.youtube.com/watch?v=RTcGNQOivPU "NivelaR 02")
+
+69. 
+
+    ## NivelaR 03-1
+
+    [NivelaR 03-1](https://www.youtube.com/watch?v=UA-TrMliTn4 "NivelaR 03-1")
+
+70. 
+
+    ## NivelaR 03-2
+
+    [NivelaR 03-2](https://www.youtube.com/watch?v=c7HvQcEcgU4 "NivelaR 03-2")
+
+71. 
+
+    ## NivelaR 04
+
+    [NivelaR 04](https://www.youtube.com/watch?v=4vawGr_aplI "NivelaR 04")
+
+72. 
+
+    ## NivelaR 05
+
+    [NivelaR 05](https://www.youtube.com/watch?v=beNh-XA-Huc "NivelaR 05")
+
+# Semana 9
+
+73. 
+
+    ## Aula 36
+
+    [Separatrizes](https://www.youtube.com/watch?v=pecT-IQavrs "Separatrizes")
+
+74. 
+
+    ## Aula 37
+
+    [Boxplot](https://www.youtube.com/watch?v=igNmapOEWYY "Boxplot")
+
+75. 
+
+    ## Aula 38
+
+    [ggplot](https://www.youtube.com/watch?v=KUyAm5LyMAs "ggplot")
+
+76. 
+
+    ## Aula 39-1
+
+    [Boxplots no R](https://www.youtube.com/watch?v=ezoejFX_d34 "Boxplots no R")
+
+77. 
+
+    ## Aula 39-2
+
+    [Boxplots no R](https://www.youtube.com/watch?v=qCZqov0uVL8 "Boxplots no R")
+
+78. 
+
+    ## Aula 39-3
+
+    [Boxplots no R](https://www.youtube.com/watch?v=0rcxEN4RsC8 "Boxplots no R")
+
+79. 
+
+    ## Aula 40
+
+    [Mais boxplots no R](https://www.youtube.com/watch?v=D_UB6vbhAbc "Mais boxplots no R")
+
+80. 
+
+    ## Encontro síncrono 05 (parte 1) - 13/10/2022
+
+    [Encontro síncrono 05 (parte 1) - 13/10/2022](https://www.youtube.com/watch?v=ATklIQuRKgg "Encontro síncrono 05 (parte 1) - 13/10/2022")
+
+81. 
+
+    ## Encontro síncrono 05 (parte 2) - 14/10/2022
+
+    [Encontro síncrono 05 (parte 2) - 13/10/2022](https://www.youtube.com/watch?v=fNgXqmzk5Us "Encontro síncrono 05 (parte 2) - 14/10/2022")
+
+# Semana 10
+
+80. 
+
+    ## Aula 41
+
+    [Calculando cobertura vacinal](https://www.youtube.com/watch?v=2B-yh2_A95s "Calculando cobertura vacinal")
+
+81. 
+
+    ## Aula 42
+
+    [Detalhando cálculo de cobertura vacinal](https://www.youtube.com/watch?v=5fDKUtbyKIY "Detalhando cálculo de cobertura vacinal")
+
+82. 
+
+    ## Aula 43-1
+
+    [Manuseando dados no R](https://www.youtube.com/watch?v=y3JA-nmL_Fo "Manuseando dados no R")
+
+83. 
+
+    ## Aula 43-2
+
+    [Manuseando dados no R](https://www.youtube.com/watch?v=zreLRhDXiuA "Manuseando dados no R")
+
+84. 
+
+    ## Aula 43-3
+
+    [Manuseando dados no R](https://www.youtube.com/watch?v=FO4bDzR9Bf8 "Manuseando dados no R")
+
+85. 
+
+    ## Aula 44
+
+    [Análise de palavras](https://www.youtube.com/watch?v=gNSBA4RWoTc "Análise de palavras")
+
+86. 
+
+    ## Aula 45
+
+    [Manipulação de dados - Hepatite B](https://www.youtube.com/watch?v=F2ku0kj-pvk "Manipulação de dados - Hepatite B")
+
+# Semana 11
+
+87. 
+
+    ## Aula 46
+
+    [Análise de taxas](https://www.youtube.com/watch?v=v0VgVCfLp_U "Análise de taxas")
+
+88. 
+
+    ## Aula 47
+
+    [Mapas de taxas](https://www.youtube.com/watch?v=r6OApttxc1c "Mapas de taxas")
+
+89. 
+
+    ## Aula 48-1
+
+    [Análise de palavras](https://www.youtube.com/watch?v=nLj17D_sHMo "Análise de palavras")
+
+90. 
+
+    ## Aula 48-2
+
+    [Análise de palavras](https://www.youtube.com/watch?v=AkIXbWqZD7M "Análise de palavras")
+
+91. 
+
+    ## Aula 49-1
+
+    [Mapas no R](https://www.youtube.com/watch?v=vTDWfQRFc2k "Mapas no R")
+
+92. 
+
+    ## Aula 49-2
+
+    [Mapas no R](https://www.youtube.com/watch?v=LyuN7OZ0UhI "Mapas no R")
+
+93. 
+
+    ## Aula 49-3
+
+    [Mapas no R](https://www.youtube.com/watch?v=zFoPlPoURVE "Mapas no R")
+
+94. 
+
+    ## Aula 50-1
+
+    [Revendo o que aprendemos no R](https://www.youtube.com/watch?v=PIYcK-NgH8M "Revendo o que aprendemos no R")
+
+95. 
+
+    ## Aula 50-2
+
+    [Revendo o que aprendemos no R](https://www.youtube.com/watch?v=LyuN7OZ0UhI "Revendo o que aprendemos no R")
+
+96. 
+
+    ## Encontro síncrono 06 parte 01 - 27/10/2022
+
+    [Encontro síncrono 06 parte 01 - 27/10/2022](https://www.youtube.com/watch?v=A9_qskAkIZU "Encontro síncrono 06 parte 01 - 27/10/2022")
+
+97. 
+
+    ## Encontro síncrono 06 parte 02 - 28/10/2022
+
+    [Encontro síncrono 06 parte 02 - 28/10/2022](https://www.youtube.com/watch?v=6ReMltDUojE "Encontro síncrono 06 parte 02 - 28/10/2022")
+
+# Semanas 12
+
+98. 
+
+    ## NivelaR 02 - Orientações para os alunos
+
+    [NivelaR 02 - Orientações para os alunos](https://www.youtube.com/watch?v=wIT0SIoBUYo "NivelaR 02 - Orientações para os alunos")
+
+# Semanas 13
+
+99. 
+
+    ## Aula 51
+
+    [Estimador bayesiano empírico](https://www.youtube.com/watch?v=F4a7SSoGcM8 "Estimador bayesiano empírico")
+
+100.                                                  
+    
+## Aula 52
+
+[Mapas com estimador bayesiano empírico](https://www.youtube.com/watch?v=-oU3yDXPPZo "Mapas com estimador bayesiano empírico")
+
+101.                        
+            
+## Aula 53-1 
+
+[Revendo o que aprendemos no R - Parte 1](https://www.youtube.com/watch?v=hJgPPdq9pDs "Revendo o que aprendemos no R - Parte 1")
+
+
+102.          
+
+## Aula 53-2
+
+[Revendo o que aprendemos no R - Parte 2](https://www.youtube.com/watch?v=WjwtxImnQ9s "Revendo o que aprendemos no R - Parte 2")
+
+
+103.         
+
+## Aula 53-3
+
+[Revendo o que aprendemos no R - Parte 3](https://www.youtube.com/watch?v=flRhLNDCcFk "Revendo o que aprendemos no R - Parte 3")
+
+
+104.                         
+
+## Aula 54
+
+[Meu script em PDF](https://www.youtube.com/watch?v=hHGA1hffHJs "Meu script em PDF")
+
+
+105.                                  
+
+## Aula 55
+    
+[Mapas no R (Tuberculose)](https://www.youtube.com/watch?v=tkpnVooRWso "Mapas no R (Tuberculose)")
+
+
+106.                 
+
+## Encontro síncrono 07 - Parte 01 - 10/11/2022
+
+[Encontro síncrono 07 - Parte 01 - 10/11/2022](https://www.youtube.com/watch?v=6p7HzejZlPw "Encontro síncrono 07 - Parte 01 - 10/11/2022")
+
+
+107. 
+
+## Encontro síncrono 07 - Parte 02 - 11/11/2022
+
+[Encontro síncrono 07 - Parte 02 - 11/11/2022](https://www.youtube.com/watch?v=E7IE-HzDPas "Encontro síncrono 07 - Parte 02 - 11/11/2022")
+
+
+# Semana 14
+
+108. 
+
+         
+## Aula 56
+
+[Ajuste de taxas brutas](https://www.youtube.com/watch?v=-X-fc_eE4cU "Ajuste de taxas brutas")
+
+
+109. 
+
+         
+## Aula 57
+
+[Como editar tabelas no R](https://www.youtube.com/watch?v=aJqeksFJXFA "Como editar tabelas no R")
+
+
+110. 
+
+         
+## Aula 58
+
+[Comunicação de Análises de Dados](https://www.youtube.com/watch?v=i32bGVUvf6U "Comunicação de Análises de Dados")
+
+
+111. 
+
+        
+## Aula 59
+
+[Análise Exploratoria R](https://www.youtube.com/watch?v=Q8kg-gkDLGs "Análise Exploratoria R")
+
+
+112. 
+
+        
+## Aula 60-1
+
+[Criando um painel de gráficos](https://www.youtube.com/watch?v=2-Kk8qvSB9Q "Criando um painel de gráficos")
+
+
+113. 
+
+         
+## Aula 60-2
+
+[Criando um painel de gráficos](https://www.youtube.com/watch?v=cXVb1SuzjAU "Criando um painel de gráficos")
+
+
+114. 
+
+         
+## Aula 60-3
+
+[Criando um painel de gráficos](https://www.youtube.com/watch?v=1tPmXAPWiSI "Criando um painel de gráficos")
+
+
+# Semanas 15 e 16
+
+115. 
+
+        
+## Instruções para entrega do projeto final do módulo 01
+
+[Instruções para entrega do projeto final do módulo 01](https://www.youtube.com/watch?v=tsJiN7aUdQ8 "Instruções para entrega do projeto final do módulo 01")
+
+
+116. 
+
+        
+##      Proposta 01 (Parte 01) - Dengue no ES
+
+[Proposta 01 (Parte 01) - Dengue no ES](https://www.youtube.com/watch?v=1L0ZYmKenc4 " Proposta 01 (Parte 01) - Dengue no ES")
+
+
+117. 
+
+         
+##  Proposta 01 (Parte 02) - Dengue no ES
+
+[ Proposta 01 (Parte 02) - Dengue no ES](https://www.youtube.com/watch?v=nsypU0C06Tw " Proposta 01 (Parte 02) - Dengue no ES")
+
+
+118. 
+
+         
+## Proposta 02 - Desigualdade Vacinal
+
+[Proposta 02 - Desigualdade Vacinal](https://www.youtube.com/watch?v=6iJCEuoU7Ds "Proposta 02 - Desigualdade Vacinal")
+
+
+119. 
+
+         
+## Proposta 03 - Empirical Bayes
+
+[Proposta 03 - Empirical Bayes](https://www.youtube.com/watch?v=IYmkqSiL3F8 "Proposta 03 - Empirical Bayes")
+
+
+120. 
+
+         
+## Proposta 04 (Parte 01) - Diabetes Mellitus
+
+[Proposta 04 (Parte 01) - Diabetes Mellitus](https://www.youtube.com/watch?v=WW9ZeebDN30 "Proposta 04 (Parte 01) - Diabetes Mellitus")
+
+
+121.          
+
+         
+## Proposta 04 (Parte 02) - Diabetes Mellitus
+
+[Proposta 04 (Parte 02) - Diabetes Mellitus](https://www.youtube.com/watch?v=0YnwxscvfXo "Proposta 04 (Parte 02) - Diabetes Mellitus")
+
+
+122.          
+
+        
+## Proposta 05 (Parte 01)- Media Móvel Interativa
+
+[Proposta 05 (Parte 01)- Media Móvel Interativa](https://www.youtube.com/watch?v=oOwEvdyAbqo "Proposta 05 (Parte 01)- Media Móvel Interativa")
+
+
+123.          
+        
+## Proposta 05 (Parte 02)- Media Móvel Interativa
+
+[Proposta 05 (Parte 02)- Media Móvel Interativa](https://www.youtube.com/watch?v=GFVxFBBOEQk "Proposta 05 (Parte 02)- Media Móvel Interativa")
+
+
+124.          
+         
+##  Encontro síncrono 08 - 25/11/2022
+
+[Encontro síncrono 08 - 25/11/2022](https://www.youtube.com/watch?v=nuM4CAQriA8 "Encontro síncrono 08 - 25/11/2022")
+
+
+125.         
+
+         
+##  Encontro síncrono 09 - 08/12/2022
+
+[Encontro síncrono 09 - 08/12/2022](https://www.youtube.com/watch?v=VUrUpx-XCEY "Encontro síncrono 09 - 08/12/2022")
+
+
+126.         
+
+##  Encontro síncrono 10 - 15/12/2022
+
+[Encontro síncrono 10 - 15/12/2022](https://www.youtube.com/watch?v=WXtt2T_o7-c "Encontro síncrono 10 - 15/12/2022")
+

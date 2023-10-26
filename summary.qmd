@@ -1,1 +1,15 @@
 # Sumário {.unnumbered}
+
+Este livro irá conter os scripts e aulas disponibilizadas pelos instrutores do curso ADQGS do ICEPi.
+
+## Autores
+
+-   Marcelo A. S. **Bragatte**
+
+-   **Isaac** N. Schrarstzhaupt
+
+-   Adelmo I. **Bertolde**
+
+-   Marcos V. C. **Vital**
+
+-   **Mikael** A. G. Lemos

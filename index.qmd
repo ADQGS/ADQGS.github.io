@@ -1,5 +1,9 @@
 # Prefácio {.unnumbered}
 
-Este é um livro on-line feito com Quarto para alunos do ICEPi.
+Este é um livro on-line feito em [Quarto](https://quarto.org) utilizando [RStudio](https://posit.co/products/open-source/rstudio/) para os cursistas da Capacitação em Análise de Dados para a Qualificação em Gestão da Saúde, promivida pelo Instituto Capixaba de Ensino, Pesquisa e Inovação em Saúde (ICEPi). Durante o curso, buscamos capacitar agentes do Sistema Único de Saúde (SUS) do estado do Espírito Santo para tomadas de decisão e a avaliação das políticas públicas de saúde, em especial as relacionadas à vigilância em saúde, a partir de treinamento em ferramentas de análise de dados e estatística. Em especial, os treinamentos foram voltados para o uso da [linguagem R](https://www.r-project.org) para análise dados.
+
+Neste livro, organizamos todos os materiais didáticos utilizados durante o treinamento, compartilhando vídeo-aulas gravadas, scripts de R, dados e demais materiais. Todo o material está disponível sob licença (depois escolhemos e inserimos a licença aqui, imagino que uma CC BY-SA-NC possa ser uma boa pedida).
+
+Inserir aqui os nossos nomes como responsáveis, e depois o DOI (tem integração do GitHub com o Zenodo, então dá pra gerar o DOI para todo o repositório).
 
 Para aprender mais sobre livros com Quarto visite <https://quarto.org/docs/books> (site em inglês).
